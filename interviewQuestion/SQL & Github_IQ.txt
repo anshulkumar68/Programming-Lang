@@ -1,0 +1,73 @@
+Q1. What is MySQL?
+Ans- MySQL is a database management system for web servers. It can grow with the website as it is highly scalable. Most of the websites today are powered by MySQL
+
+Q2. What do you mean by ‘databases’?
+Ans- A database is a structured collection of data stored in a computer system and organized in a way to be quickly searched. With databases, information can be rapidly retrieved.
+
+Q3.  What does a MySQL database contain?
+Ans- A MySQL database contains one or more tables, each of which contains records or rows. Within these rows are various columns or fields that contain the data itself.
+
+Q4.What are MySQL Database Queries?
+Ans- A query is a specific request or a question. One can query a database for specific information and have a record returned
+
+Q5. difference between char and varchar
+Ans- CHAR	fixed-length nonbinary(character) string
+VARCHAR		variable-length nonbinary string
+INTEGER(size)	Equal to INT(size)
+DATE	A date. Format: YYYY-MM-DD. The supported range is from '1000-01-01' to '9999-12-31'
+
+Q6.How to add users in MySQL?
+You can add a User by using the CREATE command and specifying the necessary credentials. For example:
+
+CREATE USER ‘testuser’ IDENTIFIED BY ‘sample password’;
+
+Q7. What are the types of relationships used in MySQL?
+Ans- There are three categories of relationships in MySQL:
+
+One-to-One: Usually, when two items have a one-to-one relationship, you just include them as columns in the same table.
+One-to-Many: One-to-many (or many-to-one) relationships occur when one row in one table is linked to many rows in another table.
+Many-to-Many: In a many-to-many relationship, many rows in one table are linked to many rows in another table. To create this relationship, add a third table containing the same key column from each of the other tables
+
+Q8. What is join and define different types of joins
+Ans- A JOIN clause is used to combine rows from two or more tables, based on a related column between them.
+
+Different Types of SQL JOINs
+Here are the different types of the JOINs in SQL:
+
+(INNER) JOIN: Returns records that have matching values in both tables
+LEFT (OUTER) JOIN: Returns all records from the left table, and the matched records from the right table
+RIGHT (OUTER) JOIN: Returns all records from the right table, and the matched records from the left table
+FULL (OUTER) JOIN: Returns all records when there is a match in either left or right table
+
+Q9. Define keys and it types
+Ans- Keys are one of the basic requirements of a relational database model. It is widely used to identify the tuples(rows) uniquely in the table. We also use keys to set up relations amongst various columns and tables of a relational database.
+
+1. Candidate Key: The minimal set of attributes that can uniquely identify a tuple is known as a candidate key. For Example, STUD_NO in STUDENT relation.
+2. Primary Key: There can be more than one candidate key in relation out of which one can be chosen as the primary key. It is a unique key and identify a tuple at a time and it contains no duplicate values. For Example, STUD_NO, as well as STUD_PHONE, are candidate keys for relation STUDENT but STUD_NO can be chosen as the primary key (only one out of many candidate keys). 
+3. Super Key: The set of attributes that can uniquely identify a tuple is known as Super Key. For Example, STUD_NO, (STUD_NO, STUD_NAME), etc. 
+4. Alternate Key: The candidate key other than the primary key is called an alternate key. All the keys which are not primary keys are called alternate keys.
+5. Foreign key : It is a key it acts as a primary key in one table and it acts as secondary key in another table.
+It combines two or more relations (tables) at a time.
+6.Composite key : It acts as a primary key if there is no primary key in a table
+Two or more attributes are used together to make a composite key.
+
+			---------------------------------------------GIT HUB---------------------------------
+
+Q1. Commands for the github to push the project into his repository
+Ans- 
+…or create a new repository on the command line
+echo "# SpringBootTwilioSMS" >> README.md
+git init		--> to initialize the local repository in that particular folder
+git status		--> Use git status in your bash to view all the files which are going to be staged to the first commit.
+git add 'file name'	--> to move the files in stage environment 
+git remote add origin "https://github.com/CodeWithIQ/SpringBootTwilioSMS.git"  --> to sync our local repository with the remote repository
+git commit -m "Add existing project files to Git" -->  confirmation that which adds the change to the local repository.
+git branch -M master   	// for first use
+git push -u origin master  -->is used for pushing local content to GitHub.
+
+-->Fill in your GitHub username and password.
+
+…or push an existing repository from the command line 
+git remote add origin https://github.com/CodeWithIQ/SpringBootTwilioSMS.git
+git branch -M master
+git push -u origin master

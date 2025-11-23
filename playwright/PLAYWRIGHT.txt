@@ -1,0 +1,43 @@
+1)
+Create project folder --> open in VSCode
+
+install playwright using terminal )
+    npm init playwright@latest
+
+    package.json  --- node project management file
+    playwright.config.js  --- playwright configuration
+    tests --- we can add all the playwright tests
+
+    npm playwright -v  -- return installed version of playwright.
+
+install playwright using vs code extension)
+run the playwright test
+
+2)
+How to Create and Run Playwrite Tests)
+npx playwright test                 ->      runs all tests on all browsers in headless mode
+npx playwright test MyTest.spec.js  ->      runs a specific test file
+npx playwright test MyTest.spec.js --project=chromium   ->  runs on specific browser
+npx playwright test MyTest.psec.js --project=chromium --headed    -> run specific test with headed mode
+npx playwright test MyTest.spec.js --project=chromium --headed --debug  -> run specific test with headed mode along playwright inspect
+npm test -- Locators.spec.js --headed   ->   using NPM always give space so that it can consider rest as attribute 
+
+3)
+Locating Elements in Playwright)
+property
+css
+xpath
+
+link/button)
+await page.locator('locator').click()
+await page.click('locator');
+
+inputbox)
+await page.locator('locator').fill('value')
+await page.locator('locator').type('value')
+await page.fill('locator', 'value')
+await page.type('locator', 'value')
+
+Locate multiple web elements)
+const elements = await page.$$(locator)
+

@@ -1,0 +1,78 @@
+v  
+ git init  (Initializes a new Git repository in the current directory.)
+git status (Shows the status of changes as untracked, modified, or staged in your working directory. It helps you understand the state of your repository.)
+git remote add origin (Associates a remote repository with your local Git repository. The term "origin" is a common convention for the default remote name, but you can choose a different name.)
+git branch (Lists all local branches in your repository. The currently active branch is usually marked with an asterisk.)
+git add . or git add <file> (Adds changes to the staging area, preparing them for the next commit) 
+git commit -m "commit message" (Commits the staged changes to the local repository with a commit message describing the changes.)
+git push origin main (Pushes the committed changes from the local "main" branch to the remote repository associated with the "origin" remote.)
+
+// WORKFLOW (working on some project want to sync up updates on gitub use below procedure)
+create repo on github ->  git init -> git status -> git remote add origin -> git add . -> git commit -m -> git push origin main  
+
+//WHILE CLONING => 
+create repo on github -> git clone -> git init -> git status -> git remote add origin -> git add . -> git commit -m -> git push origin main  
+
+//command to sync up local repository to remote repository
+git fetch 
+git merge origin/main
+
+// Command to pull changes from the remote repository (G itHub) to your local repository:
+git pull origin main
+
+// 4 types of status state in github
+1) untracked 
+new files that git doesn't yet track
+2) modified
+changed (changes has been done)
+3) staged - A
+file is ready to committed
+4) unmodified
+unchanged (no changes has been done)
+
+// Command to RESET the local branch to match the remote branch:
+git reset --hard origin/main
+
+//  BRANCH COMMAND
+git branch => to see your current branch
+git branch -M main  => to rename branch
+git checkout  <-branch name->  => to navigate
+git checkout -b <-new branch name->  => to create new branch
+git branch -d  <-branch name->  => to delete branch
+
+//  MERGING CODE'
+Way 1
+git diff <-branch name->    (to compare commits, branches, files & more)
+git merge  <-branch name->  (to merge 2 branches)
+
+Way 2
+create a PR (pull request)
+
+//  PULL COMMAND
+
+git pull origin main   (to pull all content from remote to local)
+
+used to fetch and download content from  a remote repo and immediately update  the local repo to match that content
+
+//  Resolving MERGE CONFLICTS
+
+An event that takes place when Git is unable to automatically resolve differences in code between two commits
+
+git log (to check all commits)
+
+//  UNDOING CHANGES
+case 1: staged changes 
+git reset <file name>
+git reset
+case 2: commited changes (for one commit)
+git reset HEAD~1
+case 3: commited changes (for many commits)
+git reset <commit  hash>
+git reset --hard <commit hash>
+
+//  FORK 
+A fork is a new repository that shares code  and visibility settings with the original  "upstream" repository
+fork is a rough copy
+	
+
+	

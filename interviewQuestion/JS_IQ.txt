@@ -1,0 +1,386 @@
+==============================================================INTRODUCTION==========================================================================================
+Q) What is JavaScript?
+Ans-
+=> JavaScript is a high-level, object-oriented and interpreted programming language primarily used for adding interactivity and dynamic behavior to web pages.
+=> JavaScript is a popular web scripting language and is used for client-side and server-side development. The JavaScript code can be inserted into HTML pages that can be understood and executed by web browsers while also supporting object-oriented programming abilities.
+
+Q) What are the key features of JavaScript?
+Ans-
+=> Lightweight, interpreted programming language
+=> Cross-platform compatible
+=> Open-source
+
+=> Dynamic typing: JavaScript is a dynamically typed language, which means that variables do not need to be declared with a specific data type. The data type of a variable is determined by the value that is assigned to it.
+
+=> Interpreted: JavaScript is an interpreted language, which means that it is not compiled into machine code before it is executed. Instead, JavaScript code is interpreted by the browser or other runtime environment at the time it is executed.
+
+=> Object-oriented: JavaScript is an object-oriented language, which means that it supports the concept of objects. Objects are collections of data and functions that act together as a single unit.
+
+=> Functions as first-class objects: This means that functions can be treated like any other data type, such as numbers, strings, or objects. Functions can be assigned to variables, passed as arguments to other functions, and returned from functions.
+
+=> Prototype-based object-orientation: is a style of object-oriented programming where classes are not explicitly defined. Instead, classes are derived by adding methods and properties to an empty object.
+
+undefined means a variable has been declared but has not yet been assigned a value, while null is an assignment value representing a deliberate absence of any value.
+
+Q) What are the advantages of JavaScript over other web technologies?
+Ans-These are the advantages of JavaScript:
+
+=>Enhanced Interaction
+JavaScript adds interaction to otherwise static web pages and makes them react to users’ inputs.
+
+=>Quick Feedback
+There is no need for a web page to reload when running JavaScript. For example, form input validation.
+
+=>Rich User Interface
+JavaScript helps in making the UI of web applications look and feel much better.
+
+=>Frameworks
+JavaScript has countless frameworks and libraries that are extensively used for developing web applications and games of all kinds.
+
+Q) How JS works behind the scene ?
+Ans-  
+1. Parsing - When a browser encounters a JavaScript code block. The parser breaks down the code into tokens and creates a syntax tree(also known as abstract syntax tree or AST).
+2. Compilation & Execution - JS engine compiles the code into executable machine code using JIT compilation. The compiled code is then executed line by line.
+3. Execution context - Environment in which a piece of js is executed. Stores all the necessary information for some code to be executed.
+It consist of Variable environment, Scope chain and This keyword.
+These execution contexts are organized in a stack known as CALL STACK.
+4. Event loop and Asynchronous Execution- JS is single threaded or synchronous, meaning it can only execute one operation at a time. 
+However, JavaScript also has a number of asynchronous features, such as callbacks, promises, and async/await, which is possible because of an EVENT LOOP mechanism. It keeps looking for task in the task queue and executes them when the call stack is empty. These features allow JavaScript code to run in the background without blocking the main thread
+5. Memory Management- JS engine have built-in garbage collectors that automatically manage memory allocation and deallocation and leds memory optimization.
+
+Q) What is the event loop in JavaScript and how does it work?
+Ans- The event loop is a mechanism in JavaScript that allows asynchronous operations to be executed in a non-blocking manner by handling callbacks from the callback queue when the call stack is empty.
+
+Q) Define OOPS ?
+Ans- 
+==========================================================================BASIC==============================================================================
+Q) What is strict mode ?
+Ans- =>  strict mode is a way to opt in to a restricted variant of JavaScript
+=> It instructs the browser to use the strict mode
+=> It stops using implicitly declared variables.
+=> It helps developers to write mode secure and efficient code by catching common mistakes and potential bug
+
+Q) What are the different datatypes present in javascript?
+Ans-
+1. Primitive types => Primitive data types can store only a single value 
+Primitives datatypes are datatypes which don't have any methods align with it
+
+Boolean - For true and false values
+Null - For empty or unknown values
+Undefined - For variables that are only declared and not defined or initialized
+Number - For integer and floating-point numbers
+String - For characters and alphanumeric values
+BigInt: Represents integers with arbitrary magnitude.
+Symbols - For unique identifiers for objects
+
+2. Non-Primitive types => To store multiple and complex values, non-primitive data types are used.
+Example: Objects, Arrays and functions
+
+Q) Define a named function in JavaScript
+Ans- In JS, a named function is a function that has a name specified while declarations of the function. It helps to improve code redability, makes it easier to identify and calling the function elsewhere in your code.
+
+=> Keyword function: This is used to define a new function.
+=> Function Name (greet): The name of the function, which is used to call it later in the code.
+=> Parameters (name): A list of parameters that the function accepts, enclosed in parentheses. In this example, the function accepts a single parameter, name.
+=> Function Body: The code block inside curly braces {} that contains the logic of the function. This is where you define what the function does. In this example, it returns a greeting message.
+
+Q) What are undeclared and undefined variables?
+Ans- 
+=>Undeclared variables
+Undeclared variables are variables that have not been declared using var, let, or const before they are used in the code. Accessing an undeclared variable will result in a ReferenceError. 
+
+=>Undefined variables
+Undefined variables are variables that have been declared but have not been assigned a value. When you declare a variable but do not initialize it with a value, its default value is undefined.
+
+Q) What is Type conversion(typecasting) and type coercion
+Ans-  These  two concepts related to how JavaScript handles data types
+Type conversion in JavaScript is the explicit conversion of a value from one data type to another Ex. Number("10"), String(), Boolean(), parseInt(), parseFloat()
+Type coercion, on the other hand, is the implicit conversion of values during evaluation of expressions
+
+Q) What are the differences between undefined and null?
+Ans- undefined means a variable has been declared but has not yet been assigned a value, whereas null is an assignment value, meaning that a variable has been declared and given the value of null
+
+Q) What is the scope in JavaScript?
+Ans- Scope refers to the accessibility of variables, functions, and objects in particular parts of your code during runtime.
+
+Q) Explain the difference between arrow functions and regular functions in JavaScript.
+Ans- 
+=> Regular function
+Regular functions are defined using the function keyword and can have a named or anonymous form.
+Regular functions has their own this keyword
+
+=> Arrow functions
+Arrow functions are defined using the => syntax and are always anonymous. They are more concise, especially use for simple operations.
+Arrow functions do not have their own this but inherit it from the surrounding context where they are defined.
+
+Q) Explain this keyword ?
+Ans-  In JavaScript, the this keyword refers to the object that is currently executing the function. The value of this is determined by how the function is called, not where it is defined.
+this behaves different under different contexts
+=> Global Context
+In the global execution context (outside of any function), this refers to the global object. In a web browser, the global object is window.
+
+=> Object Method
+When a function is called as a method of an object, this refers to the object that owns the method.
+
+=> Constructor Function
+In a constructor function, this refers to the newly created object that is being initialized.
+
+=> Event Handlers
+In event handlers, this refers to the DOM element that received the event.
+
+
+Q) What is callback functions ?
+Ans- A callback is a function that is passed as an argument to another function. The receiving function is responsible for executing the callback function at a specific point in its execution
+used for handle asynchronous operation
+
+Q) Define forEach ?
+Ans- In JavaScript, the forEach loop is a method available on arrays that allows you to iterate over each element in the array. The forEach method takes a callback function as an argument and executes that function once for each element in the array.
+
+=> Example
+let fruits = ["apple", "banana", "cherry"];
+
+fruits.forEach(function(fruit) {
+  console.log(fruit);
+});
+
+Q) Explain Hoisting in javascript.
+Ans-
+=> Hoisting is the default behaviour of javascript where all the variable and function declarations are moved on top.
+Note - Variable initializations are not hoisted, only variable declarations are hoisted
+Note - To avoid hoisting, you can run javascript in strict mode by using “use strict” on top of the code
+
+Example:
+a=1;
+alert('a='+a);
+var a;
+
+
+Q) What is the difference between == and === in JavaScript?
+Ans- == is the equality operator, which performs type coercion before comparing two values, while === is the strict equality operator, which checks for both value and datatype equality without type coercion.
+
+Q) What is the difference between let, const, and var?
+Ans- var is function-scoped and can be redeclared and reassigned from the very beginning var keyword is in usage,
+let is block-scoped and can be reassigned but not redeclared.
+const is also block-scoped but cannot be reassigned or redeclared.
+
+Q) Dot vs bracket notation in object
+Ans-  Dot notation and bracket notation are used to access properties of objects, but they have some differences in their usage.
+Dot notation is the simpler and more commonly used method for accessing object properties. It involves accessing properties using the dot (.) operator followed by the property name
+
+Bracket notation allows you to access object properties using square brackets ([]) and providing the property name as a string. This notation is more flexible as it allows you to access properties dynamically
+
+Q) Find method ?
+Ans- In JavaScript, the find method is used to locate the first element in an array that satisfies a given condition. It returns the value of the first matching element or undefined if no element meets the condition.
+
+Q) Define setTimeout and clearTimeout ?
+Ans- setTimeout and clearTimeout are built-in JS functions used for handling delayed execution of the code
+=> setTimeout: setTimeout function takes a callback function as first argument to be executed after specified delay with second argument as time in miliseconds and third arguments (optional)
+
+=> Example
+setTimeout(myFunc, 2000, "param1", "param2"); 
+
+=> clearTimeout: clearTimeout is used to cancel the previously defined setTimeout function if hasn't executed already
+
+Q) Define setInterval ?
+Ans- setInterval is a built-in JS function that repeatedly calls a specified function at specified time intervals, it's useful in task which need to be performed periodically, like updating a clock or polling a server.
+
+setInterval(function, interval);
+function: The function to be executed.
+interval: The time, in milliseconds, between each execution.
+
+Q) Explain call(), apply() and, bind() methods?
+Ans- 
+=> call()
+=> It is a predefined method in JS
+=> call() method invokes the method by specifying the owner object and it can also accept the arguments
+
+apply()
+=> apply() methods is similar as call() methods but it takes arguments as array
+
+bind()
+=> This method returns a new function, where the value of “this” keyword will be bound to the owner object, which is provided as a parameter.
+
+
+Q) How to handle exceptions in JavaScript?
+Ans- Handling exceptions in JS is crucial for robust and error-resistent application. It provides mechanisms to catch and handle errors, preventing application from crashing.
+
+Key Concepts in Exception Handling
+=> try...catch Statement
+It allow us to handle expections in our code. It allows you to execute code in `try` block and catch any errors in `catch` block 
+
+=> finally Block
+the `finally` block is optional, contains code that will always execute block of code regardless of whether an error occured in `try` block 
+=> throw Statement
+the `throw` statement allows you to create your own errors, that you can throw in any expressions such as String, Number or an instance of error Object
+
+=> Custom Error Handling
+You can create error types by extending the built-in error class. This can be useful for creating more specific error handling in your applications.
+
+Q) What is event bubbling in JavaScript?
+Ans- Event bubbling is a concept in JS that describes how the event propagate throught the DOM tree. When an event occurs on an element it first triggers on that specific element and then bubble up through the ancestors element of DOM eventually reaching to the root element of the DOM.
+
+Q) Explain higher-order functions in JavaScript ?
+Ans- A higher-order function is a function that either takes one or more functions as arguments, or
+Returns a function as its result.
+This concept allows for more abstract and flexible code, enabling functions to be composed, reused, and manipulated in powerful ways.
+
+====================================================================ES6=========================================================================================
+Q) ES6 concepts ?
+Ans- Ecmascript 2015, introduced new features to enhancing the capabbilities of JS to write more clean, efficient and maintainable code.
+1. Arrow functions: Arrow functions provide a more concise syntax for writing functions
+2. let and const: ES6 introduced let and const for block-scoped variable declarations, replacing the function-scoped var.
+3. Template literals: Template literals allow for easier string interpolation and multi-line strings using backticks (``)
+4. Destructuring Assignment: Destructuring allows for unpacking values from arrays or objects into distinct variables.
+5. Rest and Spread Operators: The rest operator (...) collects remaining elements into an array, while the spread operator expands elements from an array or object.
+6. Default parameters: Default parameters enable functions to have default values for parameters if no argument is provided.
+7. Promises: Promises provide a cleaner way to handle asynchronous operations and avoid callback hell
+8. Map and set: ES6 introduces Map and Set collections, which provide more efficient and convenient ways to handle key-value pairs and unique values, respectively.
+
+Q) Destructuring arrays  ES6
+Ans- Destructuring in JavaScript allows you to extract/unpack values from arrays and objects, making your code more expressive.
+
+Q) The spread operator(...)  ES6
+Ans- Right side of "=" operator
+spread operator is used to expand iterables (like arrays or objects) into individual elements.
+
+Q) Rest pattern(...)  ES6
+Ans- Left side of "=" operator
+Rest operator allows you to collect multiple elements into a single array
+
+Q) Short circuiting (&& and ||) ES6
+Ans- where evaluation of an expression stops as soon as the outcome is determined based on the initial part of the expression, without needing to evaluate the entire expression
+
+Q) Nullish Coalescing Operator (??)  ECMA2020
+Ans-  It provides a concise way to handle default values for cases where a variable might be null or undefined, but not for other falsy values like 0 or ''.
+
+Q) Optional chaining    ES2020
+Ans- It allows you to safely access nested properties of an object without having to explicitly check if each property exists
+
+Q) map() method
+Ans-  Iterates over each element of the array, applies a function to each element, and returns a new array with the results of applying the function to each element.
+
+Q) filter() method
+Ans-  Iterates over each element of the array, applies a filtering condition to each element, and returns a new array containing only the elements that satisfy the filtering condition.
+
+Q) reduce() method
+Ans- Iterates over each element of the array, applies a function that accumulates a single value from the elements of the array, and returns the accumulated value.
+
+Q) Truthy and falsy values
+Ans- Values that are considered truthy will evaluate to true when coerced to a boolean. These include:
+Non-empty strings ("hello", "0")
+Non-zero numbers (e.g., 1, -1)
+Objects (including arrays and functions)
+true
+
+Values that are considered falsy will evaluate to false when coerced to a boolean. These include:
+Empty strings ("")
+Zero (0) and negative zero (-0)
+null
+undefined
+NaN (Not a Number)
+false
+
+Q) Explain the event bubbling and event capturing in JavaScript.
+Ans- Event bubbling and capturing are two ways of event propagation in the DOM. In event bubbling, the event starts at the innermost target element and works its way up the DOM tree, while in event capturing, the event starts at the outermost element and moves towards the target element.
+
+Q) What is the purpose of the this keyword in JavaScript?
+Ans- The this keyword in JavaScript is a reference to the context in which a function is called. It provides a way to access the properties and methods of an object within its methods
+
+Q) Explain the concept of prototype in JavaScript.promis
+Ans- Prototypes are a way to implement inheritance in JavaScript, where objects can inherit properties and methods from other objects through their prototype chain.
+
+Q) What are some ways to handle asynchronous operations in JavaScript?
+Ans- Promises, async/await, and callback functions are common ways to handle asynchronous operations in JavaScript.
+
+
+Q) What is the difference between localStorage and sessionStorage?
+Ans-
+localStorage: Data stored using localStorage persists indefinitely until explicitly deleted by the website or the user.
+sessionStorage: Data stored using sessionStorage persists only for the duration of the page session. It is cleared when the page session ends, typically when the browser tab is closed.
+
+Q) What is lazy loading ?
+Ans- Lazy loading is a technique of delaying non-essential resources (such as images, scripts, or stylesheets) until they are needed. This helps to improve the initial loading time and overall performance of a web page.
+
+Q) How can you optimize the performance of a website/application built with JavaScript?
+Ans- Performance optimization techniques include minimizing HTTP requests, using asynchronous loading for resources, optimizing images and media, minimizing and optimizing JavaScript code, using caching strategies, and implementing lazy loading.
+
+=================================================================CLOSURE, PROMISES================================================================================
+Q) What are closures and how do you use them?
+Ans- 
+=> Closures are functions in which inner function have access to the outer lexical scope(function's variables), even after the outer function has finishes executing. 
+=> Closures are a fundamental concept in JavaScript that allow functions to retain access to their lexical scope even after the outer function has finished executing. This unique feature of JavaScript makes closures incredibly powerful and versatile for a variety of use cases  
+=> Closures can be used to create private variables and methods, allowing you to encapsulate data and provide controlled access.
+
+Q) Explain the concept of promises in JavaScript.
+Ans- A promise in JavaScript is an object representing the eventual completion (or failure) of an asynchronous operation and its resulting value. It acts as a placeholder for a value that will be available in the future 
+=> such as fetching data from the internet, reading a file, or waiting for a timer.
+=> There are 3 state in promise
+1. Pending :  The initial state of a Promise when it is created. In this state, the Promise is neither fulfilled nor rejected
+2. Fulfilled : when a success response come from server identify as fulfilled request
+3. Rejected : If server throw a error or anything gone wrong identify as rejected
+
+Ways to handle asynchronous operation in JS
+.then and .catch
+=> .then(): It takes two parameters that will be executed when a promise is fulfilled(resolved) and other parameter when a promise got rejected and other parameter is optional(second parameter)
+=> .catch(): It is used to handle errors that occur during the asynchronous operation. It is specifically for handling rejections of a promise.
+
+async and await
+=> They provide more readable and synchronous way to work with promise. 
+=> async Declares a function that will return a promise
+=> await pauses the execution of the async function until the promise is resolved or rejected.  
+
+=> Promise is ceated using "Promise" constructor which takes 2 parameter resolve and reject. we call resolve(value) if when the asynchronous task completes successfully, else reject() if fails.
+
+Q) Explain Promise Combinators ?
+Ans- Promise Combinators 
+1. Promise.all
+Description: Waits for all promises to be fulfilled or for one to be rejected.
+Usage: If you need all promises to succeed and want to handle the results together, use Promise.all. 
+
+2. Promise.allSettled
+Description: Waits for all promises to either resolve or reject and returns a list of results for each promise.
+Usage: Use Promise.allSettled when you want to get the result of all promises, regardless of whether they succeed or fail
+
+3. Promise.any
+Description: Returns the first promise that resolves, or return rejects if all promises are rejected.
+Usage: Use Promise.any when you want to proceed as soon as any promise resolves successfully.
+
+4. Promise.race
+Description: Returns the promise that resolves or rejects first.
+Usage: Use Promise.race when you need the result of the fastest promise, regardless of whether it resolves or rejects.
+
+Q) async await in js ?
+Ans- async/await are built on top of promises, to make handling asynchronous operation in more straightforward and readable. it simplify the way of write and managing code which traditionally involved .then() and .catch() methods.
+
+=> async keyword
+Definition: The async keyword is used to declare a function as asynchronous. An async function always returns a Promise.
+Behavior: If the function returns a value, that value is automatically wrapped in a Promise that resolves with the value. If the function throws an error, the Promise is rejected with that error.
+
+=> await keyword
+Definition: await keyword we can only use within the async functions. It pauses the execution time of the async function and wait for the response to be resolved or rejects.
+Behavior: When used with a Promise, await will:
+Pause the function's execution until the Promise resolves.
+Resume execution with the resolved value when the Promise resolves.
+Throw an error if the Promise is rejected, which you can handle with a try/catch block.
+
+
+==================================================================REGULAR EXPRESSION========================================================================
+Q) What is regular expression ?
+Ans- It is sequence of characters that forms a search pattern. It is used to match patterns for provided string, making it powerful tool for searching, replacing, extracting specific information in text
+
+.test method
+=> The .test() method takes the regex, applies it to a string (which is placed inside the parentheses), and returns true or false if your pattern finds something or not.
+let testStr = "freeCodeCamp";
+let testRegex = /Code/;
+testRegex.test(testStr);
+
+.match method
+=> the .match() method takes the regex, applies it to the string and returns array
+
+=> flag
+i : it will ignore the uppercase, lowercase for the provided regular expression
+g : To search or extract a pattern more than once, we can use global search flag 
+.(wildcard character) : used to match any single character
+^ : in character class [] it will negate else used to find the string in the starting of the expression
+  
+

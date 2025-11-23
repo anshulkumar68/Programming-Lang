@@ -1,0 +1,1 @@
+console.log("JS is easy and fun to learn language");

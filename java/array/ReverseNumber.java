@@ -1,0 +1,21 @@
+package array;
+public class ReverseNumber 
+{
+    static void reverse(int num)
+    {
+        int rem, rev=0;
+        while(num>0)
+        {
+            rem=num%10;
+            rev=rev*10+rem;
+            num=num/10;
+        }
+        System.out.println("Reverse of "+num+" is: "+rev);
+    }
+        public static void main(String[] args)
+        {
+            int num=20724;
+            reverse(num);
+        }
+}    
+

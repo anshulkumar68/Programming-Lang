@@ -1,0 +1,788 @@
+(VARIABLE/MEMBER), (METHOD/FUNCTION)
+
+Java is a high-level programming language that was developed by James Gosling in the year 1982. It is based on the principles of object-oriented programming and can be used to develop large-scale applications. 
+
+High-level means These languages offer a higher level of abstraction from the details of the computer's hardware
+---------------------------------------------------------------------CORE JAVA-----------------------------------------------------------------------------
+
+Q1. Why is Java not a pure object oriented language?
+Java supports primitive data types - byte, boolean, char, short, int, float, long, and double and hence it is not a pure object oriented language
+Boolean: 1bits
+byte: 8 bits (1 byte)
+short: 16 bits (2 bytes)
+char: 16 bits (2 bytes)
+int: 32 bits (4 bytes) 
+long: 64 bits (8 bytes)
+float: 32 bits (4 bytes) 
+double: 64 bits (8 bytes)
+
+
+Q2. Features of JAVA ?
+Ans- 
+( 1.Platform Independent
+2.OOPs
+3.Portable  ) make it a versatile language for a wide range of applications
+4.Multithreaded - We can write Java programs that deal with many tasks at once by defining multiple threads.
+5.Secured - Java is best known for its security. It don't have any explicit pointer and other it uses it's own runtime environment.
+
+Q3. Define main component of JAVA(JVM, JDK, JRE)
+Ans- Java architecture consists of three main components and those are JRE(Java Runtime Environment), JDK(Java Development Kit), and JVM(Java Virtual Machine).
+
+Java Runtime Environment(JRE)
+Java programs can run in a runtime environment created by the JRE software. The Java Runtime Environment (JRE) contains all of the libraries and software required to run Java programs.
+
+Java Development Kit(JDK)
+It’s a Java application and applet development environment. JRE, a compiler, an interpreter or loader, and a number of development tools are all included in the Java Development Kit. Now we will walk through these development tools which come along with JDK:
+
+Java(loader/executor): responsible for launching Java applications
+javac(compiler): It is responsible for compilation of java programs
+Javadoc: provides support for generation of API documentation
+Jar: responsible for creating and managing all JAR files.
+
+Java Virtual Machine(JVM)
+WORA is Java’s most important feature. Write Once, Run Anywhere is an acronym for WORA.It provides us with a platform in which we can run Java programs. The basic job of the JVM is to transform byte code into machine code. On the whole, JVM performs these functions – loads and verifies the code and then executes the code, and enables the runtime environment.
+
+Source code -> java compiler -> byte code -> JVM --> Machine code 
+
+
+Q4. Why java is a platform independent ?
+Ans- It supports platform independence using Java bytecode and Java Virtual Machine. Java compiler (javac) converts the source code into byte code. This byte code is platform-independent and can run on any JVM operating system. JVM interprets the byte code to machine code, and the program is executed.
+
+
+Q5. What is Variable, there types and scope of variables?
+Ans- A variable is a name assigned to a value that is stored inside the system memory. The value can be updated during the program execution.
+There are basically three types of variables in Java,
+a) Java Local variable - Variables declared within a method are local variables.
+b) Java Instance variable - An instance variable is declared inside a class but outside of any method or block.
+c) Java Static variable - Static variables are declared inside a class but outside of a method starting with a keyword static.
+
+Scope and Lifetime of a Variable in Java 
+The scope of a variable refers to the areas or the sections of the program in which the variable can be accessed, and the lifetime of a variable indicates how long the variable stays alive in the memory.
+
+Instance Variables
+A variable which is declared inside a class and outside all the methods and blocks is an instance variable. The general scope of an instance variable is throughout the class except in static methods. The lifetime of an instance variable is until the object stays in memory.
+
+Class Variables / Static varaibles
+A variable which is declared inside a class, outside all the blocks and is marked static is known as a class variable. The general scope of a class variable is throughout the class and the lifetime of a class variable is until the end of the program or as long as the class is loaded in memory.
+
+Local Variables
+All other variables which are not instance and class variables are treated as local variables including the parameters in a method. Scope of a local variable is within the block in which it is declared and the lifetime of a local variable is until the control leaves the block in which it is declared.
+
+
+Q6. What is Identifiers ?
+Ans- Identifiers in Java are a sequence of characters to identify something in a program. They are names given to a class, variable, package, method, or interface and allow the programmer to refer to the specific item from any place in the program.
+
+
+Q7. What is separators ?
+Ans- Separators in java are nothing but some symbols or characters that are used to structure a java program. We can see some symbols like ; , } , { , (). These are nothing but separators in java.
+
+
+Q8. Define Literals and their types ?
+Ans- In Java, literals are the constant values that appear directly in the program. It can be assigned directly to a variable. Java has various types of literals.
+a) Integer literals - Integer literals are numbers that do not have a decimal point or an exponential part. They can be represented as: Decimal integer literals. Hexadecimal integer literals and Octal Integer literals.
+b) Character literals - A character literal is expressed as a character, enclosed in a single quote ('') mark. It is always a type of char. For example, 'a'.
+c) String literals - String literal is a sequence of characters that is enclosed between double quotes ("") marks. It may be alphabet, numbers, special characters, blank space, etc. For example, "Jack", "12345", "\n", etc.
+d) Boolean literals - Boolean literals are the value that is either true or false. It may also have values 0 and 1. For example, true, 0, etc.
+
+
+Q9. What is Keywords ?
+Ans- Java keywords are also known as reserved words.  These are predefined words by Java so they cannot be used as a variable or object name or class name.
+
+
+Q10. Datatypes ?
+Ans- Data types specify the different sizes and values that can be stored in the variable. There are two types of data types in Java:
+a)Primitive data types: The primitive data types include boolean, char, byte, short, int, long, float and double.
+b)Non-primitive data types: The non-primitive data types include Classes, Interfaces, and Arrays.
+
+
+Q11. Decorators ?
+Ans- Decorator is a structural pattern that allows adding new behaviors to objects dynamically by placing them inside special wrapper objects, called decorators. Using decorators you can wrap objects countless number of times since both target objects and decorators follow the same interface.
+
+
+Q12. Default and initial values
+Ans- Default values are initialized by compiler and initial values are those which assigned by user.
+
+
+Q13. What is Operators and expressions ?
+Ans- Operator in Java is a symbol that is used to perform operations. For example: +, -, *, / etc.
+
+There are many types of operators in Java which are given below:
+
+Unary Operator  	expr++, expr--, ++expr ,--expr 
+Arithmetic Operator	*, /, %, +, -
+Shift Operator		<<, >>, >>>
+Relational Operator	<, >, <=, >=, ==, !=
+Bitwise Operator	&, ^, |. ~
+Logical Operator	&&, ||, !
+Ternary Operator 	?, :
+Assignment Operator	=, +=, -=, *=, /=, %=, &=, ^=, |=, <<=, >>=, >>>=
+
+An expression in Java is a series of operators, variables, and method calls constructed according to the syntax given, the language for evaluating a single value is as follows.
+For Example- marks = 90
+
+
+Q14. Boxing and Unboxing conversion ?
+Ans- Boxing - Boxing when you convert primitive datatypes to object type to store in the collection 
+ primitive data type (such as int, double, char, etc.) has a corresponding wrapper class (such as Integer, Double, Character, etc.)
+NOTE : Boxing is required when passing primitive values to collections because collections in Java are designed to hold objects, not primitive data types.
+Unboxing - When you converting an object to a primitive data type
+
+
+Q15. CONTROL FLOW STATEMENT ?
+Ans- Java provides statements that can be used to control the flow of Java code. Such statements are called control flow statements. It is one of the fundamental features of Java, which provides a smooth flow of program.
+a)Decision Making statements
+if statements
+switch statement
+b)Loop statements
+do while loop
+while loop
+for loop
+for-each loop
+c)Jump statements
+break statement
+continue statement
+
+
+Q16. CAN WE RUN JAVA PROGRAM WITHOUT MAIN METHOD
+Ans- Yes, we can execute a java program without a main method by using a static block. 
+Static block in Java is a group of statements that gets executed only once when the class is loaded into the memory by Java ClassLoader, It is also known as a static initialization block
+
+
+Q17. Define public static void main ?
+Ans- public is used as an access modifier for a main method . static is used so that it can directly load in memory with creating any instance. void is used because it do not return any value and main is the entry point of program
+
+
+Q18. FINAL PARAMETERS ?
+Ans- If you ever see the final keyword with a parameter variable, it means that the value of this variable cannot be changed anywhere in the function.
+
+
+Q19. ASCII code and unicode ?
+Ans- ASCII and UNICODE are the two most extensively used character encoding schemes in computer systems. The most basic difference between ASCII and UNICODE is that ASCII is used to represent text in form of symbols, numbers, and character, whereas UNICODE is used to exchange, process, and store text data in any language. UNICODE uses mainly four character encoding schemes namely UTF-7 (7-bit), UTF-8 (8-bit), UTF-16 (16-bit), and UTF-32 (32-bit).
+
+
+Q20. Define Methods ?
+Ans- A method is a block of code or collection of statements to perform a certain task or operation. It is used to achieve the reusability of code.
+We write a method once and use it many times
+
+
+Q21. What is Mutable and Immutable objects ?
+Ans- a) Mutable Objects - The mutable objects are objects whose value can be changed after initialization. We can change the object's values, such as field and states, after the object is created. For example, Java.util.Date, StringBuilder, StringBuffer, etc. 
+b) Immutable Objects - The immutable objects are objects whose value can not be changed after initialization. We can not change anything once the object is created. For example, primitive objects such as int, long, float, double, all legacy classes, Wrapper class, String class, etc.
+
+
+Q22. Difference between Heap and Stack Memory in java. And how java utilizes this.
+Ans- Stack memory is the portion of memory that was assigned to every individual program. And it was fixed. On the other hand, Heap memory is the portion that was not allocated to the java program but it will be available for use by the java program when it is required, mostly during the runtime of the program.
+
+Java Utilizes this memory as - 
+
+When we write a java program then all the variables, methods, etc are stored in the stack memory.
+And when we create any object in the java program then that object was created in the heap memory. And it was referenced from the stack memory.
+
+
+Q23. Define ARRAY and it's types ?
+Ans- An array is a container object that holds a fixed number of values of a single datatype. The length of an array is established when the array is created. 
+
+->Single-Dimensional Array - is basically a linear array that allows its user to store multiple values of the same data type.
+->Multi-Dimensional Array - A multidimensional array is an array of arrays. Multidimensional arrays are useful when you want to store data as a tabular form, like a table with rows and columns.
+
+
+Q24. What is jagged array.
+Ans- A jagged Array is an array of arrays where each element is an array. It is a special type of Multidimensional array which has variable number of columns in each row.
+
+
+Q25. String class ?
+Ans- In Java, string is basically an object that represents sequence of char values. An array of characters works same as Java string. For example:
+
+char[] ch={'j','a','v','a','t','p','o','i','n','t'};  
+String s=new String(ch); 
+
+
+Q26. Explain String pool in Java.	
+Ans- String Pool, also known as SCP (String Constant Pool), is a special storage space in Java heap memory that is used to store unique string objects. Whenever a string object is created, it first checks whether the String object with the same string value is already present in the String pool or not, and if it is available, then the reference to the string object from the string pool is returned. Otherwise, the new string object is added to the string pool, and the respective reference will be returned.
+
+Q27. State the difference between String and StringBuffer.
+Ans- String objects in Java are immutable and final, so we can't change their value after they are created. Since strings are commonly used in applications, we need to perform several operations on them such as substring(), equals(), indexof(), toUppercase(), etc. Each time we manipulate a string, a new String object is created, and all previous objects will be garbage, placing a strain on the garbage collector. This is why The Java team developed StringBuffer. A StringBuffer is a mutable object, meaning it can be changed, but the string is an immutable object, so it cannot be changed once it has been created.
+
+
+Q28.State the difference between StringBuffer and StringBuilder in Java.
+Ans- StringBuffer and StringBuilder are two Java classes for manipulating strings. These are mutable objects, i.e., they can be modified, and provide various methods such as insert(), substring(), delete(), and append(), for String manipulation.
+
+StringBuffer: The StringBuffer class was created by the Java Team when they realized the need for an editable string object. Nevertheless, StringBuffer has all methods synchronized, meaning they are thread-safe. Therefore, StringBuffer allows only one thread to access a method at once, so it is not possible to call StringBuffer methods from two threads simultaneously, which means it takes more time to access. The StringBuffer class has synchronized methods, making it thread-safe, slower, and less efficient than StringBuilder. The StringBuffer class was introduced in Java 1.0.
+Syntax:
+StringBuffer var = new StringBuffer(str);
+StringBuilder: It was at that point that the Java Team realized that making all methods of StringBuffer synchronized wasn't the best idea, which led them to introduce StringBuilder. The StringBuilder class has no synchronized methods. Unlike StringBuffer, StringBuilder does not offer synchronized methods, which makes it less thread-safe, faster, and more efficient. StringBuilder was introduced in Java 1.5 in response to StringBuffer's shortcomings.
+Syntax: 
+StringBuilder var = new StringBuilder(str);
+
+
+-------------------------------------------------------------------------------OOPS------------------------------------------------------------------------------------
+
+ 
+Q29. State between Contiguous memory and non-contiguous memory location.
+Ans- In contiguous memory allocation, a single part of the memory section is allowed to accomplish the further process. While on other hand, in non-contiguous memory allocation, the method is assigned to different memory sections at multiple memory locations in the memory.
+
+
+Q30. OOPS and describe it real time example
+Ans- OOPS is object oriented programming which revolves around objects 
+
+A class is a blueprint or template of the object which consist of data member or method which defined some set of rules.
+Ex. first a home architect will be made. based on 1 architect many numbers of home can be made now
+
+An object is just a instance of the class, which contains the instance of the members and behaviours defined under class template, A object is actually interact with the user while class is just a template for the object
+Ex. Home
+
+Data abstraction
+It is one of the most important concept of OOP. This process used for hiding the unnecessary details from the user, 
+User only wants to know how this software helping them in solving the problem without knowing how it works.
+Ex. You only need to know how to run a car, and not how the wires are connected inside it. This is obtained using Abstraction.
+
+Encapsulation
+It is the process of binding variable, methods together like a capsule to do a specific job and presenting the capsule to the user, without revealing the unnecessary details
+Ex.  As a driver you know how to start a car by pressing a button and internal details of the starting hidden from you
+
+Polymorphism
+Polymorphism means many forms or shape, It refers same code, data, method, or object behaves differently under different circumstances
+It is of two types compile-time(METHOD OVERLOADING) and runtime polymorphism(METHOD OVERRIDING)
+Ex. if we ask different animals to speak, they respond in their own way.
+
+Inheritance
+It means inheriting some quality or behaviour from the parent class to offspring.
+it is a mechanism by which a object or class is created from the definition of another class or object
+Ex. best example a son is inheriting properties from a father, mammals inheriting properties of animals from base animal class
+
+
+Q31. Define constructor and their types ?
+Ans- A constructor in Java is a special method that is used to initialize objects. The constructor is called when an object of a class is created. It can be used to set initial values for object attributes
+
+Rules for creating Java constructor
+There are two rules defined for the constructor.
+
+a)Constructor name must be the same as its class name
+b)A Constructor must have no explicit return type
+c)A Java constructor cannot be abstract, static, final, and synchronized
+
+a)Default constructor 
+A constructor is called "Default Constructor" when it doesn't have any parameter.
+The default constructor is used to provide the default values to the object like 0, null, etc., depending on the type.
+
+b)Parameterized Constructor
+A constructor which has a specific number of parameters is called a parameterized constructor.
+The parameterized constructor is used to provide different values to distinct objects. However, you can provide the same values also.
+
+c)Copy Constructor
+A copy constructor is to create an exact copy of an existing object of the class.
+
+NOTE-----Constructor Overloading 
+In Java, a constructor is just like a method but without return type. It can also be overloaded like Java methods.
+Constructor overloading in Java is a technique of having more than one constructor with different parameter lists.
+
+
+Q32. What is METHOD OVERLOADING / compile-time polymorphism?
+Ans- If a class has multiple methods having same name but different in parameters, it is known as Method Overloading.
+There are two ways to overload the method in java
+a)By changing number of arguments
+b)By changing the data type
+Eg- sum of different number of parameter passed in different method
+
+
+Q33. What is METHOD OVERIDING / run-time polymorphism?
+Ans- In Java method overriding occurs when a subclass provides a particular implementation of a method declared by one of its parent classes.
+Rules for java method overriding-
+a)The method must have the same name as in the parent class
+b)The method must have the same parameter as in the parent class.
+For example, a parent child can have a common behavior singing, where in the singing behavior of a child may be different than his parent.
+
+
+Q34. Define Destructor ?
+Ans- Remember that there is no concept of destructor in Java. In place of the destructor, Java provides the garbage collector that works the same as the destructor. The garbage collector is a program (thread) that runs on the JVM.
+
+
+Q35. What is Access Modifier in java ?
+Ans- Access modifiers help to restrict the scope of a class, constructor, variable, method. It provides security, accessibility, etc to the user depending upon the access modifier used with the element.
+
+a)Private: The access level of a private modifier is only within the class. It cannot be accessed from outside the class.
+b)Default: The access level of a default modifier is only within the package. It cannot be accessed from outside the package. If you do not specify any access level, it will be the default.
+c)Protected: The access level of a protected modifier is within the package and outside the package through child class. If you do not make the child class, it cannot be accessed from outside the package.
+d)Public: The access level of a public modifier is everywhere. It can be accessed from within the class, outside the class, within the package and outside the package.
+
+Non-access modifier - do not control access level, but provides other functionality such as -final, abstract 
+
+
+Q36.Do final, finally and finalize keywords have the same function?
+Ans - Final: If any restriction is required for classes, variables, or methods, the final keyword comes in handy. Inheritance of a final class and overriding of a final method is restricted by the use of the final keyword. The variable value becomes fixed after incorporating the final keyword. Example: final int a=100;
+
+Finally: It is the block present in a program where all the codes written inside it get executed irrespective of handling of exceptions.
+
+Finalize: Prior to the garbage collection of an object, the finalize method is called so that the clean-up activity is implemented
+
+
+Q37. What are some other programming paradigms other than OOPs?
+Ans- Programming paradigms refers to the method of classification of programming languages based on their features. There are mainly two types of Programming Paradigms:
+
+a) Imperative Programming Paradigm - focuses on HOW to execute program logic and defines control flow as statements that change a program state.
+b) Declarative Programming Paradigm - focuses on WHAT to execute and defines program logic, but not a detailed control flow.
+
+
+Q37. What is meant by Structured Programming?
+Ans- Structured Programming refers to the method of programming which consists of a completely structured control flow. Here structure refers to a block, which contains a set of rules, and has a definitive control flow, such as (if/then/else), (while and for), block structures, and subroutines.
+
+
+Q38. Why is OOPs so popular?
+Ans- OOPs programming paradigm is considered as a better style of programming. Not only it helps in writing a complex piece of code easily, but it also allows users to handle and maintain them easily as well. Not only that, the main pillar of OOPs - Data Abstraction, Encapsulation, Inheritance, and Polymorphism, makes it easy for programmers to solve complex scenarios. As a result of these, OOPs is so popular
+
+
+Q39. How much memory does a class occupy?
+Ans- Classes do not consume any memory. They are just a blueprint based on which objects are created. Now when objects are created, they actually initialize the class members and methods and therefore consume memory(heap memory).
+
+
+Q40. Is it always necessary to create objects from class?
+Ans- No. An object is necessary to be created if the base class has non-static methods. But if the class has static methods, then objects don’t need to be created. You can call the class method directly in this case, using the class name
+
+
+Q41. What are the various types of inheritance?
+Ans- The various types of inheritance include:
+
+Single inheritance
+Multi-level inheritance
+Hierarchical inheritance
+Hybrid inheritance
+Multiple inheritances
+
+
+Q42. Define super ?
+Ans- The super keyword in Java is a reference variable which is used to refer immediate parent class object.
+
+a)super can be used to refer immediate parent class instance variable.
+b)super can be used to invoke immediate parent class method.
+c)super() can be used to invoke immediate parent class constructor.
+
+
+Q43. What is packages ?
+Ans- A java package is a group of similar types of classes, interfaces and sub-packages.
+Package in java can be categorized in two form, built-in package such as java.util.arrays and user-defined package.
+
+
+Q44. What is abstract class ?
+Ans- A class which is declared with the abstract keyword is known as an abstract class in Java. It can have abstract and non-abstract methods (method with the body).
+Abstraction is a process of hiding the implementation details and showing only functionality to the user.
+
+
+Q45. Define interface class
+Ans- In java, interface used to achieve complete abstraction which include static and abstract method with empty bodies.
+To access the interface methods, the interface must be "implemented" (kinda like inherited) by another class with the implements keyword (instead of extends)
+
+
+Q46. How is an abstract class different from an interface?
+Ans- Interface and abstract class both are special types of classes that contain only the methods declaration and not their implementation. But the interface is entirely different from an abstract class. The main difference between the two is that, when an interface is implemented, the subclass must define all its methods and provide its implementation. Whereas when an abstract class is inherited, the subclass does not need to provide the definition of its abstract method, until and unless the subclass is using it.
+
+Also, an abstract class can contain abstract methods as well as non-abstract methods.
+
+
+Q47. What is Exception Handling 
+Ans- An exception is an “unwanted or unexpected event”, which occurs during the execution of the program i.e, at run-time, that disrupts the normal flow of the program’s instructions. When an exception occurs, the execution of the program gets terminated. 
+When executing Java code, different errors can occur: coding errors made by the programmer, errors due to wrong input, Opening a non-existing file in your program, etc .
+Ex. while using computer light went off and you have completed 90% of project work so now computer will be shut down you will loose your work which you did till now (here we can use some powerback which will provide backup for in absence of electricity)
+
+Exception Handling : 
+The Exception Handling in Java is one of the powerful mechanism to handle the runtime errors so that the normal flow of the application can be maintained such as ClassNotFoundException, ArithmeticException, IOException, SQLException, RemoteException, etc.
+
+different types of exception occurs while executing 
+ArithmeticException, NullPointerException, NumberFormatException, ArrayIndexOutOfBoundsException     
+
+Java provides five keywords that are used to handle the exception. The following table describes each.
+a)try - The try block contains a set of statements where an exception can occur. 
+b)catch - The catch block is used to handle the uncertain condition of a try block. A try block is always followed by a catch block, which handles the exception that occurs in the associated try block
+c)finally - It is executed after the catch block. We use it to put some common code (to be executed irrespective of whether an exception has occurred or not ) when there are multiple catch blocks. 
+d)throw -The throw keyword is used to transfer control from the try block to the catch block.  
+e)throws - The throws keyword is used for exception handling without try & catch block. It specifies the exceptions that a method can throw to the caller and does not handle itself. 
+
+Q48. Difference between checked and unchecked exception
+Ans- The exception which are checked by compiler for smooth execution of program at runtime while the unchecked exception which are not checked by compiler and it directly taken care by JVM
+
+Checked exception are commonly occured exception so compiler takes very much care about this while it rarely occured exception so compiler doesn't take very much care about these exception
+
+
+Q49. What is meant by Garbage Collection in OOPs world?
+Ans- Object-oriented programming revolves around entities like objects. Each object consumes memory and there can be multiple objects of a class. So if these objects and their memories are not handled properly, then it might lead to certain memory-related errors and the system might fail.
+
+Garbage collection refers to this mechanism of handling the memory in the program. Through garbage collection, the unwanted memory is freed up by removing the objects that are no longer needed.
+
+			
+-------------------------------------------------------------------COLLECTIONS-----------------------------------------------------------------------------
+
+The Java collections framework is a set of classes and interfaces that implement commonly reusable collection data structures.
+
+Collection faramework divided into 3 types mainly			
+i)Collection Interface 
+	a)List --> ArrayList, LinkedList, Stack, Vector(less in usage)
+	b)Set  --> HashSet, LinkedHashSet, TreeSet, Enumset(less in usage)
+	c)Queue --> ArrayDequeue, LinkedList, PriorityQueue
+ii)Map Interface
+	a)Map  --> HashMap, TreeMap, LinkedHashMap, EnumMap(less in usage), WeakHashMap(less in usage)
+iii)Iterator Interface
+	a)ListIterator
+
+INTERFACE - COLLECTION, LIST, SET, SORTEDSET, NAVIGABLESET, QUEUE, MAP
+
+Q50. Difference between Arrays and collections(AL, LL, HASHSET, TREEMAP...ETC) ?this is need why collections introduced
+Ans-Arrays
+1. Arrays are fixed in size
+2. with respect to memory arrays are not recommended to use 
+3. with respect to performance arrays are recommended to use
+4. Array can hold only homogeneous datatype elements
+5. There is no underlying data structure for arrays and hence readymade method support is not available.
+6. Array can hold both primitives and object types
+
+Collections
+1. They are growable in nature i.e. based on our requierment we can increase or decrease the size.
+2. with respect to memory collections are recommended to use
+3. with respect to performance collections are not recommended to use
+4. Collection can hold both homogeneous and heterogeneous elements
+5. Every collections class is implemented based on some standard data structure. Hence readymade method support is available for every requirement.
+6. Collections can hold only object but not primitives
+
+
+Q51. Difference between collection and collections ?
+Ans- a)The Collection is an interface which can be used to represent a group of individual objects as a single entity.
+b)Collections is an utility class present in java.util.package to define several utility methods(like sorting, searching..) for collection objects.
+
+
+Q52. What is collection and collection framework ?
+Ans- If we want to represent a group of individual objects as a single entity then we should go for collection whereas It defines several classes and interfaces which can be used a group of objects as single entity.
+
+===============>LIST
+Q53. What is List interface ?
+Ans-List is a child interface of collection.
+If we want to represent a group of individual objects as a single entity where duplicates are allowed and insertion order preserved then we should go for list.
+a) List allows duplicates element
+b) List is an ordered collection it maintains the insertion order
+c) List allows any numbers of null values
+d) List implementations : LinkedList, ArrayList, Stack and vector
+
+Q54. Define ArrayList ?
+Ans- 
+a)The underlined data structre Resizable Array or Growable array
+b)Duplicates are allowed
+c)Insertion order is preserved
+d)Heterogeneous objects are allowed (except TreeSet & TreeMap) everywhere heterogeneous objects are allowed
+e)Null insertion is possible
+f)ArrayList is best choice, if our frequent operation is Random access of element or retrievable
+g)Methods mostly used are add(), set(2, 'value') for setting value at particular index, remove(), clear(), contains() for checking does that element is available or not, 
+
+Creates an empty ArrayList object with default initial capacity of 10. Once ArrayList reaches it's max capacity new Arraylist will be created with new capacity = (currentcapacity * 3/2) +1.
+
+
+Q55. Define LinkedList ?
+Ans- 
+a)The underlying data structre is Double Linked List
+b)Duplicates are allowed
+c)Insertion order is preserved
+d)Heterogeneous objects are allowed (except TreeSet & TreeMap) everywhere heterogeneous objects are allowed
+e)Null insertion is possible
+f)LinkedList is best choice, if our frequent operation is insertion and deletion in the middle, worst choice retrieval
+g)Methods mostly used are add(), set(2, 'value') for setting value at particular index, remove(), clear(), contains() for checking does that element is available or not
+
+
+Q56. Stack with real time example
+Ans-     
+a)It is a child class of vector
+b)A Stack is a linear data structure that follws the LIFO (Last-In-First-Out) principle.
+c)Stack is a collection of data item where the insertion and deletion takes place from one end that is called Top of the stack
+d)A stack can be represent with Array and Linked list	
+e)Method of Stacks includes are push(), pop(), peek(), search(), empty().
+Ex- The stack of trays in a cafeteria; A stack of plates in a cupboard, a bucket contains some element;
+
+
+Q57. Difference between ArrayList and vector ?
+Ans- a)Every method present in AL is non-synchronize whereas every method present in LL is  synchronize
+b)At a time multiple threads are allowed to operate on AL object and hence AL is not thread safe whereas at a time only one thread  is allowed  to operate on vector object is thread safe
+c)Threads are not required to wait to operate on AL object so performance is high whereas Threads are required to wait to operate on Vector hence performance is low.
+
+
+Q58.How to get Synchronized version of ArrayList ?
+Ans- By default ArrayList object is non-synchronized but we can get synchronized version of ArrayList by using Collection class synchronizedList() method.
+public static List synchronizedList(List l)
+
+Similarly we get synchronized version of Set, Map objects by using the following methods of collection class
+public static Set synchronizedSet(Set s)
+public static Map synchronizedMap(Map m)
+
+
+Q59. Difference between arraylist and linkedlist ?
+Ans-a)AL is the best choice if our frequent operation is retrieval whereas LL is the best choice if our frequent operation is insertion and deletion
+b)Underlying data structure for ArrayList is resizable and growable Arrays whereas underlying data structure is Doubly Linked list
+c)Arraylist implements Random-Access(indexing) Interface whereas Linkedlist doesn't implement Random-access interface
+
+============================================================================================================================================================
+
+===============>SET
+Q60. What is Set interface ?
+Ans- It is the child interface of collection.
+If we want to represent a group of individual objects as a single entity where duplicates are not allowed and insertion order not preserved then we should go for set.
+a) Set doesn't allow duplicates
+b) Set is an unordered collection, it doesn't maintain any order
+c) Set can have only single null value at most
+d) Set implementations: HashSet, LinkedHashSet, TreeSet.
+
+
+Q61. Define Hashset ?
+Ans- It is the child interface of Set, where duplicates are not allowed and insertion order not preserved then we should go for set.
+a)Underlying data structure is HashTable
+b)Duplicates are not allowed. If we are trying to insert duplicates, we won't get compile time or run-time error. add() method simply return false.
+c)Insertion order not preserved and all objects will be inserted based on Hash-code of objects
+d)Heterogeneous objects are allowed
+e)null insertion is possible
+f)HashSet is the best choice, if our frequent operation is search
+g)Method used are add(), remove(element), contains(element), isEmpty(), size(), clear().
+
+
+Q62. Define LinkedHashSet ?
+Ans- It is the child interface of HashedSet, where duplicates are not allowed and insertion order preserved then we should go for set.
+a)Underlying data structure is HashTable + LinkedList
+b)Duplicates are not allowed. If we are trying to insert duplicates, we won't get compile time or run-time error. add() method simply return false.
+c)Insertion order preserved and all objects will be inserted based on Hash-code of objects
+d)Heterogeneous objects are allowed
+e)null insertion is possible
+f)HashSet is the best choice, if our frequent operation is search
+g)Method used are add(), remove(element), contains(element), isEmpty(), size(), clear().
+
+
+Q63. Define TreeSet ?
+Ans- It is the child interface of Set, where duplicates are not allowed, insertion order preserved and elements stored in sorting order then we should go for set. 
+a)Underlying data structure is Balanced Tree
+b)Duplicates objects are not allowed
+c)Insertion order not preserved or N/A
+d)Elements will be stored in Sorting order   
+e)Heterogeneous objects are not allowed. If we are trying to insert heterogeneous then we will get Runtime exception saying ClassCastException.
+f)Null insertion is allowed but only once
+g)Method used are add(), remove(element), contains(element), isEmpty(), size(), clear().
+
+TreeSet constructor
+1) TreeSet t = new TreeSet();
+creates an empty treeset object where elements will be inserted according to default natural sorting order
+2)TreeSet t = new TreeSet(Comparator c);
+-creates an empty treeset object where elements will be inserted according to customized sorting order
+3) TreeSet t = new Treeset(Sortedset s);
+4)TreeSet t = new Treeset(Collection c);
+
+=====================================================================================================================
+==============>QUEUE
+
+Q64. Queue in real time example
+Ans- It is an child interface of collection. and If we want to represent a group of individual objects prior to processing then we should go for queue.
+a)A queue is a liner data structure that follows the FIFO principle. 
+b)It can be defined as an ordered list which enables insert operations to be performed at one end called REAR 
+c)Delete operations to be performed at another end called FRONT
+d)It can be implemented by LinkedList, ArrayList, PriorityQueue.
+e)Method used are
+offer()- for adding the elements in queue. / add() but it throws exception if queue is full
+poll() - for removing the elements in queue.  / remove() but it throws exception if queue is empty
+peek()- front element in queue. / element() but it throws exception if queue is empty
+
+For example- people waiting in line for a rail ticket form a queue.
+
+
+Q65. Define Array Dequeue ?
+Ans- 	
+a)Deque is subtype interface of Queue Interface .
+b)We can add or remove elements from both sides (because of Deque interface implementation).
+c)Null elements are not allowed in the ArrayDeque.
+c)ArrayDeque is faster than LinkedList and Stack.
+d)Methods are offer() , poll(), peek() 
+offerFirst()- to add element at first
+offerLast()- to add element at last
+pollFirst(), pollLast(), peekFirst(), peekLast()
+
+
+Q66. Define PriorityQueue ?
+Ans- 	
+a)It is implemented by Queue Interface
+b)Sometimes the elements of the queue are needed to be processed according to the priority, that's where a PriorityQueue comes into action.
+c)By default it followed min-heap 
+c)Methods are offer(), poll(), peek()
+
+
+========================================================================================================================
+=============>MAP
+
+Q67. Define Map Interface ?
+Ans-a)Map is not child interface of collection.
+b)If we want to represent a group of individual objects as key value pairs then should go for map.
+c)Both key and value are objects, duplicated keys are not allowed but values can be duplicated.
+d)A Map is useful if you have to search, update or delete elements on the basis of a key.
+e)Method used are 
+->put(Object key, Object value) - It is used to insert an entry in the map.
+->putIfAbsent(K key, V value) - 	It inserts the specified value with the specified key in the map only if it is not already specified.
+->remove(Object key) - It is used to delete an entry for the specified key.
+->containsKey(object key) - to check that key is available or not
+->containsValue(object value) - to check that value is available or not
+->isEmpty()- to check map is empty or not
+
+
+
+Q. Define HashMap ?
+Ans-
+a)Java HashMap class implements the Map interface which allows us to store key and value pair, where keys should be unique. If you try to insert the duplicate key, it will replace the element of the corresponding key(Java HashMap contains only unique keys.)
+a)A map contains values on the basis of key, i.e. key and value pair. Each key and value pair is known as an entry. 
+b)Duplicated keys are not allowed.
+c)Java HashMap not maintains insertion order.
+d)Java HashMap may have one null key and multiple null values.
+e)Java HashMap is non synchronized.
+f)Same method as Map interface
+
+
+Q. Define LinkedHashMap ?
+Ans- 
+a)Underlying data structure is HashTable + LinkedList
+b)Java LinkedHashMap contains values based on the key.
+c)Java LinkedHashMap contains unique elements.
+d)Java LinkedHashMap may have one null key and multiple null values.
+e)Java LinkedHashMap maintains insertion order.
+
+
+Q. Define TreeMap ?
+Ans-a)The TreeMap class implements the Map interface by using a tree.
+b)A TreeMap stores key/value pairs in sorted order and sorted order will be acoording to keys
+c)Methods are
+put()
+remove()
+containsValue()
+
+=========================================================================================================================
+Q. Difference between Comparable and Comparator ?
+Ans- 
+a)Comparable meant for default natural sorting order whereas Comparator meant for customized sorting order.
+b)It present in java.lang package whereas It present in java.util package
+c)This interface defines only one method compareTo() whereas This interface defines two methods compare() and equal().
+d)All wrapper classes and string class implement comparable interface whereas the only implemented class of Comparator are Collator and RuleBasedCollator
+
+
+Q. Three types of cursor in java ?
+Ans- If we want to retrieve Objects one by one from the collection, then we should go for cursors. 
+1)Enumeration
+a) We can use Enumeration to get Objects one by one from the old Collection Objects(Legacy Collections)
+b)We can create Enumeration Object by using elements() method of Vector class.
+
+It defines the following two methods
+i)public boolean hasMoreElements()
+ii)public Object nextElement()
+
+
+2) Iterator 
+a)We can apply iterator concept for any collection object hence it is universal cursor
+b)By using iterator we can perform both read and remove operations	
+
+We can create Iterator object by using iterator() method of collection interface.
+public Iterator iterator();
+Example - Iterator itr = c.iterator(); 
+
+Iterator defines the following three methods
+i) public boolean hasNext()
+ii) public Object next()
+iii) public void remove()
+
+Limitations of Iterator
+1)By using Enumeration and Iterator we can only towards forward direction and we can't move to the backward direction, and thse are single direction cursors.
+2)By using Iterator we can perform only read and remove operations and we can't perform replacement of new Objects.
+
+
+3)ListIterator
+a) By using ListIterator we can move either to the forward direction or to the backward direction, and hence ListIterator is bidirectional cursor.
+b)By using ListIterator we can perform replacement and addition of new Objects in addition to read and remove operations
+
+Methods defines for ListIterator are :
+i)public boolean hasNext()
+ii)public void next()
+iii)public int nextIndex()
+iv)public boolean hasPrevious()
+v)public void previous()
+vi)public int previousIndex()
+vii)public void remove()
+viii)public void set(Object new)
+ix)public void add(Object new)
+
+Limitation of ListIterator
+a) Only applicable for List implemented class objects and it is not a universal cursor.
+
+
+Q. What is tree, types of traversal for tree and types of tree
+Ans- A tree data structure is a hierarchical structure that is used to represent and organize data in a way that is easy to navigate and search. It is a collection of nodes that are connected by edges and has a hierarchical relationship between the nodes. 
+The topmost node of the tree is called the root, and the nodes below it are called the child nodes. Each node can have multiple child nodes, and these child nodes can also have their own child nodes, forming a recursive structure.
+We can also say that tree data structure has roots, branches, and leaves connected with one another.
+They are arranged on multiple levels or we can say it is a hierarchical structure. For this reason, the tree is considered to be a non-linear data structure.
+
+Three types of traversal
+1. Preorder traversal
+
+Step 1 - Visit the root node  
+Step 2 - Traverse the left subtree recursively.  
+Step 3 - Traverse the right subtree recursively.  
+
+2.Postorder traversal
+
+Step 1 - Traverse the left subtree recursively.  
+Step 2 - Traverse the right subtree recursively.  
+Step 3 - Visit the root node.  
+
+3.Inorder traversal
+
+Step 1 - Traverse the left subtree recursively.  
+Step 2 - Visit the root node.  
+Step 3 - Traverse the right subtree recursively. 
+
+Types of tree
+1.General tree- A tree which can have 0 to maximum n node in the tree
+2.Binary tree- A tree which can have atmost 2 node
+3.AVL tree
+
+ 
+Q. Define Graphs
+Ans- The Graph is a data structure that stores a certain of data. It represents a network that connects multiple points to each other. The concept of the graph has been stolen from the mathematics that fulfills the need of the computer science field.
+
+A graph is a data structure that stores connected data. In other words, a graph G (or g) is defined as a set of vertices (V) and edges (E) that connects vertices. The examples of graph are a social media network, computer network, Google Maps, etc.
+
+Types of Graph
+Weighted Graph: In a weighted graph, each edge contains some data (weight) such as distance, weight, height, etc.
+
+Unweighted Graph: A graph in which edges are not associated with any value is called an unweighted graph.
+
+Directed Graph: A graph in which edges represent direction is called a directed graph. In a directed graph, we use arrows instead of lines (edges).
+
+Undirected Graph: A graph in which edges are bidirectional is called an undirected graph. In an undirected graph, we can traverse in any direction. 
+
+
+
+EXCEPTION HANDLING
+-categories of exception
+-common exceptions and categories
+-try block
+-catch clause
+-finally clause
+-try with resource 
+
+CAN WE ESCAPE FINALLY BLOCK IN JAVA ?
+
+Difference btw final, finally and finalize
+
+Object lifetime and garbage collection
+-object finalization
+-finalizer chaining
+-invoking garbage collection programmatically
+-declaration order of initializer expressions
+-static initializer blocks
+-declaration order of static initializers
+-instance initializer blocks
+-declaration order of instance initializers
+
+OBJECT CLASS
+-wrapper class
+-common wrapper class constructors
+-common wrapper class utility methods
+-numeric wrapper classes
+-character & boolean class
+
+ Anonymous inner class
+nested class
+inner class 
+
+LAMBDAS AND FUNCTINAL PROGRAMMING

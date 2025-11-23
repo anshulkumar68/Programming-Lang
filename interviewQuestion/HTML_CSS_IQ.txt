@@ -1,0 +1,174 @@
+Q) What is HTML?
+Ans- HTML is the standard markup language for creating web pages
+HTML elements tell the browser how to display the content
+An HTML element is defined by a start tag, some content, and an end tag
+<h1>My first Heading</h1>
+
+Q) HTML tags vs HTMl Element?
+Ans- No. HTML Elements are defined by starting tag, may contain some content and a closing tag. For example, <h1>Heading 1</h1> is a HTML element but just <h1> is a starting tag and </h1> is a closing tag
+
+Q) Significance of head and body tag?
+Ans- only 1 head tag in the entire html document and will always be before the body tag.
+head tag provides information about the document.
+It should always be enclosed in the html tag. This tag contains the metadata about the webpage and the tags which are enclosed by head tag like <link>, <meta>, style, script, etc. are not displayed on the web page
+
+body tag defines the body of the HTML document. It should always be enclosed in the html tag. All the contents which needs to be displayed on the web page like images, text, audio, video, contents, using elements like <p>, <img>, <audio>, <heading>, <video>, <div>, etc. will always be enclosed by the body tag. Also, there can be only 1 body element in an HTML document and will always be after the <head> tag
+
+Q) Different types of list in HTML.
+Ans- Unordered list, ordered list and definiiton list
+
+Q) Difference between id and class attribute?
+Ans- Both are used for providing specific styling to particular tag, Multiple element in HTML can have the same class value, whereas a value of id attribute of one element cannot be associated with another html element
+
+Q) what are various formatting tag in HTML ?
+Ans- <b>, <i>, <em> - makes text italic but with added semantics importance
+<big> - increases the font size of the text by one unit
+<small> - decreases the font size of the text by one unit
+<sub> - makes the text a subscript
+<sup> - makes the text a superscript
+<del> - displays as strike out text
+<strong> - marks the text as important
+<mark> - highlights the text
+<ins> - displays as added text
+
+
+Q) Link in HTML
+Ans- HTML provides a hyperlink - <a> tag to specify the links in a webpage
+The 'href' attribute is used to specify the link and the 'target' attribute is used to specify, where do we want to open the linked document
+
+_self: default value, it opens the documnet in the same window
+_blank: it opens the document in a new window
+_parent: it opens the document in a parent frame
+_top: it opens the document  in  a fully-body window
+
+
+Q) How many ways we can specify CSS?
+Ans- Inline- here we use the 'style' attribute inside the HTML element
+Internal- Here we use the <style> tag inside the <head> tag
+External- Here we use the <link> tag inside the <head> tag to reference the CSS file into our HTML code. Again the binding between elements and styles is done using 'id' and 'class' attributes.
+
+Q) Inline and block element ?
+Ans- Inline element just take up the space that is absolutely necessary for the content and does not start from the new line.
+Example: <span>, <a>, <strong>, <img>, <button>, <em>, <select>, <label>, <sub>, etc.
+
+Block element start on a new line and consume the full width of the viewport.
+Example. <div>, <p>, <header>, <footer>, <h1>...<h6>, <form>, <table>, <canvas>, <video>, <blockquote>, <ul>, ol, figure, hr, article, section, etc
+
+Q) How do you display a table in an HTMl webpage?
+Ans- The html <table> tag is used to display data in a tabular format
+It is also used to manage the layout of the page, for example, header section, navigation bar, body content, footer section)
+
+Q) What is whitespace in HTML
+Ans- An empty sequence of space character is called the whitespace in html, the whitespace is considered as a single space character in html
+
+Q) How do you create links to different sections within the same html webpage?
+Ans- we use the <a> tag, along with referencing through the use of #symbol, to create several links to different sections within the same webpage
+The hyperlink can be added to images too.
+
+Q) Define an image map in HTML?
+Ans- An image map helps in linking with the different kinds of web pages using a single image
+
+The image map can be used for defining shapes in the images that are made part of the image mapping process
+
+
+Q) What is semantic HTML
+Ans- These elements that have meaning and clearly describes its meaning to both the browser and and developer. EX:  <form> , <table> , and <article>
+
+Q) What is non-semantic HTML
+Ans- These elements tell nothing about it's content. EX: div, span
+
+Q) How do you create nested web pages in HTML ?
+Ans- Nested web pages basically mean a webpage within a webpage
+We can create nested web pages in HTML using built-in frame tag
+
+Q) How do you insert a copyright symbol in HTML ?
+Ans- You can insert a copyright symbol by using &copy or &#169, in and HTML file
+
+Q) html vs html5 ?
+Ans- 1.Doctype declaration
+HTML- Uses a lengthy and complex doctype declaration
+HTML5- Simplified doctype declaration
+
+2. New Elements and attributes
+HTML- Limited set of elements and attributes
+HTML5- Introduces new semantic elements like <article>, <section>, <nav>, <header>, <footer>, and <aside>. Also adds new attributes and input types to form elements, such as placeholder, required, and email.
+
+3.Multimedia Support
+HTML- Requires plugins (like Flash) for multimedia content.
+HTMl5- Native support for audio and video through <audio> and <video> tags.
+
+4. Graphics and Animation
+HTML- Limited support for graphics, requiring external plugins.
+HTML5- Introduces the <canvas> element for drawing graphics on the fly and the <svg> (Scalable Vector Graphics) element for vector-based graphics.
+
+5.APIs and Additional Features:
+HTML- Lacks built-in APIs for web applications.
+HTML5-  Provides various APIs to enhance web functionality, including:
+Geolocation API for location-based services.
+Web Storage API (localStorage and sessionStorage) for client-side storage.
+
+6.Form Enhancements
+
+)div, span and other semantic tags
+)lists
+)adding internal links
+)media tags
+)special characters
+)favicon and meta tags
+
+
+-----------------------------------------------------------------CSS-------------------------------------------------------------------
+
+Q1. BOX Model ?
+Ans- The CSS box model is essentially a box that wraps around every HTML element. It consists of: content, padding, borders and margins. 
+padding - space between content and border
+margin - area outside of border. the margin is transparent
+
+Q. id and class and which is having more priority ?
+Ans- Id is having more priority
+
+Q.MediaQuery ?
+Ans- It uses the @media rule to include a block of CSS properties only if a certain condition is true. and helps in making web page responsive
+
+
+2.CSS preprocessor => It extends the ability of CSS, enable us to use logic in our CSS code, such as variables, nesting, inheritance, mixins, functions, and mathematical operations.
+3.flexbox
+
+1. Basic Syntax
+2. Color Property => RGB, HEX, RGBA
+3. Including Styles
+4. HTML Refresher
+5. Comments
+6. MDN Documentation
+7. Browser Tools
+8. Selectors => Element, Id, class 
+9. Background-Color property
+10 .Color System
+11.  Absolute Units
+12. Height & Width Property
+13. Background-Image Property
+14. Visibility Property => (visible, hidden)
+15. Text-Align Property => (left, right, center, justify)
+16. Text-Decoration => (none, overline, underline, line-through, underline overline)
+17. Text-Transform Property => (uppercase, lowercase, capitalize, none)
+18. Line-Height Property
+19. Font Properties
+20. Font family
+21. Icon using fonts
+22. What is Box Model
+23. Padding Property
+24. Margin Property
+25. Border Property
+26. Display Property => (none, inline, block, inline-block)
+27. Responsive Websites 
+28. Relative Units => (em, rem, %, vw, vh)
+29. Position Property => (static, relative, fixed, absolute, sticky)
+30. Semantic Tags
+31. Float Property => (left, right)
+32. What is Flexbox
+33. Flex Model
+34. Flexbox Direction => (row, column, row-reverse, column-reverse)
+35. Properties: Flexbox container => (flex-direction, flex-wrap, flex-flow, justify-content, align-items, align-content)
+36. Properties: Flex items => (order, flex-grow, flex-shrink, flex, align-self)
+37. Grid Layout
+38. Media Queries
