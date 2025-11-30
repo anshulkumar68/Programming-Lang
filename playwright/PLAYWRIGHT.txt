@@ -56,3 +56,52 @@ Negative assetion =>=> expect(page).not.toHaveURL()
 9. expect(locator).toContainText() – Element contains text
 10. expect(locator).toHaveValue(value) – Input has a value
 11. expect(locator).toHaveCount() – List of elements has given length
+
+5) DROPDOWN
+Selecting an option from a dropdown
+Playwright provides multiple ways to select values:
+
+a) Select by visible text
+await page.locator('#country').selectOption('India');
+b) Select by value attribute
+await page.locator('#country').selectOption({ value: 'india' });
+c) Select by index
+await page.locator('#country').selectOption({ index: 3 });
+d) Select using page-level method
+await page.selectOption('#country', 'India');
+
+=> ASSERIONS OF DROPDOWN
+2.1) Counting total number of options
+Method 1: Using locator + toHaveCount
+const options = page.locator('#country option');
+await expect(options).toHaveCount(10);
+
+Method 2: Using checking length of options array 
+options =await page.$$('#country option')
+await expect(options.length).toBe(10)
+
+2.2) Validate dropdown contains specific values
+
+Method 1: Using textContent() of entire select element
+const text = await page.locator('#country').textContent();
+expect(text.includes('India')).toBeTruthy();
+expect(text.includes('Germany')).toBeTruthy();
+Note:
+textContent often contains newline characters or spaces. Includes() works better than direct comparison.
+
+Method 2: Validate presence of an option using a loop
+const options = await page.$$('#country option');
+let status = false;
+
+for (const option of options) {
+const text = await option.textContent();
+if (text.trim() === 'France') {
+status = true;
+break;
+}
+}
+expect(status).toBeTruthy();
+
+Why trim() is needed:
+Option text often contains leading spaces, trailing spaces, or newline characters.
+
