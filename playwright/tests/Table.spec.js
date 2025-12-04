@@ -44,6 +44,9 @@ test('Table', async({page})=>{
       await page.waitForTimeout(3000)
     }
 
+    // 6. Print particular cell data
+    const text =await getCellText(table, 5, 1)
+
     await page.waitForTimeout(3000)
     await page.close()
 })
@@ -65,4 +68,9 @@ async function printTable(rows, page) {
                 console.log(await tds.nth(j).textContent())
             }
         }
+}
+
+async function getCellText(table, row , col) {
+    const cell =await table.locator('tbody tr').nth(row).locator('td').nth(col);
+    return await cell.textContent()
 }

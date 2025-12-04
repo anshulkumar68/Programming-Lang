@@ -23,7 +23,7 @@ test('Mouse Right-click', async({page})=>{
     await page.close();
 })
 
-test.only('Mouse Double-click', async({page})=>{
+test('Mouse Double-click', async({page})=>{
 
     await page.goto('https://testautomationpractice.blogspot.com/');
     
@@ -36,3 +36,25 @@ test.only('Mouse Double-click', async({page})=>{
     await page.waitForTimeout(4000)
     await page.close();
 })
+
+test.only('Drag and Drop', async({page})=>{
+
+    await page.goto('https://testautomationpractice.blogspot.com/');
+    
+    const drag = page.locator('#draggable');
+    const drop = page.locator('#droppable')
+    
+    // Approach 1 
+    // await drag.hover() 
+    // await page.mouse.down()
+    // await drop.hover()
+    // await page.mouse.up()
+
+    // Approach 2
+    await drag.dragTo(drop)
+
+    await page.waitForTimeout(4000)
+    await page.close();
+})
+
+
