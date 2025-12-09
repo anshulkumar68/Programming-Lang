@@ -105,3 +105,20 @@ expect(status).toBeTruthy();
 Why trim() is needed:
 Option text often contains leading spaces, trailing spaces, or newline characters.
 
+6) Common challenges & how you solved them ?
+Ans-
+Flaky tests → Switched to getByTestId
+Slow execution → Mocked APIs with page.route()
+File downloads → await page.waitForEvent(‘download’)
+Authentication → Saved storageState: ‘admin.json’
+Shadow DOM → page.locator(‘pierce>>text=Click me’)
+
+7) . What are the best practices for writing efficient and maintainable tests?
+Ans-
+- Always use data-testid
+- Login once with storageState
+- Mock all external APIs
+- Use Page Object Model + fixtures
+- Never use waitForTimeout() or XPath
+- Use soft assertions for multiple checks
+- Enable trace on failure in CI

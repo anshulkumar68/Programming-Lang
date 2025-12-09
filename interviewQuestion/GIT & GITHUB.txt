@@ -1,5 +1,19 @@
-v  
- git init  (Initializes a new Git repository in the current directory.)
+1) Merge vs Rebase
+Ans=> Git merge combines two branches by creating a merge commit and preserves the full branch history, so it is safe for shared branches like main. Git rebase moves my commits on top of another branch and rewrites the commit history to make it linear. I usually use rebase only on my local feature branches to keep a clean history and avoid using it on shared branches.  
+
+2) Pull vs Fetch
+Ans=> Git fetch only downloads the latest changes from the remote repository and updates the remote tracking branch without affecting my working branch. Git pull is fetch plus merge, so it directly brings the changes into my local branch. I use fetch when I want to review changes first and pull when I directly want to sync.
+
+3) Handling Merge Conflicts
+Ans=> When a merge conflict happens, Git marks the conflicting code inside the file. I manually compare my changes with the incoming changes, decide the final correct logic or i can use VS code merge editor or git mergetool to make it easier and remove the conflict markers, add the resolved file, and then complete the merge or rebase. After that, I always run tests to ensure nothing broke.
+
+4) Steps to Commit and Push
+Ans=> My normal workflow is: I finish a logical piece of work, run tests, and then use git status to review changes. I stage the relevant files with git add, then create a clear, descriptive commit message using git commit -m. Finally, I push the branch to the remote using git push. If it’s a new branch, I use git push -u origin branch-name so that it’s linked to the remote and easier to work with in the future.
+
+5) fork
+Ans=> A fork is a personal copy of someone else’s repository created on my GitHub account. It is mainly used when I don’t have direct write access to the original repository, such as in open-source projects. After forking, I clone the repo locally, create my feature branch, commit and push changes to my fork, and then raise a pull request to the original repository. I can also sync my fork with the original repo using an upstream remote.
+
+git init  (Initializes a new Git repository in the current directory.)
 git status (Shows the status of changes as untracked, modified, or staged in your working directory. It helps you understand the state of your repository.)
 git remote add origin (Associates a remote repository with your local Git repository. The term "origin" is a common convention for the default remote name, but you can choose a different name.)
 git branch (Lists all local branches in your repository. The currently active branch is usually marked with an asterisk.)
