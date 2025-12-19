@@ -26,7 +26,7 @@ Q) What are the advantages of JavaScript over other web technologies?
 Ans-These are the advantages of JavaScript:
 
 =>Enhanced Interaction
-JavaScript adds interaction to otherwise static web pages and makes them react to users’ inputs.
+JavaScript adds interaction to static web pages and makes them react to users’ inputs.
 
 =>Quick Feedback
 There is no need for a web page to reload when running JavaScript. For example, form input validation.
@@ -133,7 +133,7 @@ Q) What is callback functions ?
 Ans- A callback is a function that is passed as an argument to another function. The receiving function is responsible for executing the callback function at a specific point in its execution
 used for handle asynchronous operation
 
-Q) Define forEach ?
+Q) Define forEach ? 
 Ans- In JavaScript, the forEach loop is a method available on arrays that allows you to iterate over each element in the array. The forEach method takes a callback function as an argument and executes that function once for each element in the array.
 
 => Example
@@ -192,13 +192,16 @@ Q) Explain call(), apply() and, bind() methods?
 Ans- 
 => call()
 => It is a predefined method in JS
-=> call() method invokes the method by specifying the owner object and it can also accept the arguments
+=> call(), apply(), and bind() are used for function reuse and method borrowing, so the same function can be used by more than one object by controlling the value of this
+
+call() 
+=> Invokes a function immediately by setting this to a given object and passing arguments one by one.
 
 apply()
-=> apply() methods is similar as call() methods but it takes arguments as array
+=> Invokes a function immediately by setting this to a given object and passing arguments as an array.
 
-bind()
-=> This method returns a new function, where the value of “this” keyword will be bound to the owner object, which is provided as a parameter.
+bind() 
+=> Returns a new function with this permanently bound to the given object for later execution.
 
 
 Q) How to handle exceptions in JavaScript?
@@ -210,6 +213,7 @@ It allow us to handle expections in our code. It allows you to execute code in `
 
 => finally Block
 the `finally` block is optional, contains code that will always execute block of code regardless of whether an error occured in `try` block 
+
 => throw Statement
 the `throw` statement allows you to create your own errors, that you can throw in any expressions such as String, Number or an instance of error Object
 
@@ -217,12 +221,12 @@ the `throw` statement allows you to create your own errors, that you can throw i
 You can create error types by extending the built-in error class. This can be useful for creating more specific error handling in your applications.
 
 Q) What is event bubbling in JavaScript?
-Ans- Event bubbling is a concept in JS that describes how the event propagate throught the DOM tree. When an event occurs on an element it first triggers on that specific element and then bubble up through the ancestors element of DOM eventually reaching to the root element of the DOM.
+Ans- Event bubbling is a concept in JS that describes how the event propagate throught the DOM tree, where an event starts from the target element and then propagates upward through its parent elements in the DOM hierarchy until it reaches the root.
 
 Q) Explain higher-order functions in JavaScript ?
 Ans- A higher-order function is a function that either takes one or more functions as arguments, or
 Returns a function as its result.
-This concept allows for more abstract and flexible code, enabling functions to be composed, reused, and manipulated in powerful ways.
+This concept enables abstraction, reuse, and functional programming patterns.
 
 ====================================================================ES6=========================================================================================
 Q) ES6 concepts ?
@@ -241,11 +245,11 @@ Ans- Destructuring in JavaScript allows you to extract/unpack values from arrays
 
 Q) The spread operator(...)  ES6
 Ans- Right side of "=" operator
-spread operator is used to expand iterables (like arrays or objects) into individual elements.
+Expands iterables(like arrays or objects) into individual elements on the right-hand side of assignments or calls.
 
 Q) Rest pattern(...)  ES6
 Ans- Left side of "=" operator
-Rest operator allows you to collect multiple elements into a single array
+Collects remaining elements into a single array or object on the left-hand side of assignments or parameters.
 
 Q) Short circuiting (&& and ||) ES6
 Ans- where evaluation of an expression stops as soon as the outcome is determined based on the initial part of the expression, without needing to evaluate the entire expression
@@ -282,9 +286,6 @@ false
 
 Q) Explain the event bubbling and event capturing in JavaScript.
 Ans- Event bubbling and capturing are two ways of event propagation in the DOM. In event bubbling, the event starts at the innermost target element and works its way up the DOM tree, while in event capturing, the event starts at the outermost element and moves towards the target element.
-
-Q) What is the purpose of the this keyword in JavaScript?
-Ans- The this keyword in JavaScript is a reference to the context in which a function is called. It provides a way to access the properties and methods of an object within its methods
 
 Q) Explain the concept of prototype in JavaScript.promis
 Ans- Prototypes are a way to implement inheritance in JavaScript, where objects can inherit properties and methods from other objects through their prototype chain.
@@ -329,7 +330,7 @@ async and await
 => async Declares a function that will return a promise
 => await pauses the execution of the async function until the promise is resolved or rejected.  
 
-=> Promise is ceated using "Promise" constructor which takes 2 parameter resolve and reject. we call resolve(value) if when the asynchronous task completes successfully, else reject() if fails.
+=> Promise is created using "Promise" constructor which takes 2 parameter resolve and reject. we call resolve(value) if when the asynchronous task completes successfully, else reject() if fails.
 
 Q) Explain Promise Combinators ?
 Ans- Promise Combinators 

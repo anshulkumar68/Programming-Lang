@@ -43,14 +43,3 @@ const palindrome = () => {
 
 // palindrome();
 
-// string palindrome
-
-const palindrome1 = () => {
-  let str = "MOOM";
-  let reverseString = str.split("").reverse().join("");
-
-  if (str === reverseString) console.log("palindrome");
-  else console.log("not palindrome");
-};
-
-palindrome1();

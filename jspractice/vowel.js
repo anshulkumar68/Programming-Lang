@@ -1,18 +1,14 @@
 function vowels(){
-    let str = "RadHe"
-    str= str.toLowerCase();
-
-    const vowels = 'aeiou';
+    let str = "ansHul".toLowerCase();
+    let vowels = 'aeiou'
     let count = 0;
-
     for(let char of str){
-       if(vowels.includes(char))
-        count++;
+        if(vowels.includes(char))
+            count++;
     }
-    console.log(count);
+    return count;
 }
-
-// vowels();
+console.log(vowels());
 
 
 function getUsernameFromEmail() {
@@ -66,18 +62,3 @@ const toggle= ()=>{
 }
 
 // toggle();
-
-// remove duplicate
-const duplicate = () =>{
-    let string = "anshulankumar";
-    let result = '';
-
-    for(let i=0; i<string.length; i++){
-        if(result.indexOf(string[i])===-1){
-            result +=string[i];
-        }
-    }
-    console.log(result);
-}
-
-duplicate();
