@@ -1,19 +1,12 @@
-// @ts-check
-import { test, expect } from '@playwright/test';
+import {test, expect} from '@playwright/test'
 
-test('has title', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+test('Login to Sauce Labs', async({page})=>{
+  await page.goto('https://www.saucedemo.com/')
 
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Playwright/);
-});
+  await page.getByPlaceholder('Username').fill('standard_user');
+  await page.getByPlaceholder('Password').fill('secret_sauce');
+  await page.getByRole('button', { name: 'Login' }).click();
 
-test('get started link', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
-
-  // Click the get started link.
-  await page.getByRole('link', { name: 'Get started' }).click();
-
-  // Expects page to have a heading with the name of Installation.
-  await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
-});
+  await expect(page).toHaveTitle(/Swag Labs/);
+  await expect(page).toHaveURL(/inventory.html/);
+})

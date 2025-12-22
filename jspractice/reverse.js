@@ -34,4 +34,19 @@ function revWordSentence(){
     }
     console.log(result.join(' '))
 }
-revWordSentence();
+// revWordSentence();
+
+//reverse a array
+function revArray(){
+    let arr = [2, 62 , 18, 198, 38, 25];
+    let s = 0, e = arr.length-1;
+    while(s<=e){
+        let temp = arr[s];
+        arr[s] = arr[e];
+        arr[e] = temp;
+        s++;
+        e--;
+    }
+    console.log(arr)
+}
+revArray();

@@ -8,8 +8,7 @@ test('Mouse Hover', async({page})=>{
     await page.locator("//a[normalize-space()='Men Footwear']").click()
     
     await page.waitForTimeout(4000)
-    await page.close();
-})
+    await page.close(); })
 
 test('Mouse Right-click', async({page})=>{
 
