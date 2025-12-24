@@ -1,32 +1,39 @@
-Introduction--------------
-
-Hello [there], I am Anshul Kumar,  from Etawah, Uttar Pradesh, Currently stauying in Bengaluru.  I am pursuing my Master of computer application in Full stack development from Jain University and hold Bachelor of computer applications from Reva university  which have equipped me with a strong foundation in software development and testing methodologies.
-
-I am leveraging my 2 years and 4 months of professional expertise as a Quality Engineer at LG Soft india. I have gained valuable insights into software quality assurance practices, including functional testing, System testing, Regression testing and test automation. My time in this role has allowed me to develop a keen eye for detail and a thorough understanding of the software development lifecycle, user experience  and ensuring products meet the highest quality standards. 
-
-One of my greatest strengths lies to approach problems analytically and systematically which led me to found critical bugs in system. I am also known for my strong communication skills and my ability to collaborate effectively with cross-functional teams which gave me opportunity of debugging field claims.
-
-However, I want to transition into web development, My goal is to leverage my Professional expertise such as attention to detail and strong understanding of software development processes, project deadlines, completion of task within given time frame and provide myself a better career growth. 
-
- I am excited about the opportunity to expand my skill set and contribute to cutting-edge projects in the field of web development.
+Q)))) Introduction ?
+Ans=> 
+Hi, I’m Anshul, a QA Automation Engineer with over 4 years of experience in testing and automating web and SaaS applications. I currently work on a cloud-based ERP financial platform, NextWorld, where I own the Supplier Invoice and Supplier Credit Memo modules and performing UI testing end-to-end business workflows. I handle both manual and automation testing, automating critical UI flows using Playwright with JavaScript/TypeScript following POM and BDD practices, along with API testing to ensure backend data consistency. I also support Journal Entries and Fixed Assets during regression cycles. I use Git and GitHub for version control and have integrated automation suites with Jenkins CI/CD. Additionally, I actively participate in requirement reviews, maintain RTM, design test scenarios, and execute smoke and regression suites to ensure financial accuracy before every production release.
+))
 
 
+Hi, I’m Anshul. I’m a QA Automation Engineer with over 4 years of experience in testing and automating web and SaaS applications, primarily in the financial domain. ))I’m passionate about building reliable automation and enjoy solving complex problems that improve product quality and team efficiency.))
 
+Currently, I work on a cloud-based SaaS ERP financial platform, NextWorld, where I own the Supplier Invoice and Supplier Credit Memo modules. I validate complete business lifecycles — from invoice creation, tax calculations, approvals, and posting, to ensuring accurate updates in ledgers and supplier balances. For credit memos, I cover refund and adjustment scenarios, including partial and full credits and tax reversals, making sure the financial impact is reflected correctly across reports.
 
-1) why are you leaving current job ?
-Ans- So may her why are you leaving your current job and now looking for an opportunity that is more aligned to my long term career goals? I have learned a lot here, and its been great. But to grow my career further, I need to expose myself to new challenges. Im ready to take on more responsibilities, but unfortunately, there are no leadership positions at my current organisation. I look forward to bringing my skills from my previous job to your company. Follow me for more. How to answer why you leaving your
+I handle both manual and automation testing and have automated critical end-to-end UI flows using Playwright with JavaScript/TypeScript, following POM and BDD practices. I also perform API testing to ensure backend workflows and data consistency. My automation suites run across browsers and are integrated with Jenkins CI/CD, helping improve coverage, reduce manual effort, and catch defects early.
 
-2) Five responses that you can give if you don't know the answer to an interview question. 
-Ans- i) thank you for asking this question. However, I'm not very well acquainted with this subject, but I can show you that I will do some research around this. 
-ii) right now, I would be able to provide you with an exact answer, but I can show you that I'm a fast learner and will be able to learn very quickly under your mentorship.
-iii) I can't think of an exact answer. I would request you to allow me sometime, and we can come back on this later. 
-iv) I did not understand the question properly. Could you please simplify and rephrase it? I don't want to misinterpret it.
-v) while I don't have much experience in X scale, but I do have proper knowledge of Y. If the job requires me to learn X scale, i'll be excited to expand my knowledge. Save this so you don't forget and follow your interview. Coach Diksha Roda to ace your interview
+In addition to my core modules, I support Journal Entries and Fixed Assets during regression cycles. I actively participate in requirement reviews, maintain the RTM, design test scenarios, and execute smoke and regression suites before every production release to ensure financial accuracy.
 
-3) Why should I hire you?
-Ans-  i)Over the years I have acquired relevant skills and experience, which I shall bring to an organisation. I have also tirelessly worked on improving my communication mobilities and teamwork schemes, 
-ii) especially for freshers. This is a wonderful opportunity that I am being interviewed at. Such a reported domination, even though I am fresher, I assure that I will give my best and work to my full potential so they can contribute to work growth and welfare of this brand 
-iii) I feel I should be hired by given my excellent academic background with the scale and experience I which the company is looking for.
+Overall, my strength lies in combining strong domain knowledge with scalable automation frameworks. I enjoy working in Agile teams, mentoring junior testers, and continuously learning to deliver high-quality, reliable releases.
 
-4) what are your hobbies ?
-Ans- Number two helps me to be in shape. Number three helps me to grow my creativity. Number 4 helps me to build a stronger mindset. And number 5 that helps me to stay connected with them with my inner self. And this completely blew my mind. I was shocked by the amount of maturity that I showed in an interview. So ugly bar apps ago
+Q)))) What does your day-to-day work look like?
+Ans=> 
+On a typical day, I start by checking test results from our CI pipelines and reviewing any failures or defects from the previous runs. Then I join stand-up to align with the team on priorities and risks.
+
+Most of my day is split between designing and executing test scenarios for my core modules — Supplier Invoices and Credit Memos — and building or maintaining Playwright UI automation for end-to-end flows, including cross-browser coverage.
+
+When new features come in, I review requirements, clarify edge cases with product and developers, and update the RTM. I create manual test cases first to understand the business flow, then automate stable scenarios.
+
+I also perform API testing to validate backend workflows and data consistency, especially for posting, tax, and ledger updates.
+
+During releases, I focus on smoke and regression runs, analyze failures, log defects with clear evidence, and work closely with devs to get fixes verified. I also support other areas like Journal Entries and Fixed Assets when needed.
+
+Overall, my day is about ensuring financial accuracy while continuously improving our automation coverage and stability in a fast-paced Agile setup.
+
+Q))))))) Challenge with flaky tests ?
+Ans=>
+When I initially joined the project, I inherited existing automation for Supplier Invoices and Supplier Credit Memos. The scripts were showing inconsistent behavior — they passed locally but failed intermittently in CI, especially during cross-browser runs.
+
+I struggled at first because the failures were flaky and hard to reproduce, which impacted the team’s trust in automation.
+
+I analyzed the failures and found a few root causes: weak and brittle locators, some hard waits, and limited reusability in the POM classes. I refactored those tests by replacing them with more reliable role-based and test-id locators, improving synchronization, and adding reusable methods in the POM to handle common flows.
+
+After these changes, flaky failures dropped significantly, execution became stable across browsers, and the suite started behaving consistently in CI. This reduced manual regression effort and gave the team confidence to rely on automation before every release.

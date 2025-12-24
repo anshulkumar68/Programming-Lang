@@ -1,0 +1,39 @@
+1) How do you handle file downloads?
+Answer:
+“In Playwright, I handle downloads using the Download API by synchronizing on the browser’s download event. I wrap the user action and page.waitForEvent('download') inside Promise.all() to avoid race conditions. Then I persist the file using download.saveAs() and validate it via filesystem APIs.”
+
+2) How do you handle a new tab / new window?
+Answer:
+“When an action opens a new tab or window, I listen for the page event on the browser context using context.waitForEvent('page'). This allows me to capture the newly created Page object and switch control to it for further interactions.”
+
+3) How do you create a new browser context and page?
+Answer:
+“I create a new browser context using browser.newContext() to isolate session state such as cookies, cache, and storage. Then I open a fresh page using context.newPage(). This ensures test isolation and prevents cross-test contamination.”
+
+4) How do you upload a file?
+Answer:
+“For file uploads, I bypass the native OS dialog by directly setting the file path on the input element using setInputFiles(). Playwright programmatically assigns the file to the input, making it fully automatable in headless and CI environments.”
+
+5) How do you handle JavaScript dialogs (alert/confirm/prompt)?
+Answer:
+“I register a listener on the dialog event using page.on('dialog'). Once intercepted, I can programmatically accept or dismiss alerts, confirms, or provide input for prompts using dialog.accept() or dialog.dismiss().”
+
+6) How do you handle iframes?
+Answer:
+“To interact with elements inside an iframe, I first obtain the frame reference using page.frame() or frameLocator(). Then I perform actions within the frame context, since DOM inside iframes is isolated from the main page.”
+
+7) How do you wait for navigation after a click?
+Answer:
+“When an action triggers navigation, I explicitly wait for it using page.waitForNavigation() combined with the click inside Promise.all(). This guarantees synchronization between the user action and the resulting page load, preventing flaky tests.”
+
+8) How do you handle multiple pages/tabs?
+Answer:
+“I retrieve all active pages from the browser context using context.pages(). Since each tab maps to a Page object, I can switch control using index or conditions and bring the required page to focus using bringToFront().”
+
+9) How do you take screenshots?
+Answer:
+“I capture screenshots using page.screenshot(), which allows me to take full-page or viewport images. This is useful for debugging failures and can be integrated into test reports or CI artifacts.”
+
+10) How do you wait for an element to appear?
+Answer:
+“I wait for an element using page.waitForSelector() or preferably Playwright locators, which have built-in auto-waiting for visibility and attachment to the DOM. This ensures synchronization before performing actions.”

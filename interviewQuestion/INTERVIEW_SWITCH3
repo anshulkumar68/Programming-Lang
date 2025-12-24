@@ -1,0 +1,132 @@
+1) Browser context
+“A browser context in Playwright is an isolated browser session within a single browser instance, like an incognito profile, used to keep cookies and storage separate between tests.”
+
+2) Filter on locator
+“locator.filter() is used to narrow down elements by text or child locators, making selectors more precise and reliable.”
+
+3) Fixture
+“A fixture is a reusable setup and teardown mechanism that provides test resources like page or context to tests.”
+
+4) Command to clear localStorage
+“We can explicitly clear localStorage using await page.evaluate(() => localStorage.clear()) in Playwright.”
+
+5) page.expose() and browser:
+In Playwright, browser controls the browser instance and manages contexts and pages. page.exposeFunction() allows us to expose a Node.js function to the page so it can be called from browser JavaScript, helping connect test logic with in-page actions.
+
+6) Robot testing scenario:
+Robot testing involves validating how a robot behaves in real-world conditions, such as navigating obstacles or picking objects, to ensure accuracy, safety, and reliability before deploying it in production.
+
+7) API and web services:
+An API enables different applications to communicate with each other, while web services are APIs over HTTP that exchange data like JSON. They allow frontends and systems to interact with backend services efficiently.
+
+8) StorageState:
+StorageState stores session data like cookies and local storage so tests can reuse a logged-in state, reducing repetitive logins and speeding up automation. 
+
+9) background in BDD
+In BDD (Behavior-Driven Development), Background is a section in a Gherkin feature file used to define common preconditions that apply to all scenarios in that feature.
+
+10) what is tagging in Playwright ?
+Ans- In Playwright, tagging with things like @smoke and @regression is a way to label tests so you can organize and selectively run them.
+
+11) How can you run specific 10 testcase out of 100 testcase in CI pipeline ?
+Ans-
+
+12) How do you do API testing ?
+
+13) How will you locate the elements in browser one-by-one or in bulk ? 
+
+14) have you used @smoke, @regression ?
+
+
+
+// Given an array of intervals [[s1,e1],[s2,e2],...], merge all overlapping intervals and return the merged list.
+// input : [[1,3],[2,6],[8,10],[15,18]]
+// // OUTPUT: [[1,6],[8,10],[15,18]]
+
+/*
+Using filter, map, reduce Question: Given an array of users, calculate total salary of active users
+const users = [
+  { name: "A", salary: 3000, active: true },
+  { name: "B", salary: 4000, active: false },
+  { name: "C", salary: 5000, active: true }
+];
+
+const totalSalary = users
+  .filter(user => user.active)        // keep only active users
+  .map(user => user.salary)           // extract salaries
+  .reduce((sum, sal) => sum + sal, 0); // sum them
+
+console.log(totalSalary); // 8000
+
+*/
+
+/*
+Sample Nested JSON Response
+ 
+{
+  "status": "SUCCESS",
+  "message": "Order details fetched successfully",
+  "data": {
+    "orderId": "ORD-20250101-1001",
+    "orderDate": "2025-01-01T10:15:30Z",
+    "customer": {
+      "customerId": "CUST-78945",
+      "name": "Ajay Singh",
+      "email": "ajay.singh@email.com",
+      "phone": "+91-9876543210",
+      "address": {
+        "line1": "Flat 402, Green Heights",
+        "city": "Bangalore",
+        "state": "Karnataka",
+        "pincode": "560102"
+      }
+    },
+
+    "items": [
+      {
+        "itemId": "ITEM-101",
+        "name": "Wireless Mouse",
+        "quantity": 2,
+        "price": 799.50,
+        "discount": 50,
+        "category": "Electronics"
+      },
+      {
+        "itemId": "ITEM-202",
+        "name": "Mechanical Keyboard",
+        "quantity": 1,
+        "price": 3499.00,
+        "discount": 0,
+        "category": "Electronics"
+      }
+    ],
+
+    "payment": {
+      "paymentId": "PAY-556677",
+      "method": "CREDIT_CARD",
+      "status": "PAID",
+      "transactionDate": "2025-01-01T10:16:00Z"
+    },
+
+    "summary": {
+      "totalItems": 3,
+      "subTotal": 5098.00,
+      "totalDiscount": 100,
+      "tax": 917.64,
+      "grandTotal": 5915.64
+    }
+  }
+}
+*/
+ /* 
+Validate HTTP status code is 200 
+Validate status is "SUCCESS"
+Validate orderId is not null
+Validate items array is not empty 
+Validate total quantity equals summary.totalItems
+Validate each item price is greater than 0
+ */
+
+ /* 
+ <div role="row" row-index="0" row-id="0" style="transform: translateY(0px); height: 45px;" tabindex="-1" class="ag-row-even ag-row-focus ag-row ag-row-level-0 group-level-0-style ag-row-position-absolute ag-row-first ag-row-last ag-row-not-inline-editing" aria-rowindex="2"> <div role="gridcell" col-id="actions" tabindex="-1" class="ag-cell ag-cell-not-inline-editing ag-cell-normal-height ag-cell-first-right-pinned ag-column-last ag-cell-range-right ag-cell-value" aria-colindex="4" style="left: 0px; width: 150px;"><svg width="1em" height="1em" viewBox="0 0 24 24">
+ */
