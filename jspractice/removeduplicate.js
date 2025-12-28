@@ -29,13 +29,12 @@ function removeDuplicates2() {
 
 // REMOVE DUPLICATE CHARACTERS FROM A STRING
 function removeDuplicateChar(){
-    let str = 'Initialize'
-    let result = ''
-    
-    for(let value of str){
-        if(!result.includes(value)) result+=value;
+    let str = 'Anshul Kumar'.toLowerCase();
+    let res = '';
+    for(let char of str){
+      if(!res.includes(char)) res+=char
     }
-    console.log(result)
+    console.log(res);
 }
 
 removeDuplicateChar()

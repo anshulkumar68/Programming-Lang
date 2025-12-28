@@ -10,3 +10,15 @@ function charOccurence(){
 } 
 // console.log(charOccurence());
 
+
+function charOccurence(){
+    let str = 'Hare Rama Hare Krishna'.toUpperCase();
+    let count = {};
+    for(let char of str){
+        if(count[char]) count[char] += 1;
+        else count[char] = 1;
+    }
+    console.log(count);
+}
+// console.log(charOccurence());
+charOccurence();

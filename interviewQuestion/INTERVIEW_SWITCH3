@@ -1,43 +1,50 @@
 1) Browser context
-“A browser context in Playwright is an isolated browser session within a single browser instance, like an incognito profile, used to keep cookies and storage separate between tests.”
+Ans) A browser context in Playwright represents an isolated session within a single browser instance, similar to an incognito or private window. Each context has its own cookies, localStorage, sessionStorage, cache, and permissions, which ensures test isolation and prevents state leakage between tests. This allows parallel execution of tests in the same browser process while maintaining independent user sessions. Browser contexts are lightweight compared to launching multiple browsers and are commonly used to simulate multiple users or roles in end-to-end scenarios.
 
 2) Filter on locator
-“locator.filter() is used to narrow down elements by text or child locators, making selectors more precise and reliable.”
+Ans)locator.filter() in Playwright is used to refine a locator by applying additional conditions such as visible text, child elements, or other locators. It helps create more resilient and readable selectors when multiple elements match the same base locator. By narrowing the search within an existing locator chain, it improves test stability, reduces flakiness, and avoids brittle selectors like long CSS/XPath expressions, especially in dynamic UIs with repeated components.
 
 3) Fixture
-“A fixture is a reusable setup and teardown mechanism that provides test resources like page or context to tests.”
+Ans) A fixture is a reusable setup and teardown mechanism provided by the Playwright Test framework to manage test dependencies such as browser, context, page, test data, or custom utilities. Fixtures enable dependency injection into tests, promote code reuse, and ensure consistent test environments. They can be scoped at test, worker, or suite level and can be extended to create custom fixtures, which improves maintainability and scalability of large automation frameworks.
 
 4) Command to clear localStorage
-“We can explicitly clear localStorage using await page.evaluate(() => localStorage.clear()) in Playwright.”
+Ans) In Playwright, localStorage can be cleared by executing JavaScript in the browser context using
+await page.evaluate(() => localStorage.clear());.
+This approach directly interacts with the web application's runtime environment and is useful for resetting client-side state between tests. Clearing localStorage ensures a clean session, avoids data pollution, and helps validate first-time user flows or scenarios dependent on storage-based flags.
 
 5) page.expose() and browser:
-In Playwright, browser controls the browser instance and manages contexts and pages. page.exposeFunction() allows us to expose a Node.js function to the page so it can be called from browser JavaScript, helping connect test logic with in-page actions.
+Ans) The browser object in Playwright represents the top-level controller for a browser instance and is responsible for creating contexts and pages, managing lifecycle, and handling multiple sessions.
+page.exposeFunction() allows exposing a Node.js function to the browser context so it can be invoked from in-page JavaScript. This is useful for bridging test code with application code, enabling callbacks, custom event handling, logging, or triggering test-side logic based on in-app actions, which is powerful for advanced integrations and mocking.
 
 6) Robot testing scenario:
-Robot testing involves validating how a robot behaves in real-world conditions, such as navigating obstacles or picking objects, to ensure accuracy, safety, and reliability before deploying it in production.
+Ans) Robot testing focuses on validating robotic systems in real or simulated environments to ensure correct interaction with physical surroundings. It involves testing sensors, actuators, navigation, object detection, decision-making algorithms, and safety constraints. Scenarios may include obstacle avoidance, path planning, pick-and-place operations, or human interaction. The goal is to verify reliability, precision, fault tolerance, and safety before deploying robots in production or mission-critical environments.
 
 7) API and web services:
-An API enables different applications to communicate with each other, while web services are APIs over HTTP that exchange data like JSON. They allow frontends and systems to interact with backend services efficiently.
+Ans) An API (Application Programming Interface) defines a contract that allows software components to communicate by exchanging requests and responses. Web services are APIs exposed over network protocols like HTTP/HTTPS, typically following REST or SOAP architectures, and commonly exchange data in JSON or XML formats. They enable decoupled communication between frontend clients and backend systems, supporting scalability, interoperability, and integration across distributed applications.
 
 8) StorageState:
-StorageState stores session data like cookies and local storage so tests can reuse a logged-in state, reducing repetitive logins and speeding up automation. 
+Ans) storageState in Playwright is used to persist and reuse authentication and session data such as cookies and localStorage across test runs. By saving the state after login and reusing it in subsequent tests, automation can bypass repetitive authentication flows. This significantly reduces execution time, improves reliability, and allows focusing tests on business logic rather than setup steps, especially in large regression suites.
 
 9) background in BDD
-In BDD (Behavior-Driven Development), Background is a section in a Gherkin feature file used to define common preconditions that apply to all scenarios in that feature.
+Ans) In BDD using Cucumber/Gherkin, the Background section defines common preconditions that are executed before each scenario in a feature file. It is used to avoid duplication of shared steps like launching the app, navigating to a page, or logging in. Background improves readability and maintainability by centralizing setup logic, ensuring all scenarios start from a consistent baseline.
 
 10) what is tagging in Playwright ?
-Ans- In Playwright, tagging with things like @smoke and @regression is a way to label tests so you can organize and selectively run them.
+Ans) Tagging in Playwright involves adding labels such as @smoke, @regression, or @critical to test titles or using annotations to categorize tests. These tags enable selective execution through CLI options like --grep and --grep-invert. Tagging helps organize large test suites, optimize CI execution by running only relevant subsets, and align tests with release strategies like smoke, sanity, or full regression cycles.
 
 11) How can you run specific 10 testcase out of 100 testcase in CI pipeline ?
-Ans-
+Ans- In Playwright, I run a specific subset of tests by using tagging, test titles, file paths, or annotations and then passing filters through the CLI. The most common and scalable approach is tagging, where I mark required tests with tags like @smoke or @critical in the test name or test.describe(). Then I execute them using npx playwright test --grep @smoke, which will only run the tests matching that pattern. Alternatively, I can target specific spec files or folders, or use --grep with part of the test title to pick exactly the 10 test cases I need. In a CI pipeline (like Jenkins or GitHub Actions), I parameterize the command so the pipeline runs npx playwright test --grep @smoke or a custom tag, enabling dynamic selection without changing code. This approach ensures fast feedback by running only critical tests on each build,
 
 12) How do you do API testing ?
+Ans- I perform API testing by validating REST APIs at the service layer without the UI, focusing on correctness, reliability, and performance. I start by going through the OpenAPI docs and identify endpoints, HTTP methods, headers, and authentication (OAuth2, JWT, API keys). I design test cases for positive, negative, boundary, and edge scenarios and execute them using tools like Postman for exploration and frameworks like Rest Assured or Playwright API for automation. I validate status codes, response schemas, payload values, headers, and response time, and also check idempotency and error handling. In automation, I chain APIs for end-to-end flows, parameterize data, assert JSON using JSONPath, and integrate with CI/CD so tests run on every build.
 
 13) How will you locate the elements in browser one-by-one or in bulk ? 
+Ans- I locate elements using robust selectors based on priority: unique IDs, data-test attributes, accessible roles, and stable CSS/XPath, following best practices to avoid brittle locators. For one-by-one interaction, I use single element locators like page.locator() in Playwright to perform actions such as click, type, or assert on a specific element with auto-wait and strictness. For bulk operations, like validating lists, tables, menus, or multiple cards, I use a common locator that matches all elements and then iterate using methods like .count(), .nth(), or .allTextContents(). I prefer relative and scoped (filter) locators to narrow context and improve performance.
 
 14) have you used @smoke, @regression ?
+Ans- Yes, I use tags in Playwright to logically group tests, for example test('@smoke Login works', ...) or via test.describe() with annotations. These tags help in selective execution using CLI options like --grep @smoke or --grep-invert @regression. Smoke tests cover critical paths and are run on every build, while regression tests cover wider scenarios and are run nightly or before releases. This tagging strategy improves test execution control in CI pipelines and helps maintain fast feedback cycles without running the full suite every time.
 
-
+15) Scenario vs. Scenario Outline in Cucumber?
+Ans- A Scenario represents a single test case with fixed steps and data, used when the behavior is validated with one specific input set. A Scenario Outline is a data-driven template where the same steps are executed multiple times with different inputs provided through an Examples table.
 
 // Given an array of intervals [[s1,e1],[s2,e2],...], merge all overlapping intervals and return the merged list.
 // input : [[1,3],[2,6],[8,10],[15,18]]

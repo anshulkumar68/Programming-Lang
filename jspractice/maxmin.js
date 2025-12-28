@@ -17,10 +17,10 @@ function maxmin() {
 
 // Find second largest number in an array
 function maxmin2(){
-  let arr = [23, 80, -5, 1, 25, 363, 52, 3]
+  let arr = [1, 2, 8, 4, 5 ,6, 7, 3]
   let largest = -Infinity;
   let secondLargest = -Infinity;
-
+  
   for(let value of arr){
     if(value > largest){
       secondLargest = largest;
@@ -31,4 +31,20 @@ function maxmin2(){
   }
   return secondLargest
 }
-console.log(maxmin2());
+// console.log(maxmin2());
+
+
+function maxSecond(){
+  let arr = [1, 2, 8, 4, 5 ,6, 7, 3]
+  let largest = -Infinity;
+  let secondLargest = -Infinity;
+  for(let i=0; i<arr.length; i++){
+    if(arr[i]>largest){
+      secondLargest = largest
+      largest = arr[i];
+    }
+    else if(arr[i]>secondLargest && arr[i] <largest)  secondLargest = arr[i]
+  }
+  return secondLargest;
+}
+console.log(maxSecond())
