@@ -1,18 +1,15 @@
 Q)))) Introduction ?
 Ans=> 
-Hi, I’m Anshul, a QA Automation Engineer with over 4 years of experience in testing and automating web and SaaS applications. I currently work on a cloud-based ERP financial platform, NextWorld, where I own the Supplier Invoice and Supplier Credit Memo modules and performing UI testing end-to-end business workflows. I handle both manual and automation testing, automating critical UI flows using Playwright with JavaScript/TypeScript following POM and BDD practices, along with API testing to ensure backend data consistency. I also support Journal Entries and Fixed Assets during regression cycles. I use Git and GitHub for version control and have integrated automation suites with Jenkins CI/CD. Additionally, I actively participate in requirement reviews, maintain RTM, design test scenarios, and execute smoke and regression suites to ensure financial accuracy before every production release.
-))
+Hi, I’m Anshul, a QA Automation Engineer with over 4 years of experience in building and maintaining scalable automation solutions for web applications.
+In my current role, I work across the full testing lifecycle — understanding business requirements, designing effective test scenarios, automating critical user and financial flows, and supporting releases through CI/CD pipelines. I have hands-on experience in UI automation using Playwright with JavaScript, following best practices like Page Object Model, and I also contribute to API testing to ensure backend workflows, integrations, and data consistency.
 
+Along with my core modules, I support Journal Entries and Fixed Assets during regression cycles. I actively participate in requirement reviews, maintain the RTM, and execute smoke and regression suites before every production release to ensure system stability and financial accuracy. I focus strongly on reducing manual, regression effort, improving test reliability, and preventing production issues.
 
-Hi, I’m Anshul. I’m a QA Automation Engineer with over 4 years of experience in testing and automating web and SaaS applications, primarily in the financial domain. ))I’m passionate about building reliable automation and enjoy solving complex problems that improve product quality and team efficiency.))
+))))))
+Currently, I work on an ERP-based financial platform, NextWorld, where I own the Supplier Invoice and Supplier Credit Memo modules end-to-end. I am responsible for validating complete business lifecycles, including invoice creation, tax calculations, approval workflows, posting processes, and ensuring accurate updates to general ledger accounts and supplier balances.
 
-Currently, I work on a cloud-based SaaS ERP financial platform, NextWorld, where I own the Supplier Invoice and Supplier Credit Memo modules. I validate complete business lifecycles — from invoice creation, tax calculations, approvals, and posting, to ensuring accurate updates in ledgers and supplier balances. For credit memos, I cover refund and adjustment scenarios, including partial and full credits and tax reversals, making sure the financial impact is reflected correctly across reports.
+For Supplier Credit Memos, I cover both refund and adjustment scenarios, handling partial and full credits also tax reversals. ensuring accurate financial impact across supplier balances and reports.
 
-I handle both manual and automation testing and have automated critical end-to-end UI flows using Playwright with JavaScript/TypeScript, following POM and BDD practices. I also perform API testing to ensure backend workflows and data consistency. My automation suites run across browsers and are integrated with Jenkins CI/CD, helping improve coverage, reduce manual effort, and catch defects early.
-
-In addition to my core modules, I support Journal Entries and Fixed Assets during regression cycles. I actively participate in requirement reviews, maintain the RTM, design test scenarios, and execute smoke and regression suites before every production release to ensure financial accuracy.
-
-Overall, my strength lies in combining strong domain knowledge with scalable automation frameworks. I enjoy working in Agile teams, mentoring junior testers, and continuously learning to deliver high-quality, reliable releases.
 
 Q)))) What does your day-to-day work look like?
 Ans=> 
