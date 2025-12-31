@@ -48,7 +48,7 @@ Ans- Yes, I use tags in Playwright to logically group tests, for example test('@
 Ans- A Scenario represents a single test case with fixed steps and data, used when the behavior is validated with one specific input set. A Scenario Outline is a data-driven template where the same steps are executed multiple times with different inputs provided through an Examples table.
 
 16) how you can approach a brand-new requirement and build a solid test strategy and test plan ?
-Ans- When I get a new requirement, I first understand the business requirements, application workflow, architecture, and risks. Then I define a high-level test strategy covering scope, test types, environments, and automation approach. After that, I create a detailed test plan for the release including features to test, resources, timelines, and deliverables. I always use a risk-based approach to prioritize critical user journeys and integrations, and I align automation to cover smoke, regression, and APIs early in the pipeline.
+Ans- When I get a new requirement, I first understand the business requirements, application type, it's workflow, architecture, and risks. Then I define a high-level test strategy covering scope, test types, environments, and automation approach. After that, I create a detailed test plan for the release including features to test, resources, timelines, and deliverables. I always use a risk-based approach to prioritize critical user journeys and integrations, and I align automation to cover smoke, regression, and APIs early in the pipeline.
 
 
 // Given an array of intervals [[s1,e1],[s2,e2],...], merge all overlapping intervals and return the merged list.

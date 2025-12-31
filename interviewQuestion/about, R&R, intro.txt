@@ -1,6 +1,6 @@
 Q)))) Introduction ?
 Ans=> 
-Hi, I’m Anshul, a QA Automation Engineer with over 4 years of experience in building and maintaining scalable automation solutions for web applications.
+Hi, I’m Anshul, a QA Automation Engineer with over 5, years of experience in building and maintaining scalable automation solutions for web applications.
 In my current role, I work across the full testing lifecycle — understanding business requirements, designing effective test scenarios, automating critical user and financial flows, and supporting releases through CI/CD pipelines. I have hands-on experience in UI automation using Playwright with JavaScript, following best practices like Page Object Model, and I also contribute to API testing to ensure backend workflows, integrations, and data consistency.
 
 Along with my core modules, I support Journal Entries and Fixed Assets during regression cycles. I actively participate in requirement reviews, maintain the RTM, and execute smoke and regression suites before every production release to ensure system stability and financial accuracy. I focus strongly on reducing manual, regression effort, improving test reliability, and preventing production issues.
@@ -15,7 +15,7 @@ Q)))) What does your day-to-day work look like?
 Ans=> 
 On a typical day, I start by checking test results from our CI pipelines and reviewing any failures or defects from the previous runs. Then I join stand-up to align with the team on priorities and risks.
 
-Most of my day is split between designing and executing test scenarios for my core modules — Supplier Invoices and Credit Memos — and building or maintaining Playwright UI automation for end-to-end flows, including cross-browser coverage.
+Most of my day is split between designing and executing test scenarios for my core modules — Supplier Invoices and Credit Memos — and building or maintaining Playwright UI automation for end-to-end flows.
 
 When new features come in, I review requirements, clarify edge cases with product and developers, and update the RTM. I create manual test cases first to understand the business flow, then automate stable scenarios.
 

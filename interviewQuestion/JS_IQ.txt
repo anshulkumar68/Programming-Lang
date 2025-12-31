@@ -177,7 +177,9 @@ Ans- setTimeout and clearTimeout are built-in JS functions used for handling del
 => setTimeout: setTimeout function takes a callback function as first argument to be executed after specified delay with second argument as time in miliseconds and third arguments (optional)
 
 => Example
-setTimeout(myFunc, 2000, "param1", "param2"); 
+setTimeout(() => {
+  console.log('wait');
+}, 5000);
 
 => clearTimeout: clearTimeout is used to cancel the previously defined setTimeout function if hasn't executed already
 
