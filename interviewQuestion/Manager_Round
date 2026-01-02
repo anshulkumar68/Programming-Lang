@@ -1,0 +1,63 @@
+1) Tell me about yourself and your current role ?
+
+2) What has been your biggest contribution to your team?
+My biggest contribution has been stabilizing and scaling our automation framework. When I joined, tests were flaky and rarely trusted in CI. I refactored locators, introduced proper waits and added common method in page objects and integrated the suite into the pipeline. This reduced regression time from hours and made automation a reliable and stable eventually.
+
+3) How do you decide what to automate and what not to?
+I follow a risk-based approach. I prioritize automating critical business flows, core user journeys, and scenarios that are repetitive and stable, like login, logout, or core CRUD operations. I usually avoid automating areas that change very frequently, heavy UI, ultimate goal is to get maximize coverage and catch defects which could do more impact.
+
+4) How do you work with developers when you find a defect? or Describe a time you disagreed with a developer or PM. What did you do?
+I treat it as a collaboration, I share clear reproduction steps, expected result, actual result, logs, screenshots or traces, and explain the impact from a user’s point of view. I classify the bug clearly in terms of severity and priority. so the discussion stays productive if needed also look into logs, I always listen to the developers point of view and then try to reach a common conclusion. If we still don't align or imapct is high I loop in My TL with all facts so a decision can be made quickly.
+
+5) How do you ensure quality in a fast-paced agile environment?
+I use shift left approach which means getting involved in grooming, clarify acceptance criteria, think about edge cases early, creating test scenario and start automation in parallel with development. With CI running smoke and regression suites, we get fast feedback. This way, quality becomes part of the sprint, not something at the end.
+
+6) How do you manage tasks when multiple features need testing at the same time?
+I first understand deadlines and business priority and risk for each feature. I focus on high-impact areas first, automate what can be reused, and communicate clearly if something is at risk. If needed, I break work into small parts or ask for support early rather than waiting till the last moment.
+
+7) Have you ever missed a bug in production? How did you handle it?
+Yes, early in my career a edge case went to production. Once we found it, I took the ownership and conducted RCA over the production build, added test converage for similar scenario to avoid in future. I took it as a learning experience and used it to improve our process by explaining to team to uncover hidden edge cases so we don't repea the same mistake.
+
+8) How do you measure the success of your automation?
+I look at how much confidence it gives to the team. Practically, that means stable CI runs, fewer false failures, reduced regression time, and catching issues before production. If developers trust the suite and releases are smoother, I consider automation successful.
+
+9) How do you mentor or support junior QA members?
+I help them understand not just how to write tests, but why we design them a certain way. I do code reviews, pair on tricky scenarios, explain framework structure, and encourage them to think in terms of user impact and edge cases. I also share best practices so they grow faster and become more confident.
+
+10) What would you do if automation is slowing down delivery instead of helping?
+I’d treat it as a signal to refactor our strategy. Maybe the suite is too big or taking longer times in regression which making it slow. I would optimize by focusing on critical flows, running tests in parallel, removing redundant cases, and keeping only what adds real value. Automation should support delivery, not block it.
+
+11) How do you handle tight deadlines when testing isn’t complete?
+In such cases, I focus on risk and transparency. I communicate clearly about what’s tested, what’s not, and the risks involved. First I prioritize critical paths flows that impact core users or revenue and make sure they are covered either manually or through automation. The idea is transparency, not last-minute surprises, so they can make informed release decision.
+
+12) What do you expect from your manager and team?
+I expect clear expectations, regular feedback, and an environment where quality is a shared responsibility and helps remove blockers so the team can perform better. I value a manager who supports improvement, encourages learning & growth as team.
+
+13) Where do you see yourself in the next 2–3 years?
+I see myself as a strong SDET or quality lead who owns test strategy, frameworks, and CI quality across projects, and also mentors others. I want to contribute not just at script level, but at process and architecture level.
+
+14) Why do you want to join this company/team?
+From what I’ve learned, Quinnox is a results-driven digital technology partner that helps organizations simplify complex processes and improve customer experiences through innovative solutions. I’m excited about working in an environment that values automation and a strong engineering mindset.
+Additionally, learning that the project is in the banking domain makes me even more eager to join, as it is a challenging and high-impact domain that offers deep learning and professional growth.
+
+15) What motivates you as a QA Automation Engineer?
+What motivates me most is knowing that my work directly improves user experience and trust in the product. When automation catches issues early, reduces production bugs, seeing stable releases and developers trusting our automation gives me real satisfaction.
+
+16) How do you handle repetitive or less exciting work?
+I see it as part of the job and look for ways to optimize it. Even sometimes repetitive tasks helps in understand the product better, and if I can improve the process, it benefits the whole team.
+
+17) What will you do in your first 90 days here?
+First, I’d focus on understanding the product, users, and current test process. Then I’d learn the existing framework and CI setup, identify gaps or flaky areas, and look for quick wins to improve stability and coverage while building good relationships with the team.
+
+18) Do you have any questions for me?
+I’d like to know how quality is measured here, how automation fits into your release process, what challenges the team is currently facing in testing, and what you expect from this role in the first few months.
+
+19) What challenges you faced ?
+Challenge
+When I joined, testing was limited to happy-path UI checks and intermittent failures for client. Critical business scenarios like partial credit memos, tax reversals, and post-payment balance validation were missing, which risked financial inconsistencies.
+
+Action
+I learned the end-to-end business flow for Supplier Invoices and Supplier Credit Memos and there integration with other modules, collaborated with TL, and designed test cases covering real-world and edge scenarios including partial credits, tax adjustments, post-payment validation.
+
+Result
+Test coverage improved significantly, which outcomes supplier credit memo and supplier invoices module became reliable, and more stable 

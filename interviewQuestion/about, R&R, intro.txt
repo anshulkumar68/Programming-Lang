@@ -1,6 +1,6 @@
 Q)))) Introduction ?
 Ans=> 
-Hi, I’m Anshul, a QA Automation Engineer with over 5, years of experience in building and maintaining scalable automation solutions for web applications.
+Hi, I’m Anshul, a QA Automation Engineer with over 4 years of experience in building and maintaining scalable automation solutions for web applications.
 In my current role, I work across the full testing lifecycle — understanding business requirements, designing effective test scenarios, automating critical user and financial flows, and supporting releases through CI/CD pipelines. I have hands-on experience in UI automation using Playwright with JavaScript, following best practices like Page Object Model, and I also contribute to API testing to ensure backend workflows, integrations, and data consistency.
 
 Along with my core modules, I support Journal Entries and Fixed Assets during regression cycles. I actively participate in requirement reviews, maintain the RTM, and execute smoke and regression suites before every production release to ensure system stability and financial accuracy. I focus strongly on reducing manual, regression effort, improving test reliability, and preventing production issues.
@@ -9,6 +9,13 @@ Along with my core modules, I support Journal Entries and Fixed Assets during re
 Currently, I work on an ERP-based financial platform, NextWorld, where I own the Supplier Invoice and Supplier Credit Memo modules end-to-end. I am responsible for validating complete business lifecycles, including invoice creation, tax calculations, approval workflows, posting processes, and ensuring accurate updates to general ledger accounts and supplier balances.
 
 For Supplier Credit Memos, I cover both refund and adjustment scenarios, handling partial and full credits also tax reversals. ensuring accurate financial impact across supplier balances and reports.
+
+))))))
+Currently, I work on an ERP-based financial platform called NextWorld, where I handle testing for the Supplier Invoice and Supplier Credit Memo modules end-to-end.
+My role is to make sure the complete user flow works correctly — from creating an invoice, calculating taxes, going through approvals, posting it, and finally confirming that supplier balances and accounting information are updated as expected.
+When I joined this module, testing was mainly limited to Happy-Path UI means basic screen checks — for example, creating an invoice and validate a record added. However, important business cases were missing, such as partial credit memos, tax reversals and validation of the final financial outcome.
+To improve this, I spent time understanding the full business flow from a user’s point of view. I expanded test coverage to include real-world scenarios and edge cases, and ensured validating partial credit, after full payment checking the supplier account updated.
+Because of these improvements, the module became more stable.
 
 
 Q)))) What does your day-to-day work look like?
