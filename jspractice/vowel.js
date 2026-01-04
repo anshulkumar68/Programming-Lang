@@ -10,9 +10,9 @@ function vowels(){
 }
 console.log(vowels());
 
-
+// Get the email from the user
 function getUsernameFromEmail() {
-  let email = 'anshul3071@gmail.com'; // Get the email from the user
+  let email = 'anshul3071@gmail.com'; 
   let username = "";
 
   // Loop through the email to extract characters until '@'

@@ -1,7 +1,7 @@
 const merge = function merge() {
   let arr1 = [1, 3, 9, 22, 79, 84];
-  let arr2 = [5, 7, 19, 87];
-  let arr3 = [arr1.length + arr2.length];
+  let arr2 = [5, 7, 3, 87];
+  let arr3 = [];
 
   let i = 0,
     j = 0,

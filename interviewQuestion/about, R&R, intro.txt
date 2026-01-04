@@ -11,7 +11,7 @@ Currently, I work on an ERP-based financial platform, NextWorld, where I own the
 For Supplier Credit Memos, I cover both refund and adjustment scenarios, handling partial and full credits also tax reversals. ensuring accurate financial impact across supplier balances and reports.
 
 ))))))
-Currently, I work on an ERP-based financial platform called NextWorld, where I handle testing for the Supplier Invoice and Supplier Credit Memo modules end-to-end.
+Currently, I work on an ERP-based financial platform called NextWorld, where I handle testing for the Supplier Invoice and Supplier Credit Memo modules end-to-end. 
 My role is to make sure the complete user flow works correctly — from creating an invoice, calculating taxes, going through approvals, posting it, and finally confirming that supplier balances and accounting information are updated as expected.
 When I joined this module, testing was mainly limited to Happy-Path UI means basic screen checks — for example, creating an invoice and validate a record added. However, important business cases were missing, such as partial credit memos, tax reversals and validation of the final financial outcome.
 To improve this, I spent time understanding the full business flow from a user’s point of view. I expanded test coverage to include real-world scenarios and edge cases, and ensured validating partial credit, after full payment checking the supplier account updated.
