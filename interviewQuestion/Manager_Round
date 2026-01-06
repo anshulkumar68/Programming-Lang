@@ -1,6 +1,6 @@
 1) Tell me about yourself and your current role ?
 Hi, I’m Anshul, a QA Automation Engineer with over 4 years of experience in building and maintaining scalable automation framework for web applications.
-In my current role, I work across the full testing lifecycle — understanding business requirements, designing effective test scenarios, automating critical user and financial flows, and supporting releases through CI/CD pipelines. I have hands-on experience in UI automation using Playwright with JavaScript, following best practices like Page Object Model, and I also contribute to API testing to ensure backend workflows, integrations, and data consistency.
+In my current role, I am working for US client NextWorld which is a multi-client ERP platform, so whenever a new client is onboarded, we provide them our customized standard application. I work across the full testing lifecycle — understanding business requirements, designing effective test scenarios, automating critical user and financial flows, and supporting releases through CI/CD pipelines. I have hands-on experience in UI automation using Playwright with JavaScript, following best practices like Page Object Model, and I also contribute to API testing to ensure backend workflows, integrations, and data consistency.
 
 Along with my core modules, I support Journal Entries and Fixed Assets during regression cycles. I actively participate in requirement reviews, maintain the RTM, and execute smoke and regression suites before every production release to ensure system stability and financial accuracy. I focus strongly on reducing manual, regression effort, improving test reliability, and preventing production issues.
 
@@ -11,6 +11,27 @@ Each client has specific business and finance requirements, such as approval flo
 My role is to understand those client-specific requirements, design the required test scenarios, and validate that the customized behavior works correctly without impacting the core ERP flow. I ensure the entire end-to-end chain works as expected — from invoice creation, tax calculations, approval workflows, posting processes, and ensuring accurate updates to general ledger accounts and supplier balances.
 
 I also make sure that any customization integrates smoothly with existing core system functionality and proper regression testing is done so other clients are not affected.
+
+
+))))))))))END to END
+Supplier Invoice – End-to-End Coverage
+
+“For Supplier Invoices, my automation starts from invoice creation, where I validate mandatory fields, supplier configuration, currency, and tax applicability.
+
+I then cover tax calculation logic, including different tax rates and rounding rules, and validate that the calculated values match backend data and financial expectations.
+
+Next, I automate the approval workflow, ensuring invoices follow the correct approval hierarchy based on amount and business rules.
+
+Once approved, I validate the posting process, where the invoice impacts the general ledger, supplier balance, and aging reports. I assert that journal entries are created correctly and that downstream financial reports reflect accurate data.”
+
+🔹 Supplier Credit Memo – End-to-End Coverage
+
+“For Supplier Credit Memos, I automate both refund and adjustment scenarios, since they have different financial impacts.
+
+I cover partial and full credit memos, validating that only the credited amount is reversed and that tax reversals happen proportionally, not incorrectly at the invoice level.
+
+I also ensure that the credit memo follows the required approval flow, gets posted correctly, and updates the supplier balance, ledger entries, and reports without breaking the original invoice integrity.”
+
                                                               
 2) What has been your biggest contribution to your team?
 My biggest contribution has been stabilizing and scaling our automation framework. When I joined, tests were flaky and rarely trusted in CI. I refactored locators, introduced proper waits and added common method in page objects and integrated the suite into the pipeline. This reduced regression time and made automation a reliable and stable eventually.  
@@ -69,7 +90,7 @@ Challenge
 When I joined, testing was limited to happy-path UI checks and intermittent failures for client. Critical business scenarios like partial credit memos, tax reversals, and post-payment balance validation were missing, which risked financial inconsistencies.
 
 Action
-I learned the end-to-end business flow for Supplier Invoices and Supplier Credit Memos and there integration with other modules, collaborated with TL, and designed test cases covering real-world and edge scenarios including partial credits, tax adjustments, post-payment validation.
+I learned the end-to-end business flow for Supplier Invoices and Supplier Credit Memos and there integration with other modules, collaborated with TL, and designed test cases covering real-world and edge scenarios including partial credit memo, tax adjustments, post-payment validation.
 
 Result
 Test coverage improved significantly, which outcomes supplier credit memo and supplier invoices module became reliable, and more stable with time.
@@ -82,40 +103,4 @@ From a QA ownership perspective, I focus on end-to-end validation, regulatory co
 21) Mortgage loan
 “A mortgage loan is a long-term loan taken against property as security, where the customer repays the loan in EMIs and the bank holds the property as collateral until full repayment.”
 
-22) Key Modules in a Banking Application
-Customer Onboarding & KYC
-Handles new customer registration, document verification, and identity checks.
-
-Authentication & Security
-Manages login, OTP, MPIN, password rules, and session security.
-
-Account Management
-Creates and maintains savings/current accounts, balances, and account details.
-
-Payments & Fund Transfer
-Supports UPI, NEFT, RTGS, IMPS, and internal transfers.
-
-Transaction Processing
-Records, processes, and tracks all debit and credit transactions.
-
-Cards Management
-Handles debit/credit card issuance, activation, limits, and blocking.
-
-Loans & Credit
-Manages loan applications, eligibility, EMI schedules, and repayments.
-
-Statements & Reports
-Generates account statements, transaction history, and downloadable reports.
-
-Notifications & Alerts
-Sends SMS, email, and in-app alerts for transactions and activities.
-
-Compliance & Risk (AML/Fraud)
-Monitors suspicious activity and ensures regulatory compliance.
-
-Admin & User Management
-Used by bank staff to manage users, roles, approvals, and configurations.
-
-One-Line Interview Wrap-Up 🧠
-
-“A banking application mainly includes onboarding and KYC, security, account management, payments, transactions, cards, loans, compliance, notifications, and admin modules.”
+22) 

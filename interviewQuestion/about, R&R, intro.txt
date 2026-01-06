@@ -1,7 +1,7 @@
 Q)))) Introduction ?
 Ans=> 
-Hi, I’m Anshul, a QA Automation Engineer with over 4 years of experience in building and maintaining scalable automation solutions for web applications.
-In my current role, I work across the full testing lifecycle — understanding business requirements, designing effective test scenarios, automating critical user and financial flows, and supporting releases through CI/CD pipelines. I have hands-on experience in UI automation using Playwright with JavaScript, following best practices like Page Object Model, and I also contribute to API testing to ensure backend workflows, integrations, and data consistency.
+Hi, I’m Anshul, a QA Automation Engineer with over 4 years of experience in building and maintaining scalable automation framework for web applications.
+In my current role, I work across the full testing lifecycle — understanding business requirements, designing effective test scenarios, automating critical user and financial flows, and supporting releases through CI/CD pipelines. I worked on UI automation using Playwright with JavaScript, following best practices like Page Object Model, and I also contribute to API testing to ensure backend workflows, integrations, and data consistency.
 
 Along with my core modules, I support Journal Entries and Fixed Assets during regression cycles. I actively participate in requirement reviews, maintain the RTM, and execute smoke and regression suites before every production release to ensure system stability and financial accuracy. I focus strongly on reducing manual, regression effort, improving test reliability, and preventing production issues.
 
