@@ -6,7 +6,7 @@ function generateNumber(){
     let random = Math.floor(100000000 + (Math.random()*900000000));
     // contact+=random;
     console.log(`07${random}`)
-}
+} 
 // generateNumber();
 
 // generate email

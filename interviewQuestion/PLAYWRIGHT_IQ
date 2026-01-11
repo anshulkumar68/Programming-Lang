@@ -1,39 +1,158 @@
-1) How do you handle file downloads?
-Answer:
-“In Playwright, I handle downloads using the Download API by synchronizing on the browser’s download event. I wrap the user action and page.waitForEvent('download') inside Promise.all() to avoid race conditions. Then I persist the file using download.saveAs() and validate it via filesystem APIs.”
+1) Why playwright is better than selenium ?
+Ans- Playwright is better than Selenium because it solves many of the pain points we faced with Selenium. It’s easier to set up since it doesn’t require separate browser drivers—browser binaries are installed automatically. It has built-in auto-waiting and web-first assertions, which greatly reduce flaky tests. Playwright also supports parallel execution and cross-browser testing using a single API, and it comes with default HTML reports and powerful debugging tools like trace viewer and video recordings. Overall, it improves test stability, execution speed, and developer productivity compared to Selenium.
 
-2) How do you handle a new tab / new window?
-Answer:
-“When an action opens a new tab or window, I listen for the page event on the browser context using context.waitForEvent('page'). This allows me to capture the newly created Page object and switch control to it for further interactions.”
+2) What are the practices should be followed for building the playwright framework ?
+Ans- While building a Playwright automation framework, I follow standard design and test automation best practices to keep the framework maintainable, scalable, and stable. I follow principles like DRY to avoid duplication, and I design reusable components using Page Object Model. I rely on Playwright’s built-in fixtures instead of implementing Singleton patterns, since Playwright already handles test isolation and browser lifecycle efficiently. I also follow SOLID principles where applicable, keep configuration and environment handling centralized, use meaningful test naming and tagging, and ensure proper reporting, logging, and CI integration.
 
-3) How do you create a new browser context and page?
-Answer:
-“I create a new browser context using browser.newContext() to isolate session state such as cookies, cache, and storage. Then I open a fresh page using context.newPage(). This ensures test isolation and prevents cross-test contamination.”
+3) How to achieve Test Isolation ?
+Ans- Test isolation in Playwright is achieved through browser contexts. Playwright Test creates a new browser context for each test by default. Each context has its own cookies, local storage, session storage, permissions, and cache, so no state is shared between tests. Because of this, tests can run independently and in parallel without affecting each other. 
 
-4) How do you upload a file?
-Answer:
-“For file uploads, I bypass the native OS dialog by directly setting the file path on the input element using setInputFiles(). Playwright programmatically assigns the file to the input, making it fully automatable in headless and CI environments.”
+4) How will you run 100 testcae efficiently in playwright ?
+To run 100 test cases efficiently in Playwright, I primarily rely on parallel execution using workers, which can be configured in the Playwright config file. Playwright runs tests in isolated browser contexts, allowing safe parallel execution. I also use tagging to group tests such as smoke, regression, or critical, so only relevant tests are executed when needed. Additionally, I run tests in headless mode for faster execution, use retries for flaky tests, and leverage Playwright’s default HTML reporting to analyze failures efficiently. In CI environments, sharding can be used to distribute tests across multiple machines for even faster execution.
+
+5) Difference between page, context, and browser? When would you use each?
+In Playwright, the browser represents a real browser instance like Chromium, Firefox, or WebKit and is the top-level object that you launch once per run. A browser context is an isolated environment inside that browser, similar to an incognito window, with its own cookies, local storage, cache, and permissions, which makes it ideal for test isolation. A page is a single tab within a context where actual interactions like clicking, typing, and navigation happen. Typically, you create one browser per test run, one context per test to keep data isolated, and one or more pages inside that context depending on whether your test needs multiple tabs.
+
+6) How does Playwright auto-wait work? What problems does it solve?
+Playwright automatically waits before performing actions like click, fill, or expect by ensuring the element is attached to the DOM, visible, enabled, and stable. It also waits for navigations and network idle when appropriate. This auto-waiting removes the need for most explicit waits and sleep statements, making tests more reliable. It solves common problems such as timing issues, race conditions, and flaky failures caused by elements not being ready when the action is attempted.
+
+7) How do you handle flaky tests in Playwright?
+Flaky tests are handled by first identifying the root cause, which is usually timing issues, unstable locators, animations, or test data dependencies. In Playwright, using robust locators like role or text-based locators, relying on auto-wait instead of manual timeouts, and adding proper assertions with expect helps a lot. You can also use retries in the test config, enable tracing for failed runs, and make sure tests are isolated with fresh contexts. Fixing the cause is preferred over just adding retries, which should be a safety net.
+
+8) What is strict mode in locators? How do you debug strict mode violations?
+Strict mode means that a locator used for actions must resolve to exactly one element, otherwise Playwright throws an error. This prevents tests from accidentally interacting with the wrong element when multiple matches exist. When a strict mode violation happens, you debug it by inspecting the error message that lists matched elements, using page.pause() or the Playwright inspector, and refining the locator with better selectors like getByRole, adding filters, or using nth() only when truly needed.
+
+9) Difference between locator() and page.$()?
+page.locator() does not immediately fetch the element. It creates a locator that re-queries the DOM and supports auto-waiting and retries when used with actions or assertions. whereas page.$() immediately returns an ElementHandle from the DOM and does not auto-wait for actions, so it can easily become stale if the DOM changes. Locators are the recommended modern API for writing stable Playwright tests
+
+10) How do you handle file upload and download?
+For file uploads, Playwright provides setInputFiles on file input elements, which allows you to upload one or more files without interacting with the OS file picker. For downloads, you listen for the download event using page.waitForEvent('download') inside Promise.all() to avoid race conditions, then save the file using download.saveAs()  and validate it via filesystem APIs.
+ 
+11) How do you test multiple tabs or windows?
+In Playwright, multiple pages are handled using browser contexts. Each test runs inside its own browser context. A context can have one or more pages (tabs or windows). Each context is completely isolated, with its own cookies, local storage, permissions, and cache. Because of this isolation, tests can safely run in parallel without affecting each other.
+
+12) How do you handle a new tab / new window?
+When an action opens a new tab or window, I listen for the page event on the browser context using context.waitForEvent('page') and capture the new page object which and switch control using bringToFront() for any visual UI interactions.
+
+13) How do you create a new browser context and page?
+I create a new browser context using browser.newContext() to isolate session state such as cookies, cache, and storage. Then I open a fresh page using context.newPage(). This ensures test isolation and prevents cross-test contamination.”
+    const pages = context.pages();
+    await pages[1].bringToFront();
+
+14) What are trace, video, and screenshot options? How do you use them in CI?
+Playwright can record traces, videos, and screenshots to help debug failures. Traces capture screenshots, DOM snapshots, and network activity and can be viewed with the Playwright trace viewer. Videos record the full test run, and screenshots can be taken on failure. In CI, these are usually enabled only for failed tests to save resources, and then uploaded as build artifacts so developers can inspect them when a test fails remotely.
+
+15) How do you run tests in parallel and control workers?
+Playwright runs tests in parallel by default using workers, which are separate processes. You can control the number of workers in the config file or via CLI to balance speed and system resources. Tests in different files run in parallel, while tests in the same file run sequentially unless configured otherwise. You can also mark some tests as serial when order matters, though parallel, isolated tests are preferred for scalability.
+
+16) How do you deal with dynamic elements and animations?
+Dynamic elements are handled by using stable locators and relying on Playwright’s auto-wait, which waits for elements to become visible and stable. For animations, Playwright waits for elements to stop moving before clicking, but if needed, you can disable animations via CSS injection or wait for specific states using expect assertions. Avoid fixed timeouts and instead wait for meaningful UI states to keep tests reliable.
+
+17) Difference between waitForSelector and relying on auto-wait?
+waitForSelector explicitly waits for an element to appear in the DOM before continuing, but it only waits for presence or visibility, not for readiness to interact. Auto-wait is built into actions and assertions and waits for multiple conditions like visibility, enablement, and stability at the moment of action. Relying on auto-wait leads to cleaner and more reliable tests, while waitForSelector should be used sparingly for special cases like waiting for background elements.
+
+18) How do you implement Page Object Model in Playwright?
+In Playwright, Page Object Model is implemented by creating classes that represent pages or components, where locators and actions are defined as methods. Each class receives a Page instance in its constructor, and tests use these methods instead of directly interacting with selectors. This improves readability, reduces duplication, and makes maintenance easier when UI changes, while still leveraging Playwright’s powerful locator system.
+
+19) How do you debug a failing test locally and in CI?
+Locally, you can run tests in headed mode, use page.pause() to open the inspector, enable slow motion, and view traces to step through actions. In CI, you rely on collected artifacts like traces, videos, and screenshots to understand what happened. Comparing logs, checking network mocks, and reproducing the failure locally with the same data and config helps close the gap between CI and local environments and fix issues faster.
 
 5) How do you handle JavaScript dialogs (alert/confirm/prompt)?
-Answer:
-“I register a listener on the dialog event using page.on('dialog'). Once intercepted, I can programmatically accept or dismiss alerts, confirms, or provide input for prompts using dialog.accept() or dialog.dismiss().”
+I register a listener on the dialog event using page.on('dialog'). Once intercepted, I can programmatically accept or dismiss alerts, confirms, or provide input for prompts using dialog.accept() or dialog.dismiss().
 
 6) How do you handle iframes?
-Answer:
-“To interact with elements inside an iframe, I first obtain the frame reference using page.frame() or frameLocator(). Then I perform actions within the frame context, since DOM inside iframes is isolated from the main page.”
+To interact with elements inside an iframe, I first obtain the frame reference using page.frame() or frameLocator(). Then I perform actions within the frame context, since DOM inside iframes is isolated from the main page.
 
 7) How do you wait for navigation after a click?
-Answer:
-“When an action triggers navigation, I explicitly wait for it using page.waitForNavigation() combined with the click inside Promise.all(). This guarantees synchronization between the user action and the resulting page load, preventing flaky tests.”
-
-8) How do you handle multiple pages/tabs?
-Answer:
-“I retrieve all active pages from the browser context using context.pages(). Since each tab maps to a Page object, I can switch control using index or conditions and bring the required page to focus using bringToFront().”
+When an action triggers navigation, I explicitly wait for it using page.waitForNavigation() combined with the click inside Promise.all(). This guarantees synchronization between the user action and the resulting page load, preventing flaky tests.
 
 9) How do you take screenshots?
-Answer:
-“I capture screenshots using page.screenshot(), which allows me to take full-page or viewport images. This is useful for debugging failures and can be integrated into test reports or CI artifacts.”
+I capture screenshots using page.screenshot(), which allows me to take full-page or viewport images. This is useful for debugging failures and can be integrated into test reports or CI artifacts.”
 
 10) How do you wait for an element to appear?
-Answer:
-“I wait for an element using page.waitForSelector() or preferably Playwright locators, which have built-in auto-waiting for visibility and attachment to the DOM. This ensures synchronization before performing actions.”
+I wait for an element using page.waitForSelector() or preferably Playwright locators, which have built-in auto-waiting for visibility and attachment to the DOM. This ensures synchronization before performing actions.
+
+Q) Sometimes page load soon and sometimes takes time how can i handle that ?
+When a page loads inconsistently, I don’t use hard waits.
+I rely on Playwright’s auto-waiting with web-first assertions and explicit waits only for navigation or backend signals.
+I wait for what actually indicates readiness — such as a specific UI element, loader disappearance, or API response — which makes tests stable regardless of page speed.” 
+
+Q) What are explicit waits in playwright and when to use and example ?
+Explicit waits are manual wait APIs used when Playwright’s auto-waiting (locators + assertions) is not sufficient.
+Use explicit waits only for navigation, page-level events, or browser events — not for normal UI actions.
+
+1️⃣ page.waitForSelector()
+Waits for an element to appear in the DOM and reach a given state (attached, visible, hidden, detached).
+EX - await page.waitForSelector('#toast', { state: 'visible' });
+
+✅ When to use
+Element appears dynamically outside locator usage
+Legacy code / debugging
+Waiting before non-locator logic
+❌ Avoid when
+You can use locator.click(), locator.fill()
+You can assert using expect(locator)
+👉 Preferred alternative
+await expect(page.locator('#toast')).toBeVisible();
+
+2️⃣ page.waitForLoadState()
+Waits for page loading lifecycle events.
+
+Load states
+load → full page load event fired
+domcontentloaded → DOM ready
+networkidle → no network requests for ~500ms
+
+EX - await page.waitForLoadState('networkidle');
+
+✅ When to use
+After page.goto()
+After opening a new tab/window
+Pages heavily dependent on API calls
+❌ Avoid
+Waiting for specific UI elements
+Replacing assertions
+🔴 Common mistake
+await page.waitForLoadState('networkidle'); // ❌ flaky for SPAs
+
+3️⃣ page.waitForNavigation()
+Waits for a full page navigation (URL + document reload).
+
+EX - 
+await Promise.all([
+  page.waitForNavigation(),
+  page.click('a[href="/dashboard"]'),
+]);
+
+✅ When to use
+Clicking links that cause full page reload
+Form submissions with navigation
+❌ Avoid
+Single-Page Applications (React, Angular, Vue)
+Client-side routing
+👉 SPA alternative
+await page.waitForURL('**/dashboard');
+
+4️⃣ page.waitForEvent()
+Waits for browser-level events.
+EX - const newPage = await page.waitForEvent('popup');
+
+✅ Use cases
+New tab / popup
+File download
+Dialogs
+
+EX 
+const [download] = await Promise.all([
+  page.waitForEvent('download'),
+  page.click('#download'),
+]);
+
+5️⃣ page.waitForURL()
+Waits until the current URL matches a pattern.
+EX- await page.waitForURL('**/checkout');
+
+✅ Best for
+SPA routing
+Redirects without reload
+OAuth flows

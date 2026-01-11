@@ -4,7 +4,7 @@ Ans) A browser context in Playwright represents an isolated session within a sin
 2) Filter on locator
 Ans)locator.filter() in Playwright is used to refine a locator by applying additional conditions such as visible text, child elements, or other locators. It helps create more readable selectors when multiple elements match the same base locator. By narrowing the search within an existing locator chain, especially in dynamic UIs with repeated components.
 
-3) Fixture
+3) Fixture 
 Ans) A fixture is a reusable setup and teardown mechanism provided by the Playwright Test framework to manage test dependencies such as browser, context, page, test data, or custom utilities. Fixtures enable dependency injection into tests, promote code reuse, and ensure consistent test environments. They can be scoped at test, worker, or suite level and can be extended to create custom fixtures, which improves maintainability and scalability of large automation frameworks.
 
 4) Command to clear localStorage
@@ -49,6 +49,14 @@ Ans- A Scenario represents a single test case with fixed steps and data, used wh
 
 16) how you can approach a brand-new requirement and build a solid test strategy and test plan ?
 Ans- When I get a new requirement, I first understand the business requirements, application type, it's workflow, architecture, and risks. Then I define a high-level test strategy covering scope, test types, environments, and automation approach. After that, I create a detailed test plan for the release including features to test, resources, timelines, and deliverables. I always use a risk-based approach to prioritize critical user journeys and integrations, and I align automation to cover smoke, regression, and APIs early in the pipeline.
+
+17) Difference between postman and playwright API ?
+Ans- Postman is best suited for fast and quick API validation, mainly focused on manual and exploratory testing, with limited automation using JavaScript snippets.
+Playwright API testing, on the other hand, is fully automation-driven. Since it uses a proper programming language like JavaScript or TypeScript, it provides better control, extensibility, and maintainability.
+
+It also allows us to integrate API validation with UI validation in the same framework, which makes it ideal for end-to-end and CI-driven automation. So, I prefer Postman for quick checks and Playwright API for scalable automation.
+
+
 
 <!-- Coding Question -->
 // Given an array of intervals [[s1,e1],[s2,e2],...], merge all overlapping intervals and return the merged list.
@@ -147,3 +155,11 @@ Validate each item price is greater than 0
  /* 
  <div role="row" row-index="0" row-id="0" style="transform: translateY(0px); height: 45px;" tabindex="-1" class="ag-row-even ag-row-focus ag-row ag-row-level-0 group-level-0-style ag-row-position-absolute ag-row-first ag-row-last ag-row-not-inline-editing" aria-rowindex="2"> <div role="gridcell" col-id="actions" tabindex="-1" class="ag-cell ag-cell-not-inline-editing ag-cell-normal-height ag-cell-first-right-pinned ag-column-last ag-cell-range-right ag-cell-value" aria-colindex="4" style="left: 0px; width: 150px;"><svg width="1em" height="1em" viewBox="0 0 24 24">
  */
+
+
+
+ const newPage = await Promise.all([
+    page.waitforEvent('page');
+    page.locator('#link').click();
+ ])
+ newPage.waitforLoadState()

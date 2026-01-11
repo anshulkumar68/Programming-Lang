@@ -1,7 +1,13 @@
-function reverse(){
-    let email = 'anshul3071@gmail.com'; 
-    let username = email.split('@')[0];
-    console.log(username)
-   }
-reverse()
-
+function findDuplicate(){
+    let arr = [3, 5, 2, 6, 2, 3, 8, 3]
+    let res = [], seen = {}, added = {}
+    for(let num  of arr){
+        if(seen[num] & !added[num]){
+            res.push(num);
+            added[num]=true;
+        } 
+        else seen[num] = true;
+    }
+    console.log(res)
+}
+findDuplicate()
