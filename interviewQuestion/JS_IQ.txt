@@ -367,7 +367,24 @@ Resume execution with the resolved value when the Promise resolves.
 Throw an error if the Promise is rejected, which you can handle with a try/catch block.
 
 
-==================================================================REGULAR EXPRESSION========================================================================
+========================================================ES6============================================================
+1️⃣ let and const
+2️⃣ Arrow Functions
+3️⃣ Template Literals
+4️⃣ Destructuring (Array & Object)
+5️⃣ Default Parameters
+6️⃣ Spread ... and Rest ...
+7️⃣ Classes
+8️⃣ Modules (import / export)
+9️⃣ Promises
+🔟 Enhanced Object Literals
+1️⃣1️⃣ for...of
+1️⃣2️⃣ Map and Set
+1️⃣3️⃣ Symbols
+1️⃣4️⃣ Object.assign
+1️⃣5️⃣ new.target
+
+========================================================REGULAR EXPRESSION============================================================
 Q) What is regular expression ?
 Ans- It is sequence of characters that forms a search pattern. It is used to match patterns for provided string, making it powerful tool for searching, replacing, extracting specific information in text
 
