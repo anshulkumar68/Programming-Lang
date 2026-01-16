@@ -1,0 +1,194 @@
+Q) Browser context
+Q) Filter on locator
+Q) Fixture 
+Q) Command to clear localStorage
+Q) page.expose()
+Q) API and web services
+Q) StorageState
+Q) Background in BDD
+Q) what is tagging in Playwright ?
+Q) How can you run specific 10 testcase out of 100 testcase in CI pipeline ?
+Q) How do you do API testing ?
+Q) How will you locate the elements in browser one-by-one or in bulk ? 
+Q) Have you used @smoke, @regression ?
+Q) Scenario vs. Scenario Outline in Cucumber?
+Ans- A Scenario represents a single test case with fixed steps and data, used when the behavior is validated with one specific input set. A Scenario Outline is a data-driven template where the same steps are executed multiple times with different inputs provided through an Examples table.
+
+Q) how you can approach a brand-new requirement and build a solid test strategy and test plan ?
+Ans- When I get a new requirement, I first understand the business requirements, application type, it's workflow, architecture, and risks. Then I define a high-level test strategy covering scope, test types, environments, and automation approach. After that, I create a detailed test plan for the release including features to test, resources, timelines, and deliverables. I always use a risk-based approach to prioritize critical user journeys and integrations, and I align automation to cover smoke, regression, and APIs early in the pipeline.
+Q) Difference between postman and playwright API ?
+
+=> 14-jan
+Q) What is SQL Injection ?
+Q) What all things you used/modified in playwright.config ?
+Q) ES6 features ?
+Q) if a test is failing or app is crashing how will you debug it in playwright ?
+Q) which framework you used in playwright ?
+Q) How will you handle cross-browser and parallel execution ?
+Q) While application is production there is a new module which you releasing so what all different types of testing you will do ?
+Q) Verification and Validation ? 
+Q) Epic, user story, task, bug ?
+
+=> 16-jan-2026
+Q) why Javascript is used for scalable application ?
+Q) How will you handle parallel execution, write code ?
+Q) How will you handle multiple tabs, write code ?
+Q) For API how do you write code using playwright API and do assertion ?
+Q) how will you handle dynamic elements ?
+Q) there is a test which is failing because playwright unable to interact with it how can you handle it ?
+Q) in each sprint what you will be doing ?
+Q) do you perform performance testing in each sprint and if yes then what all things you will validate ?
+Q) 2 sql query 
+Q) how will you handle developer conflict for bug raise ?
+Q) what action items you do when you have less time before release ?
+Q) before release what if you found severity bug how will you convey with your lead and convinvce him for that problem ?
+Q) how will you handle test data for your scalable framework ?
+Q) how will you test download files ?
+Q) how will you take logs for login or a test ?
+
+Q) how will you handle the scenario where testcase is passing locally and failing in CI pipeline ?
+Q)* There is a scenario where there is a checkbox and after deployment it replaced with tick image how will i handle that case ?
+Q) how did you ensure testcase is running in isolation ?
+Q) Imagine you having 20-25 TC and you wants to run 10 TC with shared storagestate how can i ?
+
+
+<!-- Coding Question -->
+Q) Char occurence in string and leap year ?
+Q) click 3 different product and checkout and go payment page ?
+test('login', async({page}=>{
+	await page.goto('url');
+	await AddtoCart(page, [product1, product2, product3])
+	await page.locator('#checkout').click();
+	
+	await page.waitForUrl('**/checkout');
+	await page.locator('#paynow').click();
+
+	await page.waitForUrl('**/payment');
+	await expect(page).toHaveURL(/payment/);
+})
+
+
+async function AddToCart(page, productSelectors){
+	for(let i=0; i<productSelectors.length; i++)
+		await page.locator(productSelectors[i]).click();		p
+}
+
+Employees
+EmployeeID	Name	DepartmentID
+1		Alice	101
+2		Bob	102
+3		Charlie	NULL
+4		Diana	103
+ 
+Departments
+DepartmentID	DepartmentName
+101		HR
+102		Engineering
+104		Marketing
+-> find the employee whose departmentName is Engineering
+
+// Given an array of intervals [[s1,e1],[s2,e2],...], merge all overlapping intervals and return the merged list.
+// input : [[1,3],[2,6],[8,10],[15,18]]
+// // OUTPUT: [[1,6],[8,10],[15,18]]
+
+// write code to find unique value from array 
+// write code to generate a mobile number and email
+// write code to fetch middlename from anshul.kumar@gmail.com
+// write code to remove 'o' and print the string 'Hello how are you, how you doing'
+// write code to count the word occurence 'Hello how are you, how you doing'
+
+/*
+Using filter, map, reduce Question: Given an array of users, calculate total salary of active users
+const users = [
+  { name: "A", salary: 3000, active: true },
+  { name: "B", salary: 4000, active: false },
+  { name: "C", salary: 5000, active: true }
+];
+
+const totalSalary = users
+  .filter(user => user.active)        // keep only active users
+  .map(user => user.salary)           // extract salaries
+  .reduce((sum, sal) => sum + sal, 0); // sum them
+
+console.log(totalSalary); // 8000
+
+*/
+
+/*
+Sample Nested JSON Response
+ 
+{
+  "status": "SUCCESS",
+  "message": "Order details fetched successfully",
+  "data": {
+    "orderId": "ORD-20250101-1001",
+    "orderDate": "2025-01-01T10:15:30Z",
+    "customer": {
+      "customerId": "CUST-78945",
+      "name": "Ajay Singh",
+      "email": "ajay.singh@email.com",
+      "phone": "+91-9876543210",
+      "address": {
+        "line1": "Flat 402, Green Heights",
+        "city": "Bangalore",
+        "state": "Karnataka",
+        "pincode": "560102"
+      }
+    },
+
+    "items": [
+      {
+        "itemId": "ITEM-101",
+        "name": "Wireless Mouse",
+        "quantity": 2,
+        "price": 799.50,
+        "discount": 50,
+        "category": "Electronics"
+      },
+      {
+        "itemId": "ITEM-202",
+        "name": "Mechanical Keyboard",
+        "quantity": 1,
+        "price": 3499.00,
+        "discount": 0,
+        "category": "Electronics"
+      }
+    ],
+
+    "payment": {
+      "paymentId": "PAY-556677",
+      "method": "CREDIT_CARD",
+      "status": "PAID",
+      "transactionDate": "2025-01-01T10:16:00Z"
+    },
+
+    "summary": {
+      "totalItems": 3,
+      "subTotal": 5098.00,
+      "totalDiscount": 100,
+      "tax": 917.64,
+      "grandTotal": 5915.64
+    }
+  }
+}
+*/
+ /* 
+Validate HTTP status code is 200 
+Validate status is "SUCCESS"
+Validate orderId is not null
+Validate items array is not empty  
+Validate total quantity equals summary.totalItems
+Validate each item price is greater than 0
+ */
+
+ /* 
+ <div role="row" row-index="0" row-id="0" style="transform: translateY(0px); height: 45px;" tabindex="-1" class="ag-row-even ag-row-focus ag-row ag-row-level-0 group-level-0-style ag-row-position-absolute ag-row-first ag-row-last ag-row-not-inline-editing" aria-rowindex="2"> <div role="gridcell" col-id="actions" tabindex="-1" class="ag-cell ag-cell-not-inline-editing ag-cell-normal-height ag-cell-first-right-pinned ag-column-last ag-cell-range-right ag-cell-value" aria-colindex="4" style="left: 0px; width: 150px;"><svg width="1em" height="1em" viewBox="0 0 24 24">
+ */
+
+
+
+ const newPage = await Promise.all([
+    page.waitforEvent('page');
+    page.locator('#link').click();
+ ])
+ newPage.waitforLoadState()

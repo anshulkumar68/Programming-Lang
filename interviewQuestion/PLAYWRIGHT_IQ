@@ -2,7 +2,7 @@
 Ans- Playwright is better than Selenium because it solves many of the pain points we faced with Selenium. It’s easier to set up since it doesn’t require separate browser drivers—browser binaries are installed automatically. It has built-in auto-waiting and web-first assertions, which greatly reduce flaky tests. Playwright also supports parallel execution and cross-browser testing using a single API, and it comes with default HTML reports and powerful debugging tools like trace viewer and video recordings. Overall, it improves test stability, execution speed, and developer productivity compared to Selenium.
 
 2) What are the practices should be followed for building the playwright framework ?
-Ans- While building a Playwright automation framework, I follow standard design and test automation best practices to keep the framework maintainable, scalable, and stable. I follow principles like DRY to avoid duplication, and I design reusable components using Page Object Model. I rely on Playwright’s built-in fixtures instead of implementing Singleton patterns, since Playwright already handles test isolation and browser lifecycle efficiently. I also follow SOLID principles where applicable, keep configuration and environment handling centralized, use meaningful test naming and tagging, and ensure proper reporting, logging, and CI integration.
+Ans- While building a Playwright automation framework, I follow standard design and test automation best practices to keep the framework maintainable, scalable, and stable. I follow principles like DRY to avoid duplication, and I design reusable components using Page Object Model. I rely on Playwright’s built-in fixtures instead of implementing Singleton patterns, since Playwright already handles test isolation and browser lifecycle efficiently. I also follow SOLID principles where applicable, keep configuration and environment handling centralized, use meaningful test naming and tagging, and ensure proper reporting, logging, and CI integration. 
 
 3) How to achieve Test Isolation ?
 Ans- Test isolation in Playwright is achieved through browser contexts. Playwright Test creates a new browser context for each test by default. Each context has its own cookies, local storage, session storage, permissions, and cache, so no state is shared between tests. Because of this, tests can run independently and in parallel without affecting each other. 
@@ -13,6 +13,13 @@ To run 100 test cases efficiently in Playwright, I primarily rely on parallel ex
 5) Difference between page, context, and browser? When would you use each?
 In Playwright, the browser represents a real browser instance like Chromium, Firefox, or WebKit and is the top-level object that you launch once per run. A browser context is an isolated environment inside that browser, similar to an incognito window, with its own cookies, local storage, cache, and permissions, which makes it ideal for test isolation. A page is a single tab within a context where actual interactions like clicking, typing, and navigation happen. Typically, you create one browser per test run, one context per test to keep data isolated, and one or more pages inside that context depending on whether your test needs multiple tabs.
 
+Q) StorageState ?
+StorageState in Playwright is used to store and reuse authentication and session data such as cookies and localStorage across test runs. By saving the state after login and reusing it in subsequent tests, automation can bypass repetitive authentication flows. This significantly reduces execution time, improves reliability, and allows focusing tests on business logic rather than setup steps, especially in large regression suites.
+
+Q) what is tagging in Playwright ?
+I use tags in Playwright to logically group tests adding labels such as @smoke, @regression, or @critical to test titles or using annotations to categorize tests. 
+It helps organizing large test suites, helps in aligning tests with release strategies like smoke, sanity,  selective execution through CLI options like --grep, --grep-invert These tags enable selective execution through CLI options like --grep and --grep-invert.
+
 6) How does Playwright auto-wait work? What problems does it solve?
 Playwright automatically waits before performing actions like click, fill, or expect by ensuring the element is attached to the DOM, visible, enabled, and stable. It also waits for navigations and network idle when appropriate. This auto-waiting removes the need for most explicit waits and sleep statements, making tests more reliable. It solves common problems such as timing issues, race conditions, and flaky failures caused by elements not being ready when the action is attempted.
 
@@ -20,7 +27,7 @@ Playwright automatically waits before performing actions like click, fill, or ex
 Flaky tests are handled by first identifying the root cause, which is usually timing issues, unstable locators, animations, or test data dependencies. In Playwright, using robust locators like role or text-based locators, relying on auto-wait instead of manual timeouts, and adding proper assertions with expect helps a lot. You can also use retries in the test config, enable tracing for failed runs, and make sure tests are isolated with fresh contexts. Fixing the cause is preferred over just adding retries, which should be a safety net.
 
 8) What is strict mode in locators? How do you debug strict mode violations?
-Strict mode means that a locator used for actions must resolve to exactly one element, otherwise Playwright throws an error. This prevents tests from accidentally interacting with the wrong element when multiple matches exist. When a strict mode violation happens, you debug it by inspecting the error message that lists matched elements, using page.pause() or the Playwright inspector, and refining the locator with better selectors like getByRole, adding filters, or using nth() only when truly needed.
+Strict mode means that a locator used for actions must resolfve to exactly one element, otherwise Playwright throws an error. This prevents tests from accidentally interacting with the wrong element when multiple matches exist. When a strict mode violation happens, you debug it by inspecting the error message that lists matched elements, using page.pause() or the Playwright inspector, and refining the locator with better selectors like getByRole, adding filters, or using nth() only when truly needed.
 
 9) Difference between locator() and page.$()?
 page.locator() does not immediately fetch the element. It creates a locator that re-queries the DOM and supports auto-waiting and retries when used with actions or assertions. whereas page.$() immediately returns an ElementHandle from the DOM and does not auto-wait for actions, so it can easily become stale if the DOM changes. Locators are the recommended modern API for writing stable Playwright tests
@@ -48,6 +55,9 @@ Playwright runs tests in parallel by default using workers, which are separate p
 16) How do you deal with dynamic elements and animations?
 Dynamic elements are handled by using stable locators and relying on Playwright’s auto-wait, which waits for elements to become visible and stable. For animations, Playwright waits for elements to stop moving before clicking, but if needed, you can disable animations via CSS injection or wait for specific states using expect assertions. Avoid fixed timeouts and instead wait for meaningful UI states to keep tests reliable.
 
+Q) How will you locate the elements in browser one-by-one or in bulk ? 
+Ans- I locate elements using robust selectors based on priority: unique IDs, data-test attributes, accessible roles, and stable CSS/XPath, following best practices to avoid brittle locators. For one-by-one interaction, I use single element locators like page.locator() in Playwright to perform actions such as click, type, or assert on a specific element with auto-wait and strictness. For bulk operations, like validating lists, tables, menus, or multiple cards, I use a common locator that matches all elements and then iterate using methods like .count(), .nth(), or .allTextContents(). I prefer relative and scoped (filter) locators to narrow context and improve performance.
+
 17) Difference between waitForSelector and relying on auto-wait?
 waitForSelector explicitly waits for an element to appear in the DOM before continuing, but it only waits for presence or visibility, not for readiness to interact. Auto-wait is built into actions and assertions and waits for multiple conditions like visibility, enablement, and stability at the moment of action. Relying on auto-wait leads to cleaner and more reliable tests, while waitForSelector should be used sparingly for special cases like waiting for background elements.
 
@@ -72,6 +82,20 @@ I capture screenshots using page.screenshot(), which allows me to take full-page
 10) How do you wait for an element to appear?
 I wait for an element using page.waitForSelector() or preferably Playwright locators, which have built-in auto-waiting for visibility and attachment to the DOM. This ensures synchronization before performing actions.
 
+Q) what is Fixture ? 
+A fixture is a reusable setup and teardown mechanism provided by the Playwright Test framework to manage test dependencies such as browser, context, page, test data, or custom utilities. Fixtures enable dependency injection into tests, promote code reuse, and ensure consistent test environments. They can be scoped at test, worker, or suite level and can be extended to create custom fixtures, which improves maintainability and scalability of large automation frameworks.
+
+Q) what is Filter on locator
+locator.filter() in Playwright is used to refine a locator by applying additional conditions such as visible text, child elements, or other locators. It helps create more readable selectors when multiple elements match the same base locator. By narrowing the search within an existing locator chain, especially in dynamic UIs with repeated components.
+
+Q) Command to clear localStorage
+In Playwright, localStorage can be cleared by executing JavaScript in the browser context using
+await page.evaluate(() => localStorage.clear());
+This approach directly interacts with the web application's runtime environment and is useful for resetting client-side state between tests. Clearing localStorage ensures a clean session, avoids data pollution, and helps validate first-time user flows or scenarios dependent on storage-based flags.
+
+Q) page.expose function() ?
+page.exposeFunction() creates a secure bridge between the browser and Playwright’s Node.js runtime, enabling browser-side JavaScript to call Node.js test logic. This makes it ideal for callbacks, analytics verification, custom mocking, event interception, and advanced test–application integrations where in-app actions need to trigger or validate test-side behavior.
+
 Q) Sometimes page load soon and sometimes takes time how can i handle that ?
 When a page loads inconsistently, I don’t use hard waits.
 I rely on Playwright’s auto-waiting with web-first assertions and explicit waits only for navigation or backend signals.
@@ -80,6 +104,9 @@ I wait for what actually indicates readiness — such as a specific UI element, 
 Q) What are explicit waits in playwright and when to use and example ?
 Explicit waits are manual wait APIs used when Playwright’s auto-waiting (locators + assertions) is not sufficient.
 Use explicit waits only for navigation, page-level events, or browser events — not for normal UI actions.
+
+Q) How can you run specific 10 testcase out of 100 testcase in CI pipeline ?
+Ans- In Playwright, I run a specific set  of tests by using tagging, test titles, file paths, or annotations and then passing filters through the CLI. The most common and scalable approach is tagging, where I mark required tests with tags like @smoke or @critical in the test name or test.describe(). Then I execute them using npx playwright test --grep @smoke, which will only run the tests matching that pattern. Alternatively, I can target specific spec files or folders, or use --grep with part of the test title to pick exactly the 10 test cases I need. In a CI pipeline (like Jenkins or GitHub Actions), I parameterize the command so the pipeline runs npx playwright test --grep @smoke or a custom tag, enabling dynamic selection without changing code. This approach ensures fast feedback by running only critical tests on each build,
 
 1️⃣ page.waitForSelector()
 Waits for an element to appear in the DOM and reach a given state (attached, visible, hidden, detached).
@@ -156,3 +183,12 @@ EX- await page.waitForURL('**/checkout');
 SPA routing
 Redirects without reload
 OAuth flows
+
+==================================PLAYWRIGHT API=========================
+Q) How do you do API testing ?
+Ans- I perform API testing by validating REST APIs at the service layer without the UI, focusing on correctness, data consistency, reliability, and performance. I start by going through the OpenAPI docs and identify endpoints, HTTP methods, headers, and authentication (OAuth2, JWT, API keys). I design test cases for positive, negative, boundary, and edge scenarios and execute them using tools like Postman for exploration and frameworks like Rest Assured or Playwright API for automation. I validate payload values, headers, status codes, response schemas and response time and also check idempotency and error handling. In automation, I chain APIs for end-to-end flows, parameterize data, assert JSON using JSONPath, and integrate with CI/CD so tests run on every build.
+
+Q) Difference between postman and playwright API ?
+Ans- Postman is best suited for fast and quick API validation, mainly focused on manual and exploratory testing, with limited automation using JavaScript snippets.
+Playwright API testing, on the other hand, is fully automation-driven. Since it uses a proper programming language like JavaScript or TypeScript, it provides better control, extensibility, and maintainability.
+
