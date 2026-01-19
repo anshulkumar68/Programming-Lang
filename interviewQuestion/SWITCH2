@@ -50,9 +50,73 @@ Q) how will you handle the scenario where testcase is passing locally and failin
 Q)* There is a scenario where there is a checkbox and after deployment it replaced with tick image how will i handle that case ?
 Q) how did you ensure testcase is running in isolation ?
 Q) Imagine you having 20-25 TC and you wants to run 10 TC with shared storagestate how can i ?
+Q)* So booking a bus availablitily how can i check from seach till booking and for uisng api need to check bus is available or not ?
+Q) what was the flow following while using github can you explain interview question as a automation tester
+Q)What is Playwright performance testing?
+Q) for what all things you are using JIRA, 
+Q) if someone asks have you ever created a test plan and if yes then explain ? 
+Q)* Application was fine but because of recent changes application is now crashed what you will do 
+Q) playwright performance
+Q) How do you implement Page Object Model in Playwright? 
+Q) TDD, data driven testing, BDD ? 
+Q) framelocator example need to see
 
+Q)* Application was fine but because of recent changes application is now crashed what you will do 
+First, I will reproduce the issue to understand when and how the crash happens.
+Then I will:
+Check recent code or configuration changes
+Review logs, error messages, and stack traces
+Identify whether it’s a functional issue, performance issue, or environment issue
+Check if the issue appears in other environments
+
+After identifying the root cause, I will:
+Create a detailed bug in JIRA with steps, screenshots, and logs
+Coordinate with developers to fix it
+Perform regression testing once the fix is deployed to ensure nothing else is broken
+
+Q) For what all things are you using JIRA?
+I use JIRA mainly for test management and defect tracking.
+
+Day-to-day, I use JIRA to:
+Create and manage bug tickets with proper priority and severity
+Track test execution status like To Do, In Progress, Blocked, and Done
+Link bugs to user stories or test cases
+Participate in sprint planning, stand-ups, and retrospectives
+Update progress and collaborate with developers and product owners
+Overall, JIRA helps maintain traceability, transparency, and smooth communication within the team.
+
+Q) TDD, data driven testing, BDD ? 
+TDD (Test Driven Development)
+In TDD, tests are written before the code.
+The cycle is
+Write test → Test fails
+Write code → Test passes
+Refactor code
+It ensures better code quality and fewer defects.
+
+✅ Data-Driven Testing
+In data-driven testing, the same test runs with multiple data sets.
+Test data comes from:
+JSON, CSV, Excel
+This reduces duplication and improves coverage.
+
+✅ BDD (Behavior Driven Development)
+BDD focuses on business behavior using simple language.
+Tests are written in Given–When–Then format so even non-technical stakeholders can understand them.
+
+Q)What is Playwright performance testing?
+Playwright is mainly used for end-to-end automation, but it can also help in basic performance checks.
+Using Playwright, I can:
+Measure page load time
+Track API response time
+Monitor navigation and rendering delays
+Capture performance metrics using browser APIs
+However, for deep performance testing, tools like JMeter or Gatling are better.
+Playwright is mostly used for UI performance validation, not heavy load testing.
 
 <!-- Coding Question -->
+Q) // str = 'Anshul Kumar from Uttar Pradesh'
+// rattU Anshul from Pradesh rumuK
 Q) Char occurence in string and leap year ?
 Q) click 3 different product and checkout and go payment page ?
 test('login', async({page}=>{
@@ -86,6 +150,11 @@ DepartmentID	DepartmentName
 102		Engineering
 104		Marketing
 -> find the employee whose departmentName is Engineering
+select e.name
+from employees e
+left join departments d 
+on e.departmentID = d.departmentID
+where  departmentName = 'Engineering'
 
 // Given an array of intervals [[s1,e1],[s2,e2],...], merge all overlapping intervals and return the merged list.
 // input : [[1,3],[2,6],[8,10],[15,18]]

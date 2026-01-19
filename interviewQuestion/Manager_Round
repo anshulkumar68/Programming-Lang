@@ -49,7 +49,7 @@ I use shift left approach which means getting involved in grooming, clarify acce
 I first understand deadlines and business priority and risk for each feature. I focus on high-impact areas first, automate what can be reused, and communicate clearly if something is at risk. If needed, I break work into small parts or ask for support early rather than waiting till the last moment.
 
 7) Have you ever missed a bug in production? How did you handle it?
-Yes, early in my career a edge case went to production. Once we found it, I took the ownership and conducted RCA over the production build, added test converage for similar scenario to avoid in future. I took it as a learning experience and used it to improve our process by explaining to team to uncover hidden edge cases so we don't repeat the same mistake.
+Yes, early in my career a edge case went to production. Once we found it, I took the ownership and conducted RCA over the production build, added test coverage for similar scenario to avoid in future. I took it as a learning experience and used it to improve our process by explaining to team to uncover hidden edge cases so we don't repeat the same mistake.
 
 8) How do you measure the success of your automation?
 I look at how much confidence it gives to the team. Practically, that means stable CI runs, fewer false failures, reduced regression time, and catching issues before production. If developers trust the suite and releases are smoother, I consider automation successful.
@@ -70,7 +70,7 @@ I expect clear expectations, regular feedback, and an environment where quality 
 I see myself as a strong SDET or quality lead who owns test strategy, frameworks, and CI quality across projects, and also mentors others. I want to contribute not just at script level, but at process and architecture level.
 
 14) Why do you want to join this company/team?
-From what I’ve learned, Quinnox is a results focused digital technology partner that helps organizations simplify complex processes and improve customer experiences through innovative solutions. I’m excited about working in an environment that values automation and a strong engineering mindset.
+From what I’ve learned, Quinnox is a results focused digital technology partner that helps organizations simplify complex processes  and improve customer experiences through innovative solutions. I’m excited about working in an environment that values automation and a strong engineering mindset.
 Additionally, learning that the project is in the banking domain makes me even more eager to join, as it is a challenging and high-impact domain that offers deep learning and professional growth.
 
 15) What motivates you as a QA Automation Engineer?

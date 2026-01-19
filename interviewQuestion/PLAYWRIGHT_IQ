@@ -40,6 +40,12 @@ In Playwright, multiple pages are handled using browser contexts. Each test runs
 
 12) How do you handle a new tab / new window?
 When an action opens a new tab or window, I listen for the page event on the browser context using context.waitForEvent('page') and capture the new page object which and switch control using bringToFront() for any visual UI interactions.
+const [newPage] = await Promise.all([
+  context.waitForEvent('page'),
+  page.locator('#new-tab').click(),
+]);
+await newPage.waitforLoadState();
+await newPage.bringToFront();
 
 13) How do you create a new browser context and page?
 I create a new browser context using browser.newContext() to isolate session state such as cookies, cache, and storage. Then I open a fresh page using context.newPage(). This ensures test isolation and prevents cross-test contamination.”
@@ -56,7 +62,7 @@ Playwright runs tests in parallel by default using workers, which are separate p
 Dynamic elements are handled by using stable locators and relying on Playwright’s auto-wait, which waits for elements to become visible and stable. For animations, Playwright waits for elements to stop moving before clicking, but if needed, you can disable animations via CSS injection or wait for specific states using expect assertions. Avoid fixed timeouts and instead wait for meaningful UI states to keep tests reliable.
 
 Q) How will you locate the elements in browser one-by-one or in bulk ? 
-Ans- I locate elements using robust selectors based on priority: unique IDs, data-test attributes, accessible roles, and stable CSS/XPath, following best practices to avoid brittle locators. For one-by-one interaction, I use single element locators like page.locator() in Playwright to perform actions such as click, type, or assert on a specific element with auto-wait and strictness. For bulk operations, like validating lists, tables, menus, or multiple cards, I use a common locator that matches all elements and then iterate using methods like .count(), .nth(), or .allTextContents(). I prefer relative and scoped (filter) locators to narrow context and improve performance.
+Ans- I locate elements using robust locators based on priority: unique IDs, data-test attributes, accessible roles, and stable CSS/XPath, following best practices to avoid brittle locators. For one-by-one interaction, I use single element locators like page.locator() in Playwright to perform actions such as click, type, or assert on a specific element with auto-wait and strictness. For bulk operations, like validating lists, tables, menus, or multiple cards, I use a common locator that matches all elements and then iterate using methods like .count(), .nth(), or .allTextContents(). I prefer relative and scoped (filter) locators to narrow context and improve performance.
 
 17) Difference between waitForSelector and relying on auto-wait?
 waitForSelector explicitly waits for an element to appear in the DOM before continuing, but it only waits for presence or visibility, not for readiness to interact. Auto-wait is built into actions and assertions and waits for multiple conditions like visibility, enablement, and stability at the moment of action. Relying on auto-wait leads to cleaner and more reliable tests, while waitForSelector should be used sparingly for special cases like waiting for background elements.
@@ -65,7 +71,7 @@ waitForSelector explicitly waits for an element to appear in the DOM before cont
 In Playwright, Page Object Model is implemented by creating classes that represent pages or components, where locators and actions are defined as methods. Each class receives a Page instance in its constructor, and tests use these methods instead of directly interacting with selectors. This improves readability, reduces duplication, and makes maintenance easier when UI changes, while still leveraging Playwright’s powerful locator system.
 
 19) How do you debug a failing test locally and in CI?
-Locally, you can run tests in headed mode, use page.pause() to open the inspector, enable slow motion, and view traces to step through actions. In CI, you rely on collected artifacts like traces, videos, and screenshots to understand what happened. Comparing logs, checking network mocks, and reproducing the failure locally with the same data and config helps close the gap between CI and local environments and fix issues faster.
+Locally, you can run tests in headed mode, debug mode, playwright inspector() and view traces to step through actions. In CI, you rely on collected artifacts like traces, videos, and screenshots to understand what happened. Comparing logs, checking network mocks, and reproducing the failure locally with the same data and config helps close the gap between CI and local environments and fix issues faster.
 
 5) How do you handle JavaScript dialogs (alert/confirm/prompt)?
 I register a listener on the dialog event using page.on('dialog'). Once intercepted, I can programmatically accept or dismiss alerts, confirms, or provide input for prompts using dialog.accept() or dialog.dismiss().
@@ -99,7 +105,7 @@ page.exposeFunction() creates a secure bridge between the browser and Playwright
 Q) Sometimes page load soon and sometimes takes time how can i handle that ?
 When a page loads inconsistently, I don’t use hard waits.
 I rely on Playwright’s auto-waiting with web-first assertions and explicit waits only for navigation or backend signals.
-I wait for what actually indicates readiness — such as a specific UI element, loader disappearance, or API response — which makes tests stable regardless of page speed.” 
+I wait for what actually indicates readiness — such as a specific UI element, loader disappearance, or API response  which makes tests stable regardless of page speed.” 
 
 Q) What are explicit waits in playwright and when to use and example ?
 Explicit waits are manual wait APIs used when Playwright’s auto-waiting (locators + assertions) is not sufficient.
@@ -172,7 +178,7 @@ Dialogs
 EX 
 const [download] = await Promise.all([
   page.waitForEvent('download'),
-  page.click('#download'),
+  page.click('#download'), 
 ]);
 
 5️⃣ page.waitForURL()
@@ -184,7 +190,7 @@ SPA routing
 Redirects without reload
 OAuth flows
 
-==================================PLAYWRIGHT API=========================
+=======================================PLAYWRIGHT API===================================
 Q) How do you do API testing ?
 Ans- I perform API testing by validating REST APIs at the service layer without the UI, focusing on correctness, data consistency, reliability, and performance. I start by going through the OpenAPI docs and identify endpoints, HTTP methods, headers, and authentication (OAuth2, JWT, API keys). I design test cases for positive, negative, boundary, and edge scenarios and execute them using tools like Postman for exploration and frameworks like Rest Assured or Playwright API for automation. I validate payload values, headers, status codes, response schemas and response time and also check idempotency and error handling. In automation, I chain APIs for end-to-end flows, parameterize data, assert JSON using JSONPath, and integrate with CI/CD so tests run on every build.
 

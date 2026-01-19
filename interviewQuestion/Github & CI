@@ -1,0 +1,142 @@
+1) What is Git and why is it important for testers?
+Git is a distributed version control system that helps track changes in code and test assets over time. For testers, Git is essential because it allows us to manage automation scripts, collaborate safely with developers, track changes in test cases and configurations, and roll back faulty test code when needed. It also enables parallel work using branches, which is critical in Agile environments where multiple features are developed simultaneously.
+
+2) Merge vs Rebase
+Git merge combines two branches by creating a merge commit and preserving the complete branch history, which makes it safe for shared branches like main. Git rebase, on the other hand, reapplies my commits on top of another branch and rewrites commit history to keep it linear. As a tester, I use rebase only on my local feature branches to clean up commit history before pushing and avoid using it on shared branches to prevent conflicts.
+
+3) Git Pull vs Git Fetch
+Git fetch downloads the latest changes from the remote repository and updates the remote-tracking branch without affecting my current working branch. Git pull performs a fetch followed by a merge, directly bringing changes into my local branch. I usually use fetch when I want to review incoming changes first and pull when I’m confident I want to sync my branch immediately.
+
+4) How do you handle merge conflicts?
+When a merge conflict occurs, Git highlights the conflicting sections in the file. I carefully review both my changes and the incoming changes, understand the intent behind each, and choose the logic that aligns with the latest application behavior. I resolve conflicts using tools like the VS Code merge editor or git mergetool, remove conflict markers, stage the resolved files, complete the merge or rebase, and finally run tests to ensure nothing is broken.
+
+5) What is a Fork?
+A fork is a personal copy of someone else’s repository, commonly used when I don’t have direct write access, such as in open-source projects. After forking, I clone the repository locally, create a feature branch, commit and push my changes to my fork, and then raise a pull request to the original repository. I also keep my fork updated by syncing it with the upstream repository to avoid conflicts.
+
+6) What is a Pull Request (PR)? (Paragraph + light bullets)
+A Pull Request is a request to merge changes from one branch or fork into another branch, usually main. It acts as a quality gate before code is merged and is especially important for testers because it ensures automation changes are reviewed and validated before becoming part of the shared test suite.
+It enables:
+Code review and feedback
+Automatic CI test execution
+Discussion and approval before merging
+
+7) What are the Git file states? (Bullets only – best choice)
+Git tracks files through different states during development:
+Untracked – New files Git does not yet track
+Modified – Files that have been changed but not staged
+Staged – Files marked as ready to be committed
+Unmodified – Files with no changes
+👉 As a tester, understanding these states helps prevent accidental commits of local configs or debug files.
+
+8) How do you undo changes in Git? (Bullets – practical commands)
+Depending on the situation:
+Unstage a file: git reset <file>
+Undo last commit: git reset HEAD~1
+Reset to specific commit: git reset <commit-hash>
+Hard reset (use cautiously): git reset --hard <commit-hash>
+👉 I avoid hard resets on shared branches to prevent losing work.
+
+9) How do testers use Git branches? (Paragraph works best)
+Testers use Git branches to work independently on automation features, bug fixes, or experimental solutions for flaky tests. Branching allows safe development without impacting the main branch, which is often connected to CI pipelines. Once the changes are stable, they are merged back through a pull request.
+
+10) What is git reset --hard origin/main? (Short paragraph + warning)
+This command resets the local branch to exactly match the remote origin/main branch and removes all local changes and commits. I use it very carefully, typically when local work is no longer required and I need a clean state aligned with the remote branch.
+⚠️ It permanently deletes local changes, so it should never be used without certainty.
+
+11) How do you resolve a situation where tests fail after pulling code?
+When tests fail after pulling new code, I first check recent commits using git log to understand what changed. I then identify whether the failure is due to UI, API, or data changes. If the application behavior has changed, I coordinate with developers to confirm the expected behavior, update locators or assertions accordingly, and rerun the tests locally to ensure stability.
+
+12) How does Git help in CI/CD pipelines?
+Git acts as the trigger point for CI/CD pipelines. Any push, pull request, or merge event can automatically start the pipeline, ensuring that tests run continuously as code changes.
+It helps by:
+Triggering automated tests on every push
+Validating changes through PR checks
+Preventing broken code from reaching production
+
+13) Difference between git reset and git revert
+Git reset rewrites commit history and is mainly used locally to undo changes before sharing them. Git revert creates a new commit that undoes a previous commit and is safe to use on shared branches. As a tester, I use reset for local cleanup and revert when working on shared branches to avoid impacting others.
+
+14) What is git stash and when do you use it?
+Git stash temporarily saves uncommitted changes without committing them. I use it when I need to quickly switch branches, for example to check a high-priority bug or pull urgent updates, and then return to my previous work later.
+
+15) How do you sync local repo with remote?
+I sync my local repository with the remote by either fetching and merging manually:
+
+git fetch origin
+git merge origin/main
+or by using:
+git pull origin main
+This ensures my local branch stays updated with the latest remote changes.
+
+CLEAN GIT COMMAND NOTES (INTERVIEW READY)
+🔹 Repository Setup
+git init
+git status
+git remote add origin <repo-url>
+git add .
+git commit -m "message"
+git push origin main
+
+🔹 Cloning a Repository
+git clone <repo-url>
+cd repo
+git status
+
+⚠️ No need to run git init after clone
+🔹 Branch Commands
+git branch                 # list branches
+git branch -M main         # rename branch
+git checkout branch-name   # switch branch
+git checkout -b new-branch # create + switch
+git branch -d branch-name  # delete branch
+
+🔹 Sync with Remote
+git fetch origin
+git merge origin/main
+or
+git pull origin main
+
+🔹 Merging Code
+git diff branch-name
+git merge branch-name
+OR
+👉 Create Pull Request (recommended)
+
+🔹 Resolving Conflicts
+git status
+# fix conflicts
+git add .
+git commit
+
+🔹 Undoing Changes
+git reset file-name
+git reset HEAD~1
+git reset --hard <commit-hash>
+
+🔹 Fork Workflow
+git remote add upstream <original-repo>
+git fetch upstream
+git merge upstream/main
+
+=============================CI/CD==============================
+1) select an item type
+This defines what kind of CI/CD job you are creating and how the pipeline behaves. like Freestyle, pipeline
+2) Source Code Management
+This step connects the CI/CD system to the automation script repository and it's purpose of Fetching the automation code (tests, scripts, infra code) and Ensures builds are traceable to a specific commit.
+3) Triggers
+Triggers define when the pipeline runs. common triggers type are Common triggers type are 
+Code commit / pull request, 
+Scheduled execution (cron-based)
+Manual trigger (on-demand)
+Upstream job completion
+Webhooks from SCM or external tools
+4) Environment
+This specifies where and how the automation runs and to store Environment variables and secrets handling, Runtime requirements (OS, language version, tools).
+5) Build Steps
+These are the actual commands that execute the automation it includes steps like Dependency installation
+Environment setup
+Execution of automation scripts
+Validation or assertions
+Cleanup or teardown
+6) Artifactsn 
+Artifacts are outputs generated by the pipeline.
