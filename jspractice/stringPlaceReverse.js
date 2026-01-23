@@ -23,3 +23,22 @@ function stringPlaceReverse() {
     console.log(res)
 }
 stringPlaceReverse();
+
+
+//str = Hi there Today is Tuesday 
+//output = Hi ereht Today is yadseuT
+function placeReverse(){
+    let str = 'Hi there Today is Tuesday', reverse='', res='';
+    let words = str.split(' ');
+    for(let word of words){
+        if(word === 'there' || word === 'Tuesday'){
+            res += word.split('').reverse().join('');
+        }
+        else{
+            res += word;
+        }
+        res += ' '
+    }
+    console.log(res.trim())
+}
+placeReverse()

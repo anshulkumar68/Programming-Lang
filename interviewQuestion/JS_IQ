@@ -51,9 +51,9 @@ However, JavaScript also has a number of asynchronous features, such as callback
 Q) What is the event loop in JavaScript and how does it work?
 Ans- The event loop is a mechanism in JavaScript that allows asynchronous operations to be executed in a non-blocking manner by handling callbacks from the callback queue when the call stack is empty.
 
-Q) Define OOPS ?
+Q)* Define OOPS ?
 Ans- 
-==========================================================================BASIC==============================================================================
+================================================================BASIC=========================================================================
 Q) What is strict mode ?
 Ans- =>  strict mode is a way to opt in to a restricted variant of JavaScript
 => It instructs the browser to use the strict mode
@@ -230,7 +230,7 @@ Ans- A higher-order function is a function that either takes one or more functio
 Returns a function as its result.
 This concept enables abstraction, reuse, and functional programming patterns.
 
-====================================================================ES6=========================================================================================
+===============================================================ES6============================================================================
 Q) ES6 concepts ?
 Ans- Ecmascript 2015, introduced new features to enhancing the capabbilities of JS to write more clean, efficient and maintainable code.
 1. Arrow functions: Arrow functions provide a more concise syntax for writing functions
@@ -307,7 +307,23 @@ Ans- Lazy loading is a technique of delaying non-essential resources (such as im
 Q) How can you optimize the performance of a website/application built with JavaScript?
 Ans- Performance optimization techniques include minimizing HTTP requests, using asynchronous loading for resources, optimizing images and media, minimizing and optimizing JavaScript code, using caching strategies, and implementing lazy loading.
 
-=================================================================CLOSURE, PROMISES================================================================================
+1️⃣ let and const
+2️⃣ Arrow Functions
+3️⃣ Template Literals
+4️⃣ Destructuring (Array & Object)
+5️⃣ Default Parameters
+6️⃣ Spread ... and Rest ...
+7️⃣ Classes
+8️⃣ Modules (import / export)
+9️⃣ Promises
+🔟 Enhanced Object Literals
+1️⃣1️⃣ for...of
+1️⃣2️⃣ Map and Set
+1️⃣3️⃣ Symbols
+1️⃣4️⃣ Object.assign
+1️⃣5️⃣ new.target
+
+====================================================CLOSURE & PROMISES===========================================================================
 Q) What are closures and how do you use them?
 Ans- 
 => Closures are functions in which inner function have access to the outer lexical scope(function's variables), even after the outer function has finishes executing. 
@@ -366,41 +382,5 @@ Pause the function's execution until the Promise resolves.
 Resume execution with the resolved value when the Promise resolves.
 Throw an error if the Promise is rejected, which you can handle with a try/catch block.
 
-
-========================================================ES6============================================================
-1️⃣ let and const
-2️⃣ Arrow Functions
-3️⃣ Template Literals
-4️⃣ Destructuring (Array & Object)
-5️⃣ Default Parameters
-6️⃣ Spread ... and Rest ...
-7️⃣ Classes
-8️⃣ Modules (import / export)
-9️⃣ Promises
-🔟 Enhanced Object Literals
-1️⃣1️⃣ for...of
-1️⃣2️⃣ Map and Set
-1️⃣3️⃣ Symbols
-1️⃣4️⃣ Object.assign
-1️⃣5️⃣ new.target
-
-========================================================REGULAR EXPRESSION============================================================
-Q) What is regular expression ?
-Ans- It is sequence of characters that forms a search pattern. It is used to match patterns for provided string, making it powerful tool for searching, replacing, extracting specific information in text
-
-.test method
-=> The .test() method takes the regex, applies it to a string (which is placed inside the parentheses), and returns true or false if your pattern finds something or not.
-let testStr = "freeCodeCamp";
-let testRegex = /Code/;
-testRegex.test(testStr);
-
-.match method
-=> the .match() method takes the regex, applies it to the string and returns array
-
-=> flag
-i : it will ignore the uppercase, lowercase for the provided regular expression
-g : To search or extract a pattern more than once, we can use global search flag 
-.(wildcard character) : used to match any single character
-^ : in character class [] it will negate else used to find the string in the starting of the expression
   
 

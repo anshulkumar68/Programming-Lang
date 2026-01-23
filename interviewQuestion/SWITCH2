@@ -61,6 +61,9 @@ Q) How do you implement Page Object Model in Playwright?
 Q) TDD, data driven testing, BDD ? 
 Q) framelocator example need to see
 
+20-jan
+Q) what challenges you faced with playwright in 3 years ?
+
 Q)* Application was fine but because of recent changes application is now crashed what you will do 
 First, I will reproduce the issue to understand when and how the crash happens.
 Then I will:

@@ -102,4 +102,17 @@
         await page.close()
     })
 
+////////////////////////////////////////////////////////////////////////
+// For select tag
+await page.waitForSelector('.dropdown');
+await page.locator('.dropdown').selectOption('India');
 
+// Case A: Searchable dropdown (input-based)
+await page.locator('.dropdown').waitFor({ state: 'visible' });
+await page.locator('.dropdown').fill('India');
+await page.locator('.list-dropdown >> text=India').click();
+
+// Case B: Click → list opens → select value
+await page.locator('.dropdown').click();
+await page.locator('.list-dropdown').waitFor({ state: 'visible' });
+await page.locator('.list-dropdown >> text=India').click();

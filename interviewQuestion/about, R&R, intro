@@ -5,7 +5,7 @@ I work across the full testing lifecycle—understanding business requirements, 
 Along with owning core modules, I supported my team during regression cycles and focus on reducing manual testing effort, improving test reliability, and proactively preventing production issues.
 
 ))))))
-Currently, I work on an ERP-based financial platform, NextWorld, where I own the Supplier Invoice and Supplier Credit Memo modules end-to-end. I am responsible for validating complete business lifecycles, including invoice creation, tax calculations, approval workflows, posting processes, and ensuring accurate updates to general ledger accounts and supplier balances.
+Currently, I work on an ERP-based financial platform, NextWorld, where I own the Supplier Invoice and Supplier Credit Memo modules end-to-end. I am responsible for validating complete business lifecycles, including invoice creation, tax calculations, approval workflows, posting processes, and ensuring accurate updates to general ledger accounts and supplier balances. 
 
 For Supplier Credit Memos, I cover both refund and adjustment scenarios, handling partial and full credits also tax reversals. ensuring accurate financial impact across supplier balances and reports.
 
