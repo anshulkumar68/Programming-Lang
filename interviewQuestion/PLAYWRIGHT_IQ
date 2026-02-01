@@ -114,6 +114,17 @@ Use explicit waits only for navigation, page-level events, or browser events —
 34) How can you run specific 10 testcase out of 100 testcase in CI pipeline ?
 Ans- In Playwright, I run a specific set  of tests by using tagging, test titles, file paths, or annotations and then passing filters through the CLI. The most common and scalable approach is tagging, where I mark required tests with tags like @smoke or @critical in the test name or test.describe(). Then I execute them using npx playwright test --grep @smoke, which will only run the tests matching that pattern. Alternatively, I can target specific spec files or folders, or use --grep with part of the test title to pick exactly the 10 test cases I need. In a CI pipeline (like Jenkins or GitHub Actions), I parameterize the command so the pipeline runs npx playwright test --grep @smoke or a custom tag, enabling dynamic selection without changing code. This approach ensures fast feedback by running only critical tests on each build,
 
+35) What is Playwright performance testing?
+Playwright is mainly used for end-to-end automation, but it can also help in basic performance checks.
+Using Playwright, I can:
+Measure page load time
+Track API response time
+Monitor navigation and rendering delays
+Capture performance metrics using browser APIs
+However, for deep performance testing, tools like JMeter or Gatling are better.
+Playwright is mostly used for UI performance validation, not heavy load testing.
+
+
 1️⃣ page.waitForSelector()
 Waits for an element to appear in the DOM and reach a given state (attached, visible, hidden, detached).
 EX - await page.waitForSelector('#toast', { state: 'visible' });

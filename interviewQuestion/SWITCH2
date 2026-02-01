@@ -108,14 +108,6 @@ BDD focuses on business behavior using simple language.
 Tests are written in Given–When–Then format so even non-technical stakeholders can understand them.
 
 Q)What is Playwright performance testing?
-Playwright is mainly used for end-to-end automation, but it can also help in basic performance checks.
-Using Playwright, I can:
-Measure page load time
-Track API response time
-Monitor navigation and rendering delays
-Capture performance metrics using browser APIs
-However, for deep performance testing, tools like JMeter or Gatling are better.
-Playwright is mostly used for UI performance validation, not heavy load testing.
 
 <!-- Coding Question -->
 Q) // str = 'Anshul Kumar from Uttar Pradesh'

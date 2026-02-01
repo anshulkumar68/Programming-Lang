@@ -97,11 +97,6 @@ I learned the end-to-end business flow for Supplier Invoices and Supplier Credit
 Result
 Test coverage improved significantly, which outcomes supplier credit memo and supplier invoices module became reliable, and more stable with time.
 
-20) Banking Application Onboarding ?
-“Banking onboarding is a critical flow because it directly impacts customer acquisition, compliance, and fraud risk. The process starts with capturing basic customer details and OTP verification, followed by KYC where identity documents and biometric or face verification are validated through third-party systems. After that, AML and risk checks are performed to identify fraud, duplicates, or blacklisted users.
-Once the customer clears all checks, the account is created in the core banking system, mapped with required products like debit card or net banking, and credentials such as login password and transaction PIN are set. The account is then activated and confirmation is sent to the customer.
-From a QA ownership perspective, I focus on end-to-end validation, regulatory compliance, data consistency across integrated systems, and graceful handling of failures like KYC rejection or third-party downtime. I also ensure strong collaboration with product, backend, and security teams, prioritize high-risk scenarios, and make sure onboarding remains fast, secure, and reliable for customers.”
-
-21) Mortgage loan
+20) Mortgage loan
 “A mortgage loan is a long-term loan taken against property as security, where the customer repays the loan in EMIs and the bank holds the property as collateral until full repayment.”
  
